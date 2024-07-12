@@ -1,5 +1,15 @@
 # clerk-solidjs
 
+## 0.2.0
+
+### Minor Changes
+
+- [`a56d81d`](https://github.com/ian-pascoe/clerk-solidjs/commit/a56d81d65f03a3e70cb1047c9e6b7c12cf6bd229) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Fix tsup config, move server stuff to it's own entry
+
+### Patch Changes
+
+- [`81f2ab5`](https://github.com/ian-pascoe/clerk-solidjs/commit/81f2ab54cd52f2cd67c3f0fd2d35e4c5cd7e23af) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Trying to fix react error
+
 ## 0.1.2
 
 ### Patch Changes
