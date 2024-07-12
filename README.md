@@ -18,7 +18,8 @@ Clerk is the easiest way to add authentication and user management to your Solid
 
 ### Prerequisites
 
-- SolidJS v1+
+- SolidJS `>=1`
+- SolidStart `>=1`
 - Node.js `>=18` or later OR Bun `>=1`
 
 ### Installation
