@@ -2,7 +2,7 @@ export const noClerkProviderError =
   'You must wrap your application in a <ClerkProvider> component.';
 
 export const multipleClerkProvidersError =
-  "You've added multiple <ClerkProvider> components in your React component tree. Wrap your components in a single <ClerkProvider>.";
+  "You've added multiple <ClerkProvider> components in your SolidJS component tree. Wrap your components in a single <ClerkProvider>.";
 
 export const hocChildrenNotAFunctionError =
   'Child of WithClerk must be a function.';

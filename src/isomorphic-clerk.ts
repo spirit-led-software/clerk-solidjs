@@ -417,16 +417,6 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
       return;
     }
 
-    // Store frontendAPI value on window as a fallback. This value can be used as a
-    // fallback during ClerkJS hot loading in case ClerkJS fails to find the
-    // "data-clerk-frontend-api" attribute on its script tag.
-
-    // This can happen when the DOM is altered completely during client rehydration.
-    // For example, in Remix with React 18 the document changes completely via `hydrateRoot(document)`.
-
-    // For more information refer to:
-    // - https://github.com/remix-run/remix/issues/2947
-    // - https://github.com/facebook/react/issues/24430
     if (typeof window !== 'undefined') {
       window.__clerk_publishable_key = this.#publishableKey;
       window.__clerk_proxy_url = this.proxyUrl;
@@ -648,7 +638,7 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
 
   __unstable__updateProps = async (props: any): Promise<void> => {
     const clerkjs = await this.#waitForClerkJS();
-    // Handle case where accounts has clerk-react@4 installed, but clerk-js@3 is manually loaded
+    // Handle case where accounts has clerk-solidjs@4 installed, but clerk-js@3 is manually loaded
     if (clerkjs && '__unstable__updateProps' in clerkjs) {
       return (clerkjs as any).__unstable__updateProps(props);
     }
@@ -1020,15 +1010,7 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
   handleRedirectCallback = (params: HandleOAuthCallbackParams): void => {
     const callback = () => this.clerkjs?.handleRedirectCallback(params);
     if (this.clerkjs && this.#loaded) {
-      void callback()?.catch(() => {
-        // This error is caused when the host app is using React18
-        // and strictMode is enabled. This useEffects runs twice because
-        // the clerk-react ui components mounts, unmounts and mounts again
-        // so the clerk-js component loses its state because of the custom
-        // unmount callback we're using.
-        // This needs to be solved by tweaking the logic in uiComponents.tsx
-        // or by making handleRedirectCallback idempotent
-      });
+      void callback();
     } else {
       this.premountMethodCalls.set('handleRedirectCallback', callback);
     }
@@ -1041,15 +1023,7 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
     const callback = () =>
       this.clerkjs?.handleGoogleOneTapCallback(signInOrUp, params);
     if (this.clerkjs && this.#loaded) {
-      void callback()?.catch(() => {
-        // This error is caused when the host app is using React18
-        // and strictMode is enabled. This useEffects runs twice because
-        // the clerk-react ui components mounts, unmounts and mounts again
-        // so the clerk-js component loses its state because of the custom
-        // unmount callback we're using.
-        // This needs to be solved by tweaking the logic in uiComponents.tsx
-        // or by making handleRedirectCallback idempotent
-      });
+      void callback();
     } else {
       this.premountMethodCalls.set('handleGoogleOneTapCallback', callback);
     }

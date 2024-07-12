@@ -1,11 +1,11 @@
 /**
  * This version selector is a bit complicated, so here is the flow:
  * 1. Use the clerkJSVersion prop on the provider
- * 2. Use the exact `@clerk/clerk-js` version if it is a `@snapshot` prerelease for `@clerk/clerk-react`
- * 3. Use the prerelease tag of `@clerk/clerk-react`
- * 4. Fallback to the major version of `@clerk/clerk-react`
+ * 2. Use the exact `@clerk/clerk-js` version if it is a `@snapshot` prerelease for `clerk-solidjs`
+ * 3. Use the prerelease tag of `clerk-solidjs`
+ * 4. Fallback to the major version of `clerk-solidjs`
  * @param clerkJSVersion - The optional clerkJSVersion prop on the provider
- * @param packageVersion - The version of `@clerk/clerk-react` that will be used if an explicit version is not provided
+ * @param packageVersion - The version of `clerk-solidjs` that will be used if an explicit version is not provided
  * @returns The npm tag, version or major version to use
  */
 export const versionSelector = (

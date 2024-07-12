@@ -121,10 +121,10 @@ We're open to all community contributions! If you'd like to contribute in any wa
 
 `clerk-solidjs` is provided **"as is"** without any **warranty**. Use at your own risk.
 
-_For more information and to report security issues, please refer to our [security documentation](https://github.com/ian-pascoe/clerk-solidjs/blob/main/docs/SECURITY.md)._
+_For more information and to report security issues, please refer to our [security documentation](https://github.com/ian-pascoe/clerk-solidjs/blob/master/docs/SECURITY.md)._
 
 ## License
 
 This project is licensed under the **MIT license**.
 
-See [LICENSE](https://github.com/ian-pascoe/clerk-solidjs/blob/main/packages/react/LICENSE) for more information.
+See [LICENSE](https://github.com/ian-pascoe/clerk-solidjs/blob/master/LICENSE) for more information.

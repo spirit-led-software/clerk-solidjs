@@ -35,16 +35,6 @@ The current setup is based on:
 - [GitHub Actions](https://docs.github.com/en/actions), used for quality checks and automated release orchestration.
 - [Vitest](https://vitest.dev/), used for running unit tests.
 
-All packages of the monorepo are inside [packages](../packages). For package specific details on installation, architecture and usage, you can refer to the package's README file.
-
-- [`@clerk/backend`](../packages/backend): Functionalities regarded as "core" for Clerk to operate with. _Authentication resolution, API Resources etc._
-- [`@clerk/clerk-js`](../packages/clerk-js): Core JavaScript implementation used by Clerk in the browser.
-- [`@clerk/clerk-react`](../packages/react) Clerk package for React applications.
-- [`@clerk/types`](../packages/types): Main TypeScript typings for Clerk libraries.
-- Browse [packages](../packages) to see more
-
-Additionally there are packages which act as shared utilities or building blocks.
-
 ### Prerequisites
 
 Ensure that you have Bun installed ([How to install Bun](https://bun.sh/docs/installation)). Its version should be equal or higher than `1.0.0`.
