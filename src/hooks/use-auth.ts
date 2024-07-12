@@ -3,7 +3,7 @@ import type {
   GetToken,
   SignOut
 } from '@clerk/types';
-import { createMemo } from 'solid-js/types/server/reactive.js';
+import { createMemo } from 'solid-js';
 import { useAuthContext } from '../contexts/auth';
 import { useIsomorphicClerkContext } from '../contexts/isomorphic-clerk';
 import { errorThrower } from '../errors/error-thrower';
