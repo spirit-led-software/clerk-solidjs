@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 0.2.1
+
+### Patch Changes
+
+- [`a26ca54`](https://github.com/ian-pascoe/clerk-solidjs/commit/a26ca547c4625954dfd2d97216e0ebc3559fe809) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - chore: fix testing imports
+
 ## 0.2.0
 
 ### Minor Changes
