@@ -1,6 +1,5 @@
-import { defineConfig } from 'tsup';
-
 import clerkJsPackage from '@clerk/clerk-js/package.json' with { type: 'json' };
+import { defineConfig } from 'tsup';
 import thisPackage from './package.json' with { type: 'json' };
 
 export default defineConfig((overrideOptions) => {

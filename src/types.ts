@@ -1,6 +1,7 @@
 import type {
   Clerk,
   ClerkOptions,
+  ClerkPaginatedResponse,
   ClientResource,
   DomainOrProxyUrl,
   InitialState,
@@ -14,7 +15,7 @@ import type {
   SignUpRedirectOptions,
   Without
 } from '@clerk/types';
-import { JSXElement } from 'solid-js';
+import { JSX, JSXElement } from 'solid-js';
 
 declare global {
   interface Window {
@@ -57,7 +58,6 @@ export interface MountProps {
   unmount: (node: HTMLDivElement) => void;
   updateProps: (props: any) => void;
   props?: any;
-  customPagesPortals?: any[];
 }
 
 export interface OpenProps {
@@ -87,6 +87,7 @@ export type ClerkProp =
 type ButtonProps = {
   mode?: 'redirect' | 'modal';
   children?: JSXElement;
+  onClick?: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent>;
 };
 
 export type SignInButtonProps = ButtonProps &
@@ -136,3 +137,70 @@ export type UserProfileLinkProps = {
 
 export type OrganizationProfilePageProps = PageProps<'general' | 'members'>;
 export type OrganizationProfileLinkProps = UserProfileLinkProps;
+
+import type { ClerkAPIResponseError } from '@clerk/shared/error';
+
+export type ValueOrSetter<T = unknown> = (size: T | ((_size: T) => T)) => void;
+
+export type CacheSetter<CData = any> = (
+  data?:
+    | CData
+    | ((currentData?: CData) => Promise<undefined | CData> | undefined | CData)
+) => Promise<CData | undefined>;
+
+export type PaginatedResources<T = unknown, Infinite = false> = {
+  data: () => T[];
+  count: () => number;
+  error: () => ClerkAPIResponseError | null;
+  isLoading: () => boolean;
+  isFetching: () => boolean;
+  isError: () => boolean;
+  page: () => number;
+  pageCount: () => number;
+  fetchPrevious: () => void;
+  fetchNext: () => void;
+  hasNextPage: () => boolean;
+  hasPreviousPage: () => boolean;
+  setData: Infinite extends true
+    ? // Array of pages of data
+      CacheSetter<(ClerkPaginatedResponse<T> | undefined)[]>
+    : // Array of data
+      CacheSetter<ClerkPaginatedResponse<T> | undefined>;
+  revalidate: () => Promise<void>;
+};
+
+// Utility type to convert PaginatedDataAPI to properties as undefined, except booleans set to false
+export type PaginatedResourcesWithDefault<T> = {
+  [K in keyof PaginatedResources<T>]: PaginatedResources<T>[K] extends boolean
+    ? false
+    : undefined;
+};
+
+export type PaginatedHookConfig<T> = T & {
+  /**
+   * Persists the previous pages with new ones in the same array
+   */
+  infinite?: boolean;
+  /**
+   * Return the previous key's data until the new data has been loaded
+   */
+  keepPreviousData?: boolean;
+};
+
+export type PagesOrInfiniteConfig = PaginatedHookConfig<{
+  /**
+   * Should a request be triggered
+   */
+  enabled?: boolean;
+}>;
+
+export type PagesOrInfiniteOptions = {
+  /**
+   * This the starting point for your fetched results. The initial value persists between re-renders
+   */
+  initialPage?: number;
+  /**
+   * Maximum number of items returned per request. The initial value persists between re-renders
+   */
+  pageSize?: number;
+};
