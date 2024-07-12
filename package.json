@@ -1,7 +1,7 @@
 {
   "name": "clerk-solidjs",
   "description": "Clerk for SolidJS",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "solidjs",
     "clerk",
