@@ -15,6 +15,27 @@
   "license": "MIT",
   "author": "Ian Pascoe",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./server": {
+      "require": "./dist/server.cjs",
+      "import": "./dist/server.js",
+      "types": "./dist/server.d.ts"
+    },
+    "./errors": {
+      "require": "./dist/errors.cjs",
+      "import": "./dist/errors.js",
+      "types": "./dist/errors.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist"
   ],
@@ -80,93 +101,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index/index.cjs",
-  "module": "./dist/index/index.js",
-  "types": "./dist/index/index.d.ts",
-  "browser": {
-    "./dist/server/server.js": "./dist/server/index.js",
-    "./dist/server/server.cjs": "./dist/server/index.cjs"
-  },
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index/index.d.ts",
-        "default": "./dist/index/index.js"
-      },
-      "require": {
-        "types": "./dist/index/index.d.cts",
-        "default": "./dist/index/index.cjs"
-      }
-    },
-    "./errors": {
-      "import": {
-        "types": "./dist/errors/index.d.ts",
-        "default": "./dist/errors/index.js"
-      },
-      "require": {
-        "types": "./dist/errors/index.d.cts",
-        "default": "./dist/errors/index.cjs"
-      }
-    },
-    "./server": {
-      "worker": {
-        "import": {
-          "types": "./dist/server/index.d.ts",
-          "default": "./dist/server/server.js"
-        },
-        "require": {
-          "types": "./dist/server/index.d.cts",
-          "default": "./dist/server/server.cjs"
-        }
-      },
-      "browser": {
-        "import": {
-          "types": "./dist/server/index.d.ts",
-          "default": "./dist/server/index.js"
-        },
-        "require": {
-          "types": "./dist/server/index.d.cts",
-          "default": "./dist/server/index.cjs"
-        }
-      },
-      "deno": {
-        "import": {
-          "types": "./dist/server/index.d.ts",
-          "default": "./dist/server/server.js"
-        },
-        "require": {
-          "types": "./dist/server/index.d.cts",
-          "default": "./dist/server/server.cjs"
-        }
-      },
-      "node": {
-        "import": {
-          "types": "./dist/server/index.d.ts",
-          "default": "./dist/server/server.js"
-        },
-        "require": {
-          "types": "./dist/server/index.d.cts",
-          "default": "./dist/server/server.cjs"
-        }
-      },
-      "import": {
-        "types": "./dist/server/index.d.ts",
-        "default": "./dist/server/index.js"
-      },
-      "require": {
-        "types": "./dist/server/index.d.cts",
-        "default": "./dist/server/index.cjs"
-      }
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "errors": [
-        "./dist/errors/index.d.ts"
-      ],
-      "server": [
-        "./dist/server/index.d.ts"
-      ]
-    }
-  }
+  "trustedDependencies": [
+    "@clerk/shared",
+    "browser-tabs-lock",
+    "core-js"
+  ]
 }
