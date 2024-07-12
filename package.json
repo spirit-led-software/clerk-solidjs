@@ -5,7 +5,8 @@
   "keywords": [
     "solidjs",
     "clerk",
-    "solid"
+    "solid",
+    "clerk-auth"
   ],
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "dev": "tsup --watch",
     "format": "prettier --write .",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
@@ -67,6 +69,7 @@
     "prettier-plugin-organize-imports": "^4.0.0"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
     "@clerk/themes": "^2.1.10",
     "@clerk/types": "^4.6.1",
