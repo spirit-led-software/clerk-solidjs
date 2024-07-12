@@ -21,5 +21,9 @@ export const auth = () => {
     throw new Error('auth() must be called from within a server function');
   }
 
+  if (!event.locals.auth) {
+    throw new Error('auth() returned null. Did you implement clerkMiddleware?');
+  }
+
   return event.locals.auth;
 };
