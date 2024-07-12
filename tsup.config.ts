@@ -14,7 +14,7 @@ export default defineConfig((overrideOptions) => {
     format: ['cjs', 'esm'],
     bundle: true,
     clean: true,
-    minify: false,
+    minify: true,
     sourcemap: true,
     external: ['solid-js', '@solidjs/start'],
     define: {
