@@ -1,5 +1,13 @@
 # clerk-solidjs
 
+## 0.1.1
+
+### Patch Changes
+
+- [`efa7923`](https://github.com/ian-pascoe/clerk-solidjs/commit/efa7923b0a3e7394b0908d73a5500526f50de3dc) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Fix changeset
+
+- [`e0d7fe7`](https://github.com/ian-pascoe/clerk-solidjs/commit/e0d7fe7bf1985f52717beba163d068832abaafe0) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Fixing nullability of auth() on server
+
 ## 0.1.0
 
 ### Minor Changes
