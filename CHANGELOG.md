@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 0.1.2
+
+### Patch Changes
+
+- [`63e34b0`](https://github.com/ian-pascoe/clerk-solidjs/commit/63e34b05a4477fb7372ddfd261023671527e32f9) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Fix bad import in use-auth
+
 ## 0.1.1
 
 ### Patch Changes
