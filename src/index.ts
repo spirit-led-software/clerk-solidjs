@@ -13,4 +13,6 @@ export type {
   HeadlessBrowserClerk
 } from './types';
 
+export * from './server';
+
 setErrorThrowerOptions({ packageName: PACKAGE_NAME });

@@ -4,7 +4,6 @@ import thisPackage from './package.json' with { type: 'json' };
 
 export default defineConfig((overrideOptions) => {
   const isWatch = !!overrideOptions.watch;
-  const shouldPublish = !!overrideOptions.env?.publish;
 
   return {
     entry: {
@@ -12,13 +11,12 @@ export default defineConfig((overrideOptions) => {
       errors: 'src/errors.ts'
     },
     dts: true,
-    onSuccess: shouldPublish ? 'npm run publish:local' : undefined,
     format: ['cjs', 'esm'],
     bundle: true,
     clean: true,
     minify: false,
     sourcemap: true,
-    external: ['solid-js'],
+    external: ['solid-js', '@solidjs/start'],
     define: {
       PACKAGE_NAME: `"${thisPackage.name}"`,
       PACKAGE_VERSION: `"${thisPackage.version}"`,
