@@ -1,5 +1,13 @@
 # clerk-solidjs
 
+## 0.2.2
+
+### Patch Changes
+
+- [`9ca3eda`](https://github.com/ian-pascoe/clerk-solidjs/commit/9ca3eda647a7faad3bda3357f7e30f39e9075b32) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Fixing build problems
+
+- [`818a542`](https://github.com/ian-pascoe/clerk-solidjs/commit/818a542a47c88dfd5acc6800ef3b50738f5bf181) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Adding version script
+
 ## 0.2.1
 
 ### Patch Changes
