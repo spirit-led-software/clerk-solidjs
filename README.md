@@ -1,3 +1,3 @@
-# clerk-solid
+# clerk-solidjs
 
 SolidJS Clerk SDK
