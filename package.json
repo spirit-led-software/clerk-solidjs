@@ -51,6 +51,7 @@
     "prepare": "bun run build",
     "changeset": "changeset",
     "prerelease": "bun run lint && bun run test",
+    "version": "changeset version && bun install --no-frozen-lockfile",
     "release": "changeset publish",
     "clean": "rimraf dist",
     "publish:local": "bunx yalc push --replace  --sig"
