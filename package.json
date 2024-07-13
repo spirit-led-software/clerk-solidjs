@@ -19,23 +19,35 @@
   "author": "Ian Pascoe",
   "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/index.d.ts",
+        "dist/server.d.ts",
+        "dist/errors.d.ts"
+      ]
+    }
+  },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
       "types": "./dist/index.d.ts",
-      "solid": "./dist/index.jsx"
+      "solid": "./dist/index.jsx",
+      "default": "./dist/index.js"
     },
     "./server": {
-      "default": "./dist/server.js",
-      "types": "./dist/server.d.ts"
+      "types": "./dist/server.d.ts",
+      "default": "./dist/server.js"
     },
     "./errors": {
-      "import": "./dist/errors.js",
-      "types": "./dist/errors.d.ts"
+      "types": "./dist/errors.d.ts",
+      "default": "./dist/errors.js"
     },
+    "./src/*": "./src/*",
     "./package.json": "./package.json"
   },
+  "source": "src/index.ts",
   "files": [
     "dist"
   ],
