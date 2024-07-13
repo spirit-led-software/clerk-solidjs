@@ -3,6 +3,12 @@ import { defineConfig } from 'tsup';
 import * as preset from 'tsup-preset-solid';
 import thisPackage from './package.json' with { type: 'json' };
 
+const CI =
+  process.env['CI'] === 'true' ||
+  process.env['GITHUB_ACTIONS'] === 'true' ||
+  process.env['CI'] === '"1"' ||
+  process.env['GITHUB_ACTIONS'] === '"1"';
+
 export default defineConfig((config) => {
   const watching = !!config.watch;
   const shouldPublish = !!config.env?.publish;
@@ -25,6 +31,14 @@ export default defineConfig((config) => {
       ],
       modify_esbuild_options: (options) => ({
         ...options,
+        bundle: true,
+        treeShaking: true,
+        sourcemap: !watching,
+        minify: !watching,
+        external: [
+          ...(options.external ?? []),
+          ...Object.keys(thisPackage.peerDependencies)
+        ],
         define: {
           ...options.define,
           PACKAGE_NAME: `"${thisPackage.name}"`,
@@ -39,13 +53,13 @@ export default defineConfig((config) => {
     watching
   );
 
-  if (!watching) {
+  if (!watching && !CI) {
     const packageFields = preset.generatePackageExports(parsed);
     preset.writePackageJson(packageFields);
   }
 
   const options = preset.generateTsupOptions(parsed);
-  if (shouldPublish && options.at(-1)) {
+  if (shouldPublish) {
     options[options.length - 1].onSuccess = 'bun run publish:local';
   }
 
