@@ -8,6 +8,9 @@
     "solid",
     "clerk-auth"
   ],
+  "bugs": {
+    "url": "https://github.com/ian-pascoe/clerk-solidjs/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ian-pascoe/clerk-solidjs"
@@ -15,22 +18,19 @@
   "license": "MIT",
   "author": "Ian Pascoe",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "solid": "./dist/index.jsx"
     },
     "./server": {
-      "require": "./dist/server.cjs",
-      "import": "./dist/server.js",
+      "default": "./dist/server.js",
       "types": "./dist/server.d.ts"
     },
     "./errors": {
-      "require": "./dist/errors.cjs",
       "import": "./dist/errors.js",
       "types": "./dist/errors.d.ts"
     },
@@ -43,7 +43,9 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "dev:publish": "bun run dev -- --env.publish",
+    "type-check": "tsc --noEmit",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "vitest run",
@@ -77,6 +79,7 @@
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/user-event": "^14.5.2",
     "changeset": "^0.2.6",
+    "esbuild-plugin-solid": "^0.6.0",
     "eslint": "^9.6.0",
     "expect-type": "^0.19.0",
     "globals": "^15.8.0",
@@ -92,8 +95,8 @@
     "vitest": "^2.0.2"
   },
   "peerDependencies": {
-    "solid-js": ">=1",
-    "@solidjs/start": ">=1"
+    "solid-js": "^1.8",
+    "@solidjs/start": "^1"
   },
   "engines": {
     "node": ">=18"

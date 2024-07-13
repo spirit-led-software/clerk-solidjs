@@ -1,0 +1,28 @@
+name: Bug report
+description: Create a bug report for the SDK.
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is to report bugs for the SDK. If you need help with your own project, feel free to [start a new thread in our discussions](https://github.com/ian-pascoe/clerk-solidjs/discussions).
+  - type: textarea
+    attributes:
+      label: Description
+      description: A detailed description of the bug you are encountering with the SDK, and how other people can reproduce it.
+      placeholder: |
+        Reproduction steps...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Code example
+      description: Provide an example code snippet that has the problem
+      placeholder: |
+        import { ClerkProvider } from 'clerk-solidjs';
+        ...
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: |
+        Any extra information that might help us investigate.
