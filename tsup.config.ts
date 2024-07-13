@@ -1,64 +1,53 @@
-// Adapted from https://github.com/corvudev/corvu/blob/main/packages/accordion/tsup.config.ts
-
 import clerkJsPackage from '@clerk/clerk-js/package.json' with { type: 'json' };
-import { solidPlugin } from 'esbuild-plugin-solid';
-import type { Options } from 'tsup';
 import { defineConfig } from 'tsup';
+import * as preset from 'tsup-preset-solid';
 import thisPackage from './package.json' with { type: 'json' };
-
-function generateConfig(config: {
-  watching: boolean;
-  jsx: boolean;
-  publish?: boolean;
-}): Options {
-  const { watching, jsx, publish } = config;
-
-  return {
-    target: 'esnext',
-    platform: 'browser',
-    format: 'esm',
-    clean: true,
-    dts: !jsx,
-    entry: {
-      index: 'src/index.ts',
-      server: 'src/server/index.ts',
-      errors: 'src/errors.ts'
-    },
-    outDir: 'dist/',
-    treeshake: { preset: 'smallest' },
-    replaceNodeEnv: true,
-    esbuildOptions: (options) => {
-      if (jsx) {
-        options.jsx = 'preserve';
-      }
-      options.chunkNames = '[name]/[hash]';
-      options.drop = ['console', 'debugger'];
-    },
-    outExtension: () => (jsx ? { js: '.jsx' } : {}),
-    esbuildPlugins: !jsx ? [solidPlugin({ solid: { generate: 'dom' } })] : [],
-    define: {
-      PACKAGE_NAME: `"${thisPackage.name}"`,
-      PACKAGE_VERSION: `"${thisPackage.version}"`,
-      JS_PACKAGE_VERSION: `"${clerkJsPackage.version}"`,
-      __DEV__: `${watching}`
-    },
-    onSuccess: publish ? 'bun run publish:local' : undefined
-  };
-}
 
 export default defineConfig((config) => {
   const watching = !!config.watch;
   const shouldPublish = !!config.env?.publish;
 
-  return [
-    generateConfig({
-      watching,
-      jsx: false
-    }),
-    generateConfig({
-      watching,
-      jsx: true,
-      publish: shouldPublish // publish on last config
-    })
-  ];
+  const parsed = preset.parsePresetOptions(
+    {
+      entries: [
+        {
+          entry: 'src/index.tsx',
+          server_entry: true
+        },
+        {
+          name: 'errors',
+          entry: 'src/errors.ts'
+        },
+        {
+          name: 'server',
+          entry: 'src/server/index.ts'
+        }
+      ],
+      modify_esbuild_options: (options) => ({
+        ...options,
+        define: {
+          ...options.define,
+          PACKAGE_NAME: `"${thisPackage.name}"`,
+          PACKAGE_VERSION: `"${thisPackage.version}"`,
+          JS_PACKAGE_VERSION: `"${clerkJsPackage.version}"`,
+          __DEV__: `${watching}`
+        }
+      }),
+      drop_console: !watching,
+      cjs: true
+    },
+    watching
+  );
+
+  if (!watching) {
+    const packageFields = preset.generatePackageExports(parsed);
+    preset.writePackageJson(packageFields);
+  }
+
+  const options = preset.generateTsupOptions(parsed);
+  if (shouldPublish && options.at(-1)) {
+    options[options.length - 1].onSuccess = 'bun run publish:local';
+  }
+
+  return options;
 });
