@@ -8,18 +8,17 @@ import thisPackage from './package.json' with { type: 'json' };
 
 function generateConfig(config: {
   watching: boolean;
-  format: 'esm' | 'cjs';
   jsx: boolean;
   publish?: boolean;
 }): Options {
-  const { watching, format, jsx, publish } = config;
+  const { watching, jsx, publish } = config;
 
   return {
     target: 'esnext',
     platform: 'browser',
-    format,
+    format: 'esm',
     clean: true,
-    dts: format === 'esm' && !jsx,
+    dts: !jsx,
     entry: {
       index: 'src/index.ts',
       server: 'src/server/index.ts',
@@ -28,20 +27,14 @@ function generateConfig(config: {
     outDir: 'dist/',
     treeshake: { preset: 'smallest' },
     replaceNodeEnv: true,
-    esbuildOptions(options) {
+    esbuildOptions: (options) => {
       if (jsx) {
         options.jsx = 'preserve';
       }
       options.chunkNames = '[name]/[hash]';
       options.drop = ['console', 'debugger'];
     },
-    outExtension() {
-      if (jsx) {
-        return { js: '.jsx' };
-      } else {
-        return {};
-      }
-    },
+    outExtension: () => (jsx ? { js: '.jsx' } : {}),
     esbuildPlugins: !jsx ? [solidPlugin({ solid: { generate: 'dom' } })] : [],
     define: {
       PACKAGE_NAME: `"${thisPackage.name}"`,
@@ -60,12 +53,10 @@ export default defineConfig((config) => {
   return [
     generateConfig({
       watching,
-      format: 'esm',
       jsx: false
     }),
     generateConfig({
       watching,
-      format: 'esm',
       jsx: true,
       publish: shouldPublish // publish on last config
     })
