@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 0.2.3
+
+### Patch Changes
+
+- [#9](https://github.com/ian-pascoe/clerk-solidjs/pull/9) [`0a23013`](https://github.com/ian-pascoe/clerk-solidjs/commit/0a23013496b6981df18d0caf63b73a82c04c479d) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Fix tsup
+
 ## 0.2.2
 
 ### Patch Changes
