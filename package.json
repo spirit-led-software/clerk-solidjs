@@ -1,192 +1,29 @@
 {
   "name": "clerk-solidjs",
-  "description": "Clerk for SolidJS",
-  "version": "0.3.0",
-  "keywords": [
-    "solidjs",
-    "clerk",
-    "solid",
-    "clerk-auth"
-  ],
-  "bugs": {
-    "url": "https://github.com/ian-pascoe/clerk-solidjs/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ian-pascoe/clerk-solidjs"
-  },
-  "license": "MIT",
-  "author": "Ian Pascoe",
-  "type": "module",
-  "main": "./dist/index/server.cjs",
-  "module": "./dist/index/server.js",
-  "types": "./dist/index/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "errors": [
-        "./dist/errors/index.d.ts"
-      ],
-      "server": [
-        "./dist/server/index.d.ts"
-      ]
-    }
-  },
-  "exports": {
-    ".": {
-      "worker": {
-        "solid": "./dist/index/server.jsx",
-        "import": {
-          "types": "./dist/index/index.d.ts",
-          "default": "./dist/index/server.js"
-        },
-        "require": {
-          "types": "./dist/index/index.d.cts",
-          "default": "./dist/index/server.cjs"
-        }
-      },
-      "browser": {
-        "solid": "./dist/index/index.jsx",
-        "import": {
-          "types": "./dist/index/index.d.ts",
-          "default": "./dist/index/index.js"
-        },
-        "require": {
-          "types": "./dist/index/index.d.cts",
-          "default": "./dist/index/index.cjs"
-        }
-      },
-      "deno": {
-        "solid": "./dist/index/server.jsx",
-        "import": {
-          "types": "./dist/index/index.d.ts",
-          "default": "./dist/index/server.js"
-        },
-        "require": {
-          "types": "./dist/index/index.d.cts",
-          "default": "./dist/index/server.cjs"
-        }
-      },
-      "node": {
-        "solid": "./dist/index/server.jsx",
-        "import": {
-          "types": "./dist/index/index.d.ts",
-          "default": "./dist/index/server.js"
-        },
-        "require": {
-          "types": "./dist/index/index.d.cts",
-          "default": "./dist/index/server.cjs"
-        }
-      },
-      "solid": "./dist/index/index.jsx",
-      "import": {
-        "types": "./dist/index/index.d.ts",
-        "default": "./dist/index/index.js"
-      },
-      "require": {
-        "types": "./dist/index/index.d.cts",
-        "default": "./dist/index/index.cjs"
-      }
-    },
-    "./errors": {
-      "import": {
-        "types": "./dist/errors/index.d.ts",
-        "default": "./dist/errors/index.js"
-      },
-      "require": {
-        "types": "./dist/errors/index.d.cts",
-        "default": "./dist/errors/index.cjs"
-      }
-    },
-    "./server": {
-      "import": {
-        "types": "./dist/server/index.d.ts",
-        "default": "./dist/server/index.js"
-      },
-      "require": {
-        "types": "./dist/server/index.d.cts",
-        "default": "./dist/server/index.cjs"
-      }
-    }
-  },
-  "browser": {
-    "./dist/index/server.js": "./dist/index/index.js",
-    "./dist/index/server.cjs": "./dist/index/index.cjs"
-  },
-  "source": "src/index.ts",
-  "files": [
-    "dist"
-  ],
+  "private": true,
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "dev:publish": "pnpm run dev -- --env.publish",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "prepare": "pnpm run build",
+    "build": "turbo build",
+    "clean": "turbo clean",
     "changeset": "changeset",
-    "prerelease": "pnpm run lint && pnpm run test",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "test": "turbo test",
+    "type-check": "turbo type-check",
     "version": "changeset version && pnpm install --no-frozen-lockfile",
-    "release": "changeset publish",
-    "clean": "rimraf dist",
-    "publish:local": "pnpm dlx yalc push --replace  --sig"
+    "release": "turbo clean && turbo build && changeset publish"
   },
-  "dependencies": {
-    "@clerk/backend": "^1.3.1",
-    "@clerk/clerk-js": "^5.8.1",
-    "@clerk/shared": "^2.3.1",
-    "@solid-primitives/context": "^0.2.3",
-    "@solid-primitives/destructure": "^0.1.17",
-    "@solid-primitives/memo": "^1.3.9",
-    "@solid-primitives/static-store": "^0.0.8",
-    "@solidjs/testing-library": "^0.8.8",
-    "@tanstack/solid-query": "^5.51.2",
-    "prettier-plugin-organize-imports": "^4.0.0"
-  },
+  "keywords": [
+    "clerk",
+    "solidjs"
+  ],
+  "author": "Ian Pascoe",
+  "license": "MIT",
   "devDependencies": {
+    "turbo": "^2.0.6",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
-    "@clerk/localizations": "^2.4.6",
-    "@clerk/themes": "^2.1.10",
-    "@clerk/types": "^4.6.1",
-    "@eslint/js": "^9.6.0",
-    "@testing-library/jest-dom": "^6.4.6",
-    "@testing-library/user-event": "^14.5.2",
-    "@types/node": "^20.14.10",
-    "changeset": "^0.2.6",
-    "esbuild-plugin-solid": "^0.6.0",
-    "eslint": "^9.6.0",
-    "expect-type": "^0.19.0",
-    "globals": "^15.8.0",
-    "jsdom": "^24.1.0",
-    "prettier": "3.3.2",
-    "rimraf": "^6.0.1",
-    "tsup": "^8.1.0",
-    "tsup-preset-solid": "^2.2.0",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^7.16.0",
-    "vite-plugin-solid": "^2.10.2",
-    "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "^2.0.2"
+    "changeset": "^0.2.6"
   },
-  "peerDependencies": {
-    "@solidjs/start": "^1",
-    "solid-js": "^1.8"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "pnpm@9.4.0",
-  "publishConfig": {
-    "access": "public"
-  },
-  "trustedDependencies": [
-    "@clerk/shared",
-    "browser-tabs-lock",
-    "core-js"
-  ]
+  "packageManager": "pnpm@9.4.0"
 }

@@ -18,5 +18,5 @@
     "types": ["@types/node"],
     "baseUrl": "."
   },
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["node_modules", "dist", "example"]
 }
