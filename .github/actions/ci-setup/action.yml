@@ -4,11 +4,17 @@ description: 'CI setup for clerk-solidjs'
 runs:
   using: 'composite'
   steps:
-    - name: Use Bun
-      uses: oven-sh/setup-bun@v2
+    - uses: pnpm/action-setup@v4
+      name: Install pnpm
       with:
-        bun-version: 1.1.17
+        run_install: false
 
-    - name: Install Dependencies
-      run: bun install
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
       shell: bash

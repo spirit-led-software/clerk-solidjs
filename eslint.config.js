@@ -2,8 +2,10 @@ import pluginJs from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default [
-  { files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'] },
+export default tseslint.config(
+  {
+    ignores: ['node_modules/**', 'dist/**']
+  },
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
@@ -13,4 +15,4 @@ export default [
       '@typescript-eslint/ban-ts-comment': 'warn'
     }
   }
-];
+);
