@@ -1,5 +1,15 @@
 # clerk-solidjs
 
+## 0.3.0
+
+### Minor Changes
+
+- [#15](https://github.com/ian-pascoe/clerk-solidjs/pull/15) [`2856dd2`](https://github.com/ian-pascoe/clerk-solidjs/commit/2856dd2e9e3456575886179f3fb7e63a2ec68727) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Remove bun, fix bundling
+
+### Patch Changes
+
+- [#15](https://github.com/ian-pascoe/clerk-solidjs/pull/15) [`9ef81ed`](https://github.com/ian-pascoe/clerk-solidjs/commit/9ef81edf2a0813646a54f4815dae6bce3a832839) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Still trying to fix build
+
 ## 0.2.5
 
 ### Patch Changes
