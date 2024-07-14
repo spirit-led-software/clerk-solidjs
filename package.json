@@ -6,6 +6,8 @@
     "clean": "turbo clean",
     "changeset": "changeset",
     "dev": "turbo dev",
+    "format": "turbo format",
+    "format:check": "turbo format:check",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
     "test": "turbo test",
