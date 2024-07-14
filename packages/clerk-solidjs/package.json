@@ -112,7 +112,6 @@
     "./dist/index/server.js": "./dist/index/index.js",
     "./dist/index/server.cjs": "./dist/index/index.cjs"
   },
-  "source": "src/index.ts",
   "files": [
     "dist"
   ],

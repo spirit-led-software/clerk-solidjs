@@ -13,10 +13,6 @@
     "version": "changeset version && pnpm install --no-frozen-lockfile",
     "release": "turbo clean && turbo build && changeset publish"
   },
-  "keywords": [
-    "clerk",
-    "solidjs"
-  ],
   "author": "Ian Pascoe",
   "license": "MIT",
   "devDependencies": {

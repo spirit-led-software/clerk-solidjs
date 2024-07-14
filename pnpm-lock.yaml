@@ -8,6 +8,15 @@ importers:
 
   .:
     devDependencies:
+      '@changesets/changelog-github':
+        specifier: ^0.5.0
+        version: 0.5.0
+      '@changesets/cli':
+        specifier: ^2.27.7
+        version: 2.27.7
+      changeset:
+        specifier: ^0.2.6
+        version: 0.2.6
       turbo:
         specifier: ^2.0.6
         version: 2.0.6
@@ -69,12 +78,6 @@ importers:
         specifier: ^1.8
         version: 1.8.18
     devDependencies:
-      '@changesets/changelog-github':
-        specifier: ^0.5.0
-        version: 0.5.0
-      '@changesets/cli':
-        specifier: ^2.27.7
-        version: 2.27.7
       '@clerk/localizations':
         specifier: ^2.4.6
         version: 2.4.6
@@ -96,9 +99,6 @@ importers:
       '@types/node':
         specifier: ^20.14.10
         version: 20.14.10
-      changeset:
-        specifier: ^0.2.6
-        version: 0.2.6
       esbuild-plugin-solid:
         specifier: ^0.6.0
         version: 0.6.0(esbuild@0.21.5)(solid-js@1.8.18)
