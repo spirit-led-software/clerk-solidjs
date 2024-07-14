@@ -33,10 +33,15 @@ export default defineConfig((config) => {
       drop_console: !watching,
       modify_esbuild_options: (options) => {
         options.bundle = true;
-        options.treeShaking = true;
-        options.sourcemap = true;
-        options.external = Object.keys(thisPackage.peerDependencies);
+        options.minify = !watching;
+        options.treeShaking = !watching;
+        options.sourcemap = !watching;
+        options.external = [
+          ...(options.external ?? []),
+          ...Object.keys(thisPackage.peerDependencies)
+        ];
         options.define = {
+          ...options.define,
           PACKAGE_NAME: `"${thisPackage.name}"`,
           PACKAGE_VERSION: `"${thisPackage.version}"`,
           JS_PACKAGE_VERSION: `"${clerkJsPackage.version}"`,
