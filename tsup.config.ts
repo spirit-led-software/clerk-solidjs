@@ -33,9 +33,7 @@ export default defineConfig((config) => {
       drop_console: !watching,
       modify_esbuild_options: (options) => {
         options.bundle = true;
-        options.minify = !watching;
-        options.treeShaking = !watching;
-        options.sourcemap = !watching;
+        options.treeShaking = true;
         options.external = [
           ...(options.external ?? []),
           ...Object.keys(thisPackage.peerDependencies)
