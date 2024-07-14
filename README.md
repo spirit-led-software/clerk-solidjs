@@ -20,7 +20,7 @@ Clerk is the easiest way to add authentication and user management to your Solid
 
 - SolidJS `>=1`
 - SolidStart `>=1`
-- Node.js `>=18` or later OR Bun `>=1`
+- Node.js `>=18` or later
 
 ### Installation
 
@@ -37,13 +37,13 @@ bun add clerk-solidjs
 ### Build
 
 ```sh
-bun run build
+pnpm run build
 ```
 
 To build the package in watch mode, run the following:
 
 ```sh
-bun run dev
+pnpm run dev
 ```
 
 ## Usage
