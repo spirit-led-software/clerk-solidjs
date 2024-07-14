@@ -29,26 +29,23 @@ export default defineConfig((config) => {
           entry: 'src/server/index.ts'
         }
       ],
-      modify_esbuild_options: (options) => ({
-        ...options,
-        bundle: true,
-        treeShaking: true,
-        sourcemap: !watching,
-        minify: !watching,
-        external: [
-          ...(options.external ?? []),
-          ...Object.keys(thisPackage.peerDependencies)
-        ],
-        define: {
-          ...options.define,
+      cjs: true,
+      drop_console: !watching,
+      modify_esbuild_options: (options) => {
+        options.bundle = true;
+        options.treeShaking = true;
+        options.sourcemap = true;
+        options.external = Object.keys(thisPackage.peerDependencies);
+        options.define = {
           PACKAGE_NAME: `"${thisPackage.name}"`,
           PACKAGE_VERSION: `"${thisPackage.version}"`,
           JS_PACKAGE_VERSION: `"${clerkJsPackage.version}"`,
           __DEV__: `${watching}`
-        }
-      }),
-      drop_console: !watching,
-      cjs: true
+        };
+
+        return options;
+      },
+      out_dir: 'dist'
     },
     watching
   );

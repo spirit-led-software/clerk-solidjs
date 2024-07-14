@@ -37,7 +37,7 @@ The current setup is based on:
 
 ### Prerequisites
 
-Ensure that you have Bun installed ([How to install Bun](https://bun.sh/docs/installation)). Its version should be equal or higher than `1.0.0`.
+Ensure that you have Node.js installed ([How to install Node](https://nodejs.org/en/download/)). Its version should be equal or higher than `18`.
 
 ### Setting up your local environment
 
@@ -49,17 +49,17 @@ To set up your development environment, please follow these steps:
    git clone https://github.com/ian-pascoe/clerk-solidjs
    ```
 
-1. Install the dependencies. We're using bun, so you **should always run `bun install`**, as it will install all of the dependencies:
+1. Install the dependencies. We're using pnpm, so you **should always run `pnpm install`**, as it will install all of the dependencies:
 
    ```sh
    cd clerk-solidjs
-   bun install
+   pnpm install
    ```
 
 1. Build the project
 
    ```sh
-   bun run build
+   pnpm run build
    ```
 
    This ensures that all internal TypeScript types are generated.
@@ -91,7 +91,7 @@ If your change can't only be tested by unit tests, you should add/edit an integr
 1. Fork the project
 1. Create your feature branch (`git checkout -b feat/amazing_feature`)
 1. It's highly recommended to [write tests](#writing-tests) to ensure your change works and will continue to work in the future
-1. If required, create a `changeset` that describes your changes (`bun run changeset`). In cases where a changeset is not required, an empty changeset can be created instead (`bun run changeset:empty`) - an empty changeset will not generate a changelog entry for the change, so please use it as an escape hatch or for internal refactors only.
+1. If required, create a `changeset` that describes your changes (`pnpm run changeset`). In cases where a changeset is not required, an empty changeset can be created instead (`pnpm run changeset:empty`) - an empty changeset will not generate a changelog entry for the change, so please use it as an escape hatch or for internal refactors only.
 1. Commit your changes (`git commit -m 'feat: Add amazing_feature'`)
 1. Push to the branch (`git push origin feat/amazing_feature`)
 1. [Open a Pull Request](https://github.com/ian-pascoe/clerk-solidjs/compare?expand=1). Make sure the description includes enough information for the reviewer to understand what the PR is about.
