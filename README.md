@@ -140,7 +140,8 @@ export default createMiddleware({
 Then you can use the `auth()` helper function to access the auth object.
 
 ```js
-// Anywhere else
+import { auth } from 'clerk-solidjs/server'
+
 async function myProtectedServerFunction() {
   'use server';
   const { userId } = auth();
