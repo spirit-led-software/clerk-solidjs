@@ -11,7 +11,10 @@ jobs:
     name: "Prettier"
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/ci-setup
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: CI setup
+        uses: ./.github/actions/ci-setup
       - name: Run Prettier check
         run: pnpm run format:check
 
@@ -19,7 +22,10 @@ jobs:
     name: "ESLint"
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/ci-setup
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: CI setup
+        uses: ./.github/actions/ci-setup
       - name: Run ESLint check
         run: pnpm run lint
 
@@ -27,6 +33,9 @@ jobs:
     name: "TypeScript"
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/ci-setup
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: CI setup
+        uses: ./.github/actions/ci-setup
       - name: Run TypeScript type check
         run: pnpm run type-check
