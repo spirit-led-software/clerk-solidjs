@@ -2,13 +2,21 @@
 
 <div align="center">
 
-This is an unofficial community-port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com) and [SolidStart](https://start.solidjs.com).
+This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com) and [SolidStart](https://start.solidjs.com).
 
 [![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://clerk.com/docs?utm_source=github&utm_medium=clerk_solidjs)
 
 </div>
 
 ---
+
+## Features
+- [x] Complete feature parity with @clerk/clerk-react
+- [x] SSR Support
+- [x] Components
+- [x] Hooks
+- [x] Middleware
+- [x] `auth()` server-side helper
 
 ## Overview
 
@@ -79,6 +87,34 @@ export default function App() {
 }
 ```
 
+Once you have wrapped your app in `<ClerkProvider />` you can access hooks and components.
+
+```js
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  useAuth
+} from 'clerk-solidjs';
+
+export default function MyComponent() {
+  const { userId } = useAuth();
+
+  return (
+    <div>
+      <SignedIn>
+        <UserButton />
+        <p>Welcome, {userId}</p>
+      </SignedIn>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+    </div>
+  );
+}
+```
+
 ### Middleware
 
 Clerk provides the `clerkMiddleware` helper function which can be used in `solid-start` middleware.
@@ -94,14 +130,27 @@ import { clerkMiddleware } from 'clerk-solidjs/server';
 export default createMiddleware({
   onRequest: [
     clerkMiddleware({
-        publishableKey: import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
-        secretKey: import.meta.env.CLERK_SECRET_KEY
+        publishableKey: process.env.VITE_CLERK_PUBLISHABLE_KEY
+        secretKey: process.env.CLERK_SECRET_KEY
     }),
     // ... other middleware
 });
 ```
 
-Then you can use the `auth` helper function to access the auth object.
+Then you can use the `auth()` helper function to access the auth object.
+
+```js
+// Anywhere else
+async function myProtectedServerFunction() {
+  'use server';
+  const { userId } = auth();
+  if(!userId) {
+    throw new Error('You must be signed in');
+  }
+
+  // ...
+}
+```
 
 ## Support
 
