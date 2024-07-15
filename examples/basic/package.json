@@ -1,5 +1,6 @@
 {
-  "name": "example-bare",
+  "name": "clerk-solidjs-basic-example",
+  "description": "An example of how to use clerk-solidjs with SolidStart",
   "private": true,
   "type": "module",
   "scripts": {
