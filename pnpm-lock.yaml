@@ -30,8 +30,8 @@ importers:
         specifier: ^1.0.4
         version: 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.2(@types/node@20.14.10)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2))
       clerk-solidjs:
-        specifier: workspace:*
-        version: link:../../packages/clerk-solidjs
+        specifier: latest
+        version: 1.0.2(@solidjs/router@0.14.1(solid-js@1.8.18))(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2)))(prettier@3.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)(typescript@5.5.3)
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
@@ -1687,6 +1687,13 @@ packages:
 
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
+
+  clerk-solidjs@1.0.2:
+    resolution: {integrity: sha512-jnAylGsK+LbkW8D0+hx0Sbqn9miOgShjTII/t62T8NbrTsl88LnvwWhzzsxGWUctrZy1jqOxTzxynBQdHsZIAg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@solidjs/start': ^1
+      solid-js: ^1.8
 
   cli-boxes@3.0.0:
     resolution: {integrity: sha512-/lzGpEWL/8PfI0BmBOPRwp0c/wFNX1RdUML3jK/RcSBA9T8mZDdQpqYBKtCFTOfQbwPqWEOpjqW+Fnayc0969g==}
@@ -5907,6 +5914,31 @@ snapshots:
   citty@0.1.6:
     dependencies:
       consola: 3.2.3
+
+  clerk-solidjs@1.0.2(@solidjs/router@0.14.1(solid-js@1.8.18))(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2)))(prettier@3.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)(typescript@5.5.3):
+    dependencies:
+      '@clerk/backend': 1.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/clerk-js': 5.8.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/shared': 2.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@solid-primitives/context': 0.2.3(solid-js@1.8.18)
+      '@solid-primitives/destructure': 0.1.17(solid-js@1.8.18)
+      '@solid-primitives/memo': 1.3.9(solid-js@1.8.18)
+      '@solid-primitives/static-store': 0.0.8(solid-js@1.8.18)
+      '@solidjs/start': 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.2(@types/node@20.14.10)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2))
+      '@solidjs/testing-library': 0.8.8(@solidjs/router@0.14.1(solid-js@1.8.18))(solid-js@1.8.18)
+      '@tanstack/solid-query': 5.51.2(solid-js@1.8.18)
+      prettier-plugin-organize-imports: 4.0.0(prettier@3.3.2)(typescript@5.5.3)
+      solid-js: 1.8.18
+    transitivePeerDependencies:
+      - '@solidjs/router'
+      - '@types/react'
+      - '@vue/language-plugin-pug'
+      - prettier
+      - react
+      - react-dom
+      - supports-color
+      - typescript
+      - vue-tsc
 
   cli-boxes@3.0.0: {}
 

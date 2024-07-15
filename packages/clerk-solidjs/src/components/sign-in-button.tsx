@@ -38,7 +38,11 @@ export const SignInButton = withClerk(
       if (mode === 'modal') {
         return clerk().openSignIn(opts);
       }
-      return clerk().redirectToSignIn(opts);
+      return clerk().redirectToSignIn({
+        ...opts,
+        signInFallbackRedirectUrl: clerkProps.fallbackRedirectUrl,
+        signInForceRedirectUrl: clerkProps.forceRedirectUrl
+      });
     };
 
     return (
