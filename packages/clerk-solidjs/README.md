@@ -11,6 +11,7 @@ This is an unofficial community-led port of the [Clerk React SDK](https://www.np
 ---
 
 ## Features
+
 - [x] Complete feature parity with @clerk/clerk-react
 - [x] SSR Support
 - [x] Components
@@ -140,12 +141,12 @@ export default createMiddleware({
 Then you can use the `auth()` helper function to access the auth object.
 
 ```js
-import { auth } from 'clerk-solidjs/server'
+import { auth } from 'clerk-solidjs/server';
 
 async function myProtectedServerFunction() {
   'use server';
   const { userId } = auth();
-  if(!userId) {
+  if (!userId) {
     throw new Error('You must be signed in');
   }
 
