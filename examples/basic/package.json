@@ -15,7 +15,7 @@
   "dependencies": {
     "@solidjs/router": "^0.14.1",
     "@solidjs/start": "^1.0.4",
-    "clerk-solidjs": "workspace:*",
+    "clerk-solidjs": "latest",
     "solid-js": "^1.8.18"
   },
   "engines": {
