@@ -161,7 +161,7 @@
     "typescript-eslint": "^7.16.0",
     "vite-plugin-solid": "^2.10.2",
     "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "^2.0.2"
+    "vitest": "^2.0.3"
   },
   "peerDependencies": {
     "@solidjs/start": "^1",
