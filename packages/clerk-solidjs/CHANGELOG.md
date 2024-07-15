@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.0.4
+
+### Patch Changes
+
+- [`b39bb70`](https://github.com/ian-pascoe/clerk-solidjs/commit/b39bb70cb2e1bef9f3eed71280540718271cd45a) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Dependency updates
+
 ## 1.0.3
 
 ### Patch Changes
