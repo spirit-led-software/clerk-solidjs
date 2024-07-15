@@ -113,7 +113,7 @@
     "./dist/index/server.cjs": "./dist/index/index.cjs"
   },
   "files": [
-    "dist"
+    "./dist"
   ],
   "scripts": {
     "build": "tsup",

@@ -1,4 +1,16 @@
+import { ClerkClient } from '@clerk/backend';
 import { getRequestEvent } from 'solid-js/web';
+import { Prettify } from '../types';
+
+export type AuthReturn = Prettify<
+  NonNullable<
+    ReturnType<
+      Awaited<ReturnType<ClerkClient['authenticateRequest']>>['toAuth']
+    >
+  >
+>;
+
+export type AuthHelper = () => AuthReturn;
 
 /**
  * Function that retrieves the authentication information from the event object.
@@ -15,7 +27,7 @@ import { getRequestEvent } from 'solid-js/web';
  *
  * @return The authentication information stored in the event object.
  */
-export const auth = () => {
+export const auth: AuthHelper = () => {
   const event = getRequestEvent();
   if (!event) {
     throw new Error('auth() must be called from within a server function');

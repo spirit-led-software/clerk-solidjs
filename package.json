@@ -3,17 +3,18 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "clean": "turbo clean",
     "changeset": "changeset",
+    "clean": "turbo clean",
     "dev": "turbo dev",
-    "format": "turbo format",
     "format:check": "turbo format:check",
-    "lint": "turbo lint",
+    "format": "turbo format",
     "lint:fix": "turbo lint:fix",
+    "lint": "turbo lint",
+    "prerelease": "turbo clean && turbo type-check && turbo format:check && turbo lint && turbo test",
+    "release": "turbo clean && turbo build && changeset publish",
     "test": "turbo test",
     "type-check": "turbo type-check",
-    "version": "changeset version && pnpm install --no-frozen-lockfile",
-    "release": "turbo clean && turbo build && changeset publish"
+    "version": "changeset version && pnpm install --no-frozen-lockfile"
   },
   "author": "Ian Pascoe",
   "license": "MIT",

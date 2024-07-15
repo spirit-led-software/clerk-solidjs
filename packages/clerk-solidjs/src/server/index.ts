@@ -1,2 +1,2 @@
-export { auth } from './auth';
+export { auth, type AuthReturn } from './auth';
 export { clerkMiddleware } from './middleware';

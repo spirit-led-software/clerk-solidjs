@@ -1,4 +1,4 @@
-# clerk-solidjs
+![Banner](https://assets.solidjs.com/banner?project=clerk-solidjs&background=tiles)
 
 <div align="center">
 
@@ -12,16 +12,18 @@ This is an unofficial community-led port of the [Clerk React SDK](https://www.np
 
 ## Features
 
-- [x] Complete feature parity with @clerk/clerk-react
-- [x] SSR Support
-- [x] Components
-- [x] Hooks
-- [x] Middleware
-- [x] `auth()` server-side helper
+This project has complete feature parity with @clerk/clerk-react. Therefore, it includes:  
+&#10004; SSR Support  
+&#10004; Components  
+&#10004; Hooks
+
+Plus additional features for SolidStart:  
+&#10004; Middleware  
+&#10004; `auth()` server-side helper
 
 ## Overview
 
-Clerk is the easiest way to add authentication and user management to your SolidJS application. Add sign up, sign in, and profile management to your application in minutes.
+Clerk is the easiest way to add authentication and user management to your application. Add sign up, sign in, and profile management to your application in minutes.
 
 ## Getting Started
 
@@ -61,7 +63,7 @@ Clerk requires your application to be wrapped in the `<ClerkProvider />` context
 
 If using Vite, set `VITE_CLERK_PUBLISHABLE_KEY` to your Publishable key in your `.env.local` file to make the environment variable accessible on `process.env` and pass it as the `publishableKey` prop.
 
-```jsx
+```tsx
 // App.tsx
 
 import { Router } from '@solidjs/router';
@@ -90,7 +92,7 @@ export default function App() {
 
 Once you have wrapped your app in `<ClerkProvider />` you can access hooks and components.
 
-```js
+```ts
 import {
   SignedIn,
   SignedOut,
@@ -122,7 +124,7 @@ Clerk provides the `clerkMiddleware` helper function which can be used in `solid
 
 See [SolidStart middleware](https://docs.solidjs.com/solid-start/advanced/middleware) for how to enable middleware.
 
-```js
+```ts
 // middleware.ts
 
 import { createMiddleware } from '@solidjs/start/middleware';
@@ -140,7 +142,7 @@ export default createMiddleware({
 
 Then you can use the `auth()` helper function to access the auth object.
 
-```js
+```ts
 import { auth } from 'clerk-solidjs/server';
 
 async function myProtectedServerFunction() {
@@ -154,11 +156,27 @@ async function myProtectedServerFunction() {
 }
 ```
 
+If you would like the access the auth object from `event.locals` directly, you must add this to your globals.d.ts file:
+
+```ts
+/// <reference types="@solidjs/start/server" />
+import { AuthReturn } from 'clerk-solidjs/server';
+
+declare module '@solidjs/start/server' {
+  export interface RequestEventLocals {
+    auth: AuthReturn;
+  }
+}
+
+export {};
+```
+
 ## Support
 
 You can get in touch in any of the following ways:
 
 - Join the Clerk official community [Discord server](https://clerk.com/discord)
+- Create a [GitHub Issue](https://github.com/ian-pascoe/clerk-solidjs/issues)
 - Create a [GitHub Discussion](https://github.com/ian-pascoe/clerk-solidjs/discussions)
 - Contact options listed on [the Clerk Support page](https://clerk.com/support?utm_source=github&utm_medium=clerk_solidjs)
 

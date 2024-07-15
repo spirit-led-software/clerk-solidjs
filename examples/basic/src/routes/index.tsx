@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import {
   ClerkLoaded,
   ClerkLoading,
@@ -10,7 +11,7 @@ import {
 
 export default function Index() {
   return (
-    <div class="flex flex-col w-screen h-screen items-center justify-center">
+    <div class="flex flex-col w-screen h-screen items-center justify-center gap-2">
       <h1 class="text-3xl font-bold mb-5 font-mono bg-slate-300 rounded-md p-1">
         clerk-solidjs
       </h1>
@@ -26,6 +27,9 @@ export default function Index() {
           <SignOutButton />
         </SignedIn>
       </ClerkLoaded>
+      <A href="/protected" class="bg-slate-200 rounded-md px-3 py-1">
+        Protected Page
+      </A>
     </div>
   );
 }

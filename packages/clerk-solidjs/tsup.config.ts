@@ -60,7 +60,7 @@ export default defineConfig((config) => {
 
   const options = preset.generateTsupOptions(parsed);
   if (shouldPublish) {
-    options[options.length - 1].onSuccess = 'bun run publish:local';
+    options[options.length - 1].onSuccess = ' && pnpm run publish:local';
   }
 
   return options;
