@@ -8,28 +8,25 @@ on:
 
 jobs:
   prettier:
-    name: 'Prettier'
+    name: "Prettier"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
       - name: Run Prettier check
         run: pnpm run format:check
 
   eslint:
-    name: 'ESLint'
+    name: "ESLint"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
       - name: Run ESLint check
         run: pnpm run lint
 
   types:
-    name: 'TypeScript'
+    name: "TypeScript"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
       - name: Run TypeScript type check
         run: pnpm run type-check
