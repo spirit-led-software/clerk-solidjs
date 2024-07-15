@@ -1,5 +1,13 @@
 # clerk-solidjs
 
+## 1.0.3
+
+### Patch Changes
+
+- [`b1f41ce`](https://github.com/ian-pascoe/clerk-solidjs/commit/b1f41ce733bcd386b4bf6875290f8af4afce9af8) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Add customizable fields to components
+
+- [`952d335`](https://github.com/ian-pascoe/clerk-solidjs/commit/952d335bfe853160f0ebc161644a2f0db920fe17) Thanks [@ian-pascoe](https://github.com/ian-pascoe)! - Finalize changes
+
 ## 1.0.2
 
 ### Patch Changes
