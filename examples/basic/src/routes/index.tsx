@@ -20,11 +20,11 @@ export default function Index() {
       </ClerkLoading>
       <ClerkLoaded>
         <SignedOut>
-          <SignInButton />
+          <SignInButton class="bg-slate-200 rounded-md px-3 py-1" />
         </SignedOut>
         <SignedIn>
           <UserButton />
-          <SignOutButton />
+          <SignOutButton class="bg-slate-200 rounded-md px-3 py-1" />
         </SignedIn>
       </ClerkLoaded>
       <A href="/protected" class="bg-slate-200 rounded-md px-3 py-1">

@@ -1,4 +1,3 @@
-import type { SignUpProps } from '@clerk/types';
 import { children as childrenFn, createMemo, splitProps } from 'solid-js';
 import type { SignUpButtonProps, WithClerkProp } from '../types';
 import {
@@ -10,7 +9,11 @@ import { withClerk } from './with-clerk';
 
 export const SignUpButton = withClerk(
   (props: WithClerkProp<SignUpButtonProps>) => {
-    const [local, rest] = splitProps(props, ['clerk', 'children']);
+    const [local, clerkProps, rest] = splitProps(
+      props,
+      ['children'],
+      ['clerk', 'mode', 'fallbackRedirectUrl', 'forceRedirectUrl', 'onClick']
+    );
 
     const children = childrenFn(() =>
       normalizeWithDefaultValue(local.children, 'Sign up')
@@ -20,25 +23,25 @@ export const SignUpButton = withClerk(
     );
 
     const clickHandler = async () => {
-      if (rest.onClick) {
-        await safeExecute(rest.onClick)();
+      const { onClick, mode, clerk, ...opts } = clerkProps;
+
+      if (onClick) {
+        await safeExecute(clerkProps.onClick)();
       }
 
-      const opts: SignUpProps = {
-        ...rest
-      };
-      if (rest.mode === 'modal') {
-        return local.clerk().openSignUp(opts);
+      if (mode === 'modal') {
+        return clerk().openSignUp(opts);
       }
-      return local.clerk().redirectToSignUp({
+
+      return clerk().redirectToSignUp({
         ...opts,
-        signUpFallbackRedirectUrl: rest.fallbackRedirectUrl,
-        signUpForceRedirectUrl: rest.forceRedirectUrl
+        signUpFallbackRedirectUrl: clerkProps.fallbackRedirectUrl,
+        signUpForceRedirectUrl: clerkProps.forceRedirectUrl
       });
     };
 
     return (
-      <button type="button" onClick={clickHandler}>
+      <button {...rest} onClick={clickHandler}>
         {child()}
       </button>
     );

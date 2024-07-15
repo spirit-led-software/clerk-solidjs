@@ -1,4 +1,3 @@
-import type { SignInProps } from '@clerk/types';
 import { children as childrenFn, createMemo, splitProps } from 'solid-js';
 import type { SignInButtonProps, WithClerkProp } from '../types';
 import {
@@ -10,7 +9,19 @@ import { withClerk } from './with-clerk';
 
 export const SignInButton = withClerk(
   (props: WithClerkProp<SignInButtonProps>) => {
-    const [local, rest] = splitProps(props, ['children', 'clerk']);
+    const [local, clerkProps, rest] = splitProps(
+      props,
+      ['children'],
+      [
+        'clerk',
+        'signUpFallbackRedirectUrl',
+        'signUpForceRedirectUrl',
+        'forceRedirectUrl',
+        'fallbackRedirectUrl',
+        'mode',
+        'onClick'
+      ]
+    );
     const children = childrenFn(() =>
       normalizeWithDefaultValue(local.children, 'Sign in')
     );
@@ -19,27 +30,22 @@ export const SignInButton = withClerk(
     );
 
     const clickHandler = async () => {
-      if (rest.onClick) {
-        await safeExecute(rest.onClick)();
+      const { onClick, mode, clerk, ...opts } = clerkProps;
+      if (onClick) {
+        await safeExecute(onClick)();
       }
-      const opts: SignInProps = {
-        forceRedirectUrl: rest.forceRedirectUrl,
-        fallbackRedirectUrl: rest.fallbackRedirectUrl,
-        signUpFallbackRedirectUrl: rest.signUpFallbackRedirectUrl,
-        signUpForceRedirectUrl: rest.signUpForceRedirectUrl
-      };
 
-      if (rest.mode === 'modal') {
-        return local.clerk().openSignIn(opts);
+      if (mode === 'modal') {
+        return clerk().openSignIn(opts);
       }
-      return local.clerk().redirectToSignIn({
-        ...opts,
-        signInFallbackRedirectUrl: rest.fallbackRedirectUrl,
-        signInForceRedirectUrl: rest.forceRedirectUrl
-      });
+      return clerk().redirectToSignIn(opts);
     };
 
-    return <button onClick={clickHandler}>{child()}</button>;
+    return (
+      <button {...rest} onClick={clickHandler}>
+        {child()}
+      </button>
+    );
   },
   'SignInButton'
 );

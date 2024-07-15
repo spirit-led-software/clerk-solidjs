@@ -11,6 +11,7 @@ import type {
   SDKMetadata,
   SignInProps,
   SignInRedirectOptions,
+  SignOutOptions,
   SignUpProps,
   SignUpRedirectOptions,
   Without
@@ -89,10 +90,8 @@ export type ClerkProp =
   | undefined
   | null;
 
-type ButtonProps = {
+type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement> & {
   mode?: 'redirect' | 'modal';
-  children?: JSXElement;
-  onClick?: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent>;
 };
 
 export type SignInButtonProps = ButtonProps &
@@ -103,6 +102,9 @@ export type SignInButtonProps = ButtonProps &
     | 'signUpForceRedirectUrl'
     | 'signUpFallbackRedirectUrl'
   >;
+
+export type SignOutButtonProps = ButtonProps &
+  Pick<SignOutOptions, 'redirectUrl' | 'sessionId'>;
 
 export type SignUpButtonProps = {
   unsafeMetadata?: SignUpUnsafeMetadata;

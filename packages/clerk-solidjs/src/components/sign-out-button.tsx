@@ -1,12 +1,5 @@
-import type { SignOutOptions } from '@clerk/types';
-import {
-  children as childrenFn,
-  createMemo,
-  JSX,
-  ParentProps,
-  splitProps
-} from 'solid-js';
-import type { WithClerkProp } from '../types';
+import { children as childrenFn, createMemo, splitProps } from 'solid-js';
+import type { SignOutButtonProps, WithClerkProp } from '../types';
 import {
   assertSingleChild,
   normalizeWithDefaultValue,
@@ -14,40 +7,33 @@ import {
 } from '../utils';
 import { withClerk } from './with-clerk';
 
-export type SignOutButtonProps = {
-  onClick?: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent>;
-  redirectUrl?: string;
-  signOutOptions?: SignOutOptions;
-  children?: JSX.Element;
-};
-
 export const SignOutButton = withClerk(
-  (props: ParentProps<WithClerkProp<SignOutButtonProps>>) => {
-    const [local, rest] = splitProps(props, [
-      'clerk',
-      'redirectUrl',
-      'signOutOptions'
-    ]);
+  (props: WithClerkProp<SignOutButtonProps>) => {
+    const [local, clerk, rest] = splitProps(
+      props,
+      ['children'],
+      ['clerk', 'redirectUrl', 'sessionId', 'onClick']
+    );
 
     const children = childrenFn(() =>
-      normalizeWithDefaultValue(rest.children, 'Sign out')
+      normalizeWithDefaultValue(local.children, 'Sign out')
     );
     const child = createMemo(() =>
       assertSingleChild(children())('SignOutButton')
     );
 
     const clickHandler = async () => {
-      if (rest.onClick) {
-        await safeExecute(rest.onClick)();
+      if (clerk.onClick) {
+        await safeExecute(clerk.onClick)();
       }
-      local.clerk().signOut({
-        redirectUrl: local.redirectUrl,
-        ...local.signOutOptions
+      clerk.clerk().signOut({
+        redirectUrl: clerk.redirectUrl,
+        sessionId: clerk.sessionId
       });
     };
 
     return (
-      <button type="button" onClick={clickHandler}>
+      <button {...rest} onClick={clickHandler}>
         {child()}
       </button>
     );

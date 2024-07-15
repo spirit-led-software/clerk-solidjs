@@ -4,7 +4,26 @@
 
 This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com) and [SolidStart](https://start.solidjs.com).
 
-[![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://clerk.com/docs?utm_source=github&utm_medium=clerk_solidjs)
+[![Clerk documentation](https://img.shields.io/badge/documentation-clerk-lavender.svg?style=for-the-badge&logo=clerk)](https://clerk.com/docs?utm_source=github&utm_medium=clerk_solidjs)
+
+### Released on NPM
+
+[![NPM version](https://img.shields.io/npm/v/clerk-solidjs.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/clerk-solidjs)
+[![NPM Downloads](https://img.shields.io/npm/dm/clerk-solidjs?style=for-the-badge)
+](https://www.npmjs.com/package/clerk-solidjs)
+
+### Maintained on GitHub
+
+[![GitHub stars](https://img.shields.io/github/stars/ian-pascoe/clerk-solidjs.svg?style=for-the-badge&logo=github)](https://github.com/ian-pascoe/clerk-solidjs/stargazers)
+[![GitHub license](https://img.shields.io/github/license/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/blob/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/network)
+[![GitHub issues](https://img.shields.io/github/issues/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/graphs/contributors)
+![GitHub last commit](https://img.shields.io/github/last-commit/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)
+
+[![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-yellow.svg?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
+[![turborepo](https://img.shields.io/badge/built%20with-turborepo-cc00ff.svg?style=for-the-badge&logo=turborepo)](https://turborepo.org/)
 
 </div>
 
@@ -12,14 +31,17 @@ This is an unofficial community-led port of the [Clerk React SDK](https://www.np
 
 ## Features
 
-This project has complete feature parity with @clerk/clerk-react. Therefore, it includes:  
-&#10004; SSR Support  
-&#10004; Components  
+This project has near-complete feature parity with @clerk/clerk-react:  
+&#10004; SSR support  
+&#10004; Headless components  
 &#10004; Hooks
+
+Missing features for SolidJS:  
+&#10006; [Custom pages for UI components](https://clerk.com/docs/components/customization/user-profile)
 
 Plus additional features for SolidStart:  
 &#10004; Middleware  
-&#10004; `auth()` server-side helper
+&#10004; Server-side `auth()` helper
 
 ## Overview
 
