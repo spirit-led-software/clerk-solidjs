@@ -1,38 +1,13 @@
 /**
- * This version selector is a bit complicated, so here is the flow:
- * 1. Use the clerkJSVersion prop on the provider
- * 2. Use the exact `@clerk/clerk-js` version if it is a `@snapshot` prerelease for `clerk-solidjs`
- * 3. Use the prerelease tag of `clerk-solidjs`
- * 4. Fallback to the major version of `clerk-solidjs`
+ * Select the version of clerk-js to use
  * @param clerkJSVersion - The optional clerkJSVersion prop on the provider
- * @param packageVersion - The version of `clerk-solidjs` that will be used if an explicit version is not provided
+ * @param packageVersion - The version of `@clerk/clerk-solidjs` that will be used if an explicit version is not provided
  * @returns The npm tag, version or major version to use
  */
-export const versionSelector = (
-  clerkJSVersion: string | undefined,
-  packageVersion = PACKAGE_VERSION
-) => {
+export const versionSelector = (clerkJSVersion: string | undefined) => {
   if (clerkJSVersion) {
     return clerkJSVersion;
   }
 
-  const prereleaseTag = getPrereleaseTag(packageVersion);
-  if (prereleaseTag) {
-    if (prereleaseTag === 'snapshot') {
-      return JS_PACKAGE_VERSION;
-    }
-
-    return prereleaseTag;
-  }
-
-  return getMajorVersion(packageVersion);
+  return JS_PACKAGE_VERSION;
 };
-
-const getPrereleaseTag = (packageVersion: string) =>
-  packageVersion
-    .trim()
-    .replace(/^v/, '')
-    .match(/-(.+?)(\.|$)/)?.[1];
-
-const getMajorVersion = (packageVersion: string) =>
-  packageVersion.trim().replace(/^v/, '').split('.')[0];

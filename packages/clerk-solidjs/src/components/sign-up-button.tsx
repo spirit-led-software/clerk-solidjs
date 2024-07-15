@@ -28,9 +28,9 @@ export const SignUpButton = withClerk(
         ...rest
       };
       if (rest.mode === 'modal') {
-        return local.clerk.openSignUp(opts);
+        return local.clerk().openSignUp(opts);
       }
-      return local.clerk.redirectToSignUp({
+      return local.clerk().redirectToSignUp({
         ...opts,
         signUpFallbackRedirectUrl: rest.fallbackRedirectUrl,
         signUpForceRedirectUrl: rest.forceRedirectUrl

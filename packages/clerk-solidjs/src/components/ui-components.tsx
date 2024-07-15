@@ -129,10 +129,10 @@ export const SignIn = withClerk((props: WithClerkProp<SignInProps>) => {
   const [local, rest] = splitProps(props, ['clerk']);
   return (
     <Portal
-      mount={local.clerk.mountSignIn}
-      unmount={local.clerk.unmountSignIn}
+      mount={local.clerk().mountSignIn}
+      unmount={local.clerk().unmountSignIn}
       updateProps={
-        (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+        (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
       }
       props={rest}
     />
@@ -143,10 +143,10 @@ export const SignUp = withClerk((props: WithClerkProp<SignUpProps>) => {
   const [local, rest] = splitProps(props, ['clerk']);
   return (
     <Portal
-      mount={local.clerk.mountSignUp}
-      unmount={local.clerk.unmountSignUp}
+      mount={local.clerk().mountSignUp}
+      unmount={local.clerk().unmountSignUp}
       updateProps={
-        (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+        (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
       }
       props={rest}
     />
@@ -170,10 +170,10 @@ const _UserProfile = withClerk(
     const [local, rest] = splitProps(props, ['clerk']);
     return (
       <Portal
-        mount={local.clerk.mountUserProfile}
-        unmount={local.clerk.unmountUserProfile}
+        mount={local.clerk().mountUserProfile}
+        unmount={local.clerk().unmountUserProfile}
         updateProps={
-          (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+          (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
         }
         props={rest}
       />
@@ -192,10 +192,10 @@ const _UserButton = withClerk(
     const [local, rest] = splitProps(props, ['clerk']);
     return (
       <Portal
-        mount={local.clerk.mountUserButton}
-        unmount={local.clerk.unmountUserButton}
+        mount={local.clerk().mountUserButton}
+        unmount={local.clerk().unmountUserButton}
         updateProps={
-          (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+          (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
         }
         props={rest}
       />
@@ -232,10 +232,10 @@ const _OrganizationProfile = withClerk(
     const [local, rest] = splitProps(props, ['clerk']);
     return (
       <Portal
-        mount={local.clerk.mountOrganizationProfile}
-        unmount={local.clerk.unmountOrganizationProfile}
+        mount={local.clerk().mountOrganizationProfile}
+        unmount={local.clerk().unmountOrganizationProfile}
         updateProps={
-          (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+          (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
         }
         props={rest}
       />
@@ -257,10 +257,10 @@ export const CreateOrganization = withClerk(
     const [local, rest] = splitProps(props, ['clerk']);
     return (
       <Portal
-        mount={local.clerk.mountCreateOrganization}
-        unmount={local.clerk.unmountCreateOrganization}
+        mount={local.clerk().mountCreateOrganization}
+        unmount={local.clerk().unmountCreateOrganization}
         updateProps={
-          (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+          (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
         }
         props={rest}
       />
@@ -279,10 +279,10 @@ const _OrganizationSwitcher = withClerk(
 
     return (
       <Portal
-        mount={local.clerk.mountOrganizationSwitcher}
-        unmount={local.clerk.unmountOrganizationSwitcher}
+        mount={local.clerk().mountOrganizationSwitcher}
+        unmount={local.clerk().unmountOrganizationSwitcher}
         updateProps={
-          (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+          (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
         }
         props={rest}
       />
@@ -302,10 +302,10 @@ export const OrganizationList = withClerk(
     const [local, rest] = splitProps(props, ['clerk']);
     return (
       <Portal
-        mount={local.clerk.mountOrganizationList}
-        unmount={local.clerk.unmountOrganizationList}
+        mount={local.clerk().mountOrganizationList}
+        unmount={local.clerk().unmountOrganizationList}
         updateProps={
-          (local.clerk as unknown as IsomorphicClerk).__unstable__updateProps
+          (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
         }
         props={rest}
       />
@@ -319,8 +319,8 @@ export const GoogleOneTap = withClerk(
     const [local, rest] = splitProps(props, ['clerk']);
     return (
       <Portal
-        open={local.clerk.openGoogleOneTap}
-        close={local.clerk.closeGoogleOneTap}
+        open={local.clerk().openGoogleOneTap}
+        close={local.clerk().closeGoogleOneTap}
         props={rest}
       />
     );

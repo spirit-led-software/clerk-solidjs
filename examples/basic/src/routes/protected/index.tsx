@@ -1,16 +1,27 @@
-import { Protect, useAuth } from "clerk-solidjs";
+import {
+  Protect,
+  SignInButton,
+  SignOutButton,
+  useAuth,
+  useUser,
+} from "clerk-solidjs";
 import { Show } from "solid-js";
 
 export default function ProtectedPage() {
-  const { userId } = useAuth();
+  const { user } = useUser();
 
   return (
     <div class="flex flex-col w-screen h-screen items-center justify-center">
       <Show
-        when={userId()}
-        fallback={<p>You are not signed in. Please sign in to continue.</p>}
+        when={user()}
+        fallback={
+          <p>
+            You are not signed in. Please <SignInButton /> to continue.
+          </p>
+        }
       >
-        Welcome, {userId()}
+        Welcome, {user()?.fullName}
+        <SignOutButton />
       </Show>
     </div>
   );

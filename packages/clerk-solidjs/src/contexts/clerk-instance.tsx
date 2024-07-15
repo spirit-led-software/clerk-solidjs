@@ -1,16 +1,14 @@
 import { LoadedClerk } from '@clerk/types';
-import { Accessor, createContext, createMemo, JSX, useContext } from 'solid-js';
+import { Accessor, createContext, JSX, useContext } from 'solid-js';
 
 const ClerkInstanceContext = createContext<Accessor<LoadedClerk>>();
 
 const ClerkInstanceContextProvider = (props: {
-  clerk: LoadedClerk;
+  clerk: Accessor<LoadedClerk>;
   children: JSX.Element;
 }) => {
-  const clerk = createMemo(() => props.clerk);
-
   return (
-    <ClerkInstanceContext.Provider value={clerk}>
+    <ClerkInstanceContext.Provider value={props.clerk}>
       {props.children}
     </ClerkInstanceContext.Provider>
   );

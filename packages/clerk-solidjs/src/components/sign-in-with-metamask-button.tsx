@@ -23,7 +23,7 @@ export const SignInWithMetamaskButton = withClerk(
         await safeExecute(rest.onClick)();
       }
       async function authenticate() {
-        await rest.clerk.authenticateWithMetamask({
+        await rest.clerk().authenticateWithMetamask({
           redirectUrl: local.redirectUrl || undefined
         });
       }

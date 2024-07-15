@@ -1,11 +1,11 @@
 import type { LoadedClerk, Without } from '@clerk/types';
-import { Component, JSX, Show } from 'solid-js';
+import { Accessor, Component, JSX, Show } from 'solid-js';
 import { useIsomorphicClerkContext } from '../contexts/isomorphic-clerk';
 import { errorThrower } from '../errors/error-thrower';
 import { hocChildrenNotAFunctionError } from '../errors/messages';
 import { useAssertWrappedByClerkProvider } from '../hooks/use-assert-wrapped-by-clerk-provider';
 
-export const withClerk = <P extends { clerk: LoadedClerk }>(
+export const withClerk = <P extends { clerk: Accessor<LoadedClerk> }>(
   Component: Component<P>,
   displayName?: string
 ) => {
@@ -24,17 +24,17 @@ export const withClerk = <P extends { clerk: LoadedClerk }>(
 };
 
 export const WithClerk: Component<{
-  children: (clerk: LoadedClerk) => JSX.Element;
-}> = ({ children }) => {
+  children: (clerk: Accessor<LoadedClerk>) => JSX.Element;
+}> = (props) => {
   const clerk = useIsomorphicClerkContext();
 
-  if (typeof children !== 'function') {
+  if (typeof props.children !== 'function') {
     errorThrower.throw(hocChildrenNotAFunctionError);
   }
 
   return (
     <Show when={clerk().loaded}>
-      {children(clerk as unknown as LoadedClerk)}
+      {props.children(clerk as unknown as Accessor<LoadedClerk>)}
     </Show>
   );
 };

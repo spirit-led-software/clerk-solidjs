@@ -117,7 +117,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
+    "dev": "tsup --watch .",
     "dev:publish": "pnpm run dev -- --env.publish",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",

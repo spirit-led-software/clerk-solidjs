@@ -40,7 +40,7 @@ export const SignOutButton = withClerk(
       if (rest.onClick) {
         await safeExecute(rest.onClick)();
       }
-      local.clerk.signOut({
+      local.clerk().signOut({
         redirectUrl: local.redirectUrl,
         ...local.signOutOptions
       });

@@ -3,29 +3,31 @@ import {
   OrganizationCustomPermissionKey,
   OrganizationCustomRoleKey
 } from '@clerk/types';
-import { createMemo } from 'solid-js';
+import { Accessor } from 'solid-js';
 import { createContextProviderAndHook } from '../utils/create-context-provider-and-hook';
 
 export const [AuthContextProvider, useAuthContext] =
   createContextProviderAndHook(
     'AuthContext',
     (props: {
-      userId: string | null | undefined;
-      sessionId: string | null | undefined;
-      actor: ActJWTClaim | null | undefined;
-      orgId: string | null | undefined;
-      orgRole: OrganizationCustomRoleKey | null | undefined;
-      orgSlug: string | null | undefined;
-      orgPermissions: OrganizationCustomPermissionKey[] | null | undefined;
+      userId: Accessor<string | null | undefined>;
+      sessionId: Accessor<string | null | undefined>;
+      actor: Accessor<ActJWTClaim | null | undefined>;
+      orgId: Accessor<string | null | undefined>;
+      orgRole: Accessor<OrganizationCustomRoleKey | null | undefined>;
+      orgSlug: Accessor<string | null | undefined>;
+      orgPermissions: Accessor<
+        OrganizationCustomPermissionKey[] | null | undefined
+      >;
     }) => {
       return {
-        userId: createMemo(() => props.userId),
-        sessionId: createMemo(() => props.sessionId),
-        actor: createMemo(() => props.actor),
-        orgId: createMemo(() => props.orgId),
-        orgRole: createMemo(() => props.orgRole),
-        orgSlug: createMemo(() => props.orgSlug),
-        orgPermissions: createMemo(() => props.orgPermissions)
+        userId: props.userId,
+        sessionId: props.sessionId,
+        actor: props.actor,
+        orgId: props.orgId,
+        orgRole: props.orgRole,
+        orgSlug: props.orgSlug,
+        orgPermissions: props.orgPermissions
       };
     }
   );

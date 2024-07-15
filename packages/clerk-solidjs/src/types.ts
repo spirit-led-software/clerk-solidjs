@@ -15,7 +15,7 @@ import type {
   SignUpRedirectOptions,
   Without
 } from '@clerk/types';
-import { JSX, JSXElement } from 'solid-js';
+import { Accessor, JSX, JSXElement } from 'solid-js';
 
 declare global {
   interface Window {
@@ -50,7 +50,7 @@ export interface HeadlessBrowserClerkConstructor {
   ): HeadlessBrowserClerk;
 }
 
-export type WithClerkProp<T = unknown> = T & { clerk: LoadedClerk };
+export type WithClerkProp<T = unknown> = T & { clerk: Accessor<LoadedClerk> };
 
 // Clerk object
 export interface MountProps {

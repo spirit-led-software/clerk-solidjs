@@ -5,9 +5,11 @@ import {
   createMemo,
   createSignal,
   JSX,
-  JSXElement
+  JSXElement,
+  on,
+  onCleanup,
+  untrack
 } from 'solid-js';
-import { createStore } from 'solid-js/store';
 import { IsomorphicClerk } from '../isomorphic-clerk';
 import type { IsomorphicClerkOptions } from '../types';
 import { deriveState } from '../utils/derive-state';
@@ -26,44 +28,45 @@ type ClerkContextProvider = {
 
 export type ClerkContextProviderState = Resources;
 
-export function ClerkContextProvider(
-  props: ClerkContextProvider
-): JSX.Element | null {
+export function ClerkContextProvider(props: ClerkContextProvider): JSX.Element {
   const { isomorphicClerk: clerk, loaded: clerkLoaded } =
     useLoadedIsomorphicClerk(() => props.isomorphicClerkOptions);
 
-  const [state, setState] = createStore<ClerkContextProviderState>({
+  const [state, setState] = createSignal<ClerkContextProviderState>({
     client: clerk().client as ClientResource,
     session: clerk().session,
     user: clerk().user,
     organization: clerk().organization
   });
   createEffect(() => {
-    return clerk().addListener((e) => setState({ ...e }));
+    onCleanup(clerk().addListener((e) => setState({ ...e })));
   });
 
   const derivedState = createMemo(() =>
-    deriveState(clerkLoaded(), state, props.initialState)
+    deriveState(clerkLoaded(), state(), props.initialState)
   );
+
+  // Hacky way to get clerk to update when the loading state changes
+  const clerkCtx = () => (clerkLoaded() ? clerk() : clerk());
 
   return (
     // @ts-expect-error - IsomorphicClerk and Loaded clerk are the same
-    <IsomorphicClerkContextProvider clerk={clerk()}>
-      <ClientContextProvider client={clerk().client}>
-        <SessionContextProvider session={derivedState().session}>
+    <IsomorphicClerkContextProvider clerk={clerkCtx}>
+      <ClientContextProvider client={() => state().client}>
+        <SessionContextProvider session={() => derivedState().session}>
           <OrganizationContextProvider
-            organization={derivedState().organization}
+            organization={() => derivedState().organization}
           >
             <AuthContextProvider
-              userId={derivedState().userId}
-              sessionId={derivedState().sessionId}
-              actor={derivedState().actor}
-              orgId={derivedState().orgId}
-              orgRole={derivedState().orgRole}
-              orgSlug={derivedState().orgSlug}
-              orgPermissions={derivedState().orgPermissions}
+              userId={() => derivedState().userId}
+              sessionId={() => derivedState().sessionId}
+              actor={() => derivedState().actor}
+              orgId={() => derivedState().orgId}
+              orgRole={() => derivedState().orgRole}
+              orgSlug={() => derivedState().orgSlug}
+              orgPermissions={() => derivedState().orgPermissions}
             >
-              <UserContextProvider user={derivedState().user}>
+              <UserContextProvider user={() => derivedState().user}>
                 {props.children}
               </UserContextProvider>
             </AuthContextProvider>
@@ -79,25 +82,33 @@ const useLoadedIsomorphicClerk = (
 ) => {
   const [loaded, setLoaded] = createSignal(false);
   const isomorphicClerk = createMemo(() =>
-    IsomorphicClerk.getOrCreateInstance(options())
+    IsomorphicClerk.getOrCreateInstance(untrack(options))
+  );
+
+  createEffect(
+    on(
+      () => options().appearance,
+      (appearance) => {
+        void isomorphicClerk().__unstable__updateProps({
+          appearance
+        });
+      }
+    )
+  );
+
+  createEffect(
+    on(options, (options) => {
+      void isomorphicClerk().__unstable__updateProps({ options });
+    })
   );
 
   createEffect(() => {
-    void isomorphicClerk().__unstable__updateProps({
-      appearance: options().appearance
+    isomorphicClerk().addOnLoaded(() => {
+      setLoaded(true);
     });
-  });
-
-  createEffect(() => {
-    void isomorphicClerk().__unstable__updateProps({ options: options() });
-  });
-
-  createEffect(() => {
-    isomorphicClerk().addOnLoaded(() => setLoaded(true));
-  });
-
-  createEffect(() => {
-    return IsomorphicClerk.clearInstance();
+    onCleanup(() => {
+      IsomorphicClerk.clearInstance();
+    });
   });
 
   return { isomorphicClerk, loaded };

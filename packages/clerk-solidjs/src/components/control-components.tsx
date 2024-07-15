@@ -30,25 +30,21 @@ export const SignedIn = (props: ParentProps<unknown>): JSX.Element => {
   return <Show when={userId()}>{props.children}</Show>;
 };
 
-export const SignedOut = (props: ParentProps<unknown>): JSX.Element | null => {
+export const SignedOut = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('SignedOut');
 
   const { userId } = useAuthContext();
   return <Show when={userId() === null}>{props.children}</Show>;
 };
 
-export const ClerkLoaded = (
-  props: ParentProps<unknown>
-): JSX.Element | null => {
+export const ClerkLoaded = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoaded');
 
   const isomorphicClerk = useIsomorphicClerkContext();
   return <Show when={isomorphicClerk().loaded}>{props.children}</Show>;
 };
 
-export const ClerkLoading = (
-  props: ParentProps<unknown>
-): JSX.Element | null => {
+export const ClerkLoading = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoading');
 
   const isomorphicClerk = useIsomorphicClerkContext();
@@ -151,15 +147,15 @@ export const RedirectToSignIn = withClerk(
 
     const hasActiveSessions = createMemo(
       () =>
-        local.clerk.client.activeSessions &&
-        local.clerk.client.activeSessions.length > 0
+        local.clerk().client.activeSessions &&
+        local.clerk().client.activeSessions.length > 0
     );
 
     createEffect(() => {
-      if (local.clerk.session === null && hasActiveSessions()) {
-        void local.clerk.redirectToAfterSignOut();
+      if (local.clerk().session === null && hasActiveSessions()) {
+        void local.clerk().redirectToAfterSignOut();
       } else {
-        void local.clerk.redirectToSignIn(redirectToSignInProps);
+        void local.clerk().redirectToSignIn(redirectToSignInProps);
       }
     });
 
@@ -172,7 +168,7 @@ export const RedirectToSignUp = withClerk(
   (props: WithClerkProp<RedirectToSignUpProps>) => {
     const [local, redirectToSignUpProps] = splitProps(props, ['clerk']);
     createEffect(() => {
-      void local.clerk.redirectToSignUp(redirectToSignUpProps);
+      void local.clerk().redirectToSignUp(redirectToSignUpProps);
     });
 
     return null;
@@ -182,7 +178,7 @@ export const RedirectToSignUp = withClerk(
 
 export const RedirectToUserProfile = withClerk((props) => {
   createEffect(() => {
-    void props.clerk.redirectToUserProfile();
+    void props.clerk().redirectToUserProfile();
   });
 
   return null;
@@ -190,7 +186,7 @@ export const RedirectToUserProfile = withClerk((props) => {
 
 export const RedirectToOrganizationProfile = withClerk((props) => {
   createEffect(() => {
-    void props.clerk.redirectToOrganizationProfile();
+    void props.clerk().redirectToOrganizationProfile();
   });
 
   return null;
@@ -198,7 +194,7 @@ export const RedirectToOrganizationProfile = withClerk((props) => {
 
 export const RedirectToCreateOrganization = withClerk((props) => {
   createEffect(() => {
-    void props.clerk.redirectToCreateOrganization();
+    void props.clerk().redirectToCreateOrganization();
   });
 
   return null;
@@ -208,8 +204,8 @@ export const AuthenticateWithRedirectCallback = withClerk(
   (props: WithClerkProp<HandleOAuthCallbackParams>) => {
     const [local, handleRedirectCallbackParams] = splitProps(props, ['clerk']);
     createEffect(() => {
-      void local.clerk.handleRedirectCallback(handleRedirectCallbackParams);
-    }, []);
+      void local.clerk().handleRedirectCallback(handleRedirectCallbackParams);
+    });
 
     return null;
   },

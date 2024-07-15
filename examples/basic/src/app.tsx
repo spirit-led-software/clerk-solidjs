@@ -10,7 +10,7 @@ export default function App() {
     <Router
       root={(props) => (
         <ClerkProvider
-          publishableKey={import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY}
+          publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
         >
           <Suspense>{props.children}</Suspense>
         </ClerkProvider>

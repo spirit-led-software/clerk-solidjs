@@ -1,11 +1,11 @@
 import { UserResource } from '@clerk/types';
-import { createMemo } from 'solid-js';
+import { Accessor } from 'solid-js';
 import { createContextProviderAndHook } from '../utils/create-context-provider-and-hook';
 
 export const [UserContextProvider, useUserContext] =
   createContextProviderAndHook(
     'UserProvider',
-    (props: { user: UserResource | null | undefined }) => {
-      return createMemo(() => props.user);
+    (props: { user: Accessor<UserResource | null | undefined> }) => {
+      return props.user;
     }
   );

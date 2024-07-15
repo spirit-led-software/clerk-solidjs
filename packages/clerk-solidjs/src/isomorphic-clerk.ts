@@ -38,7 +38,6 @@ import type {
   UserResource,
   Without
 } from '@clerk/types';
-
 import { errorThrower } from './errors/error-thrower';
 import { unsupportedNonBrowserDomainOrProxyUrlFunction } from './errors/messages';
 import type {

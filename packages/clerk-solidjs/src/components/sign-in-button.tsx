@@ -30,9 +30,9 @@ export const SignInButton = withClerk(
       };
 
       if (rest.mode === 'modal') {
-        return local.clerk.openSignIn(opts);
+        return local.clerk().openSignIn(opts);
       }
-      return local.clerk.redirectToSignIn({
+      return local.clerk().redirectToSignIn({
         ...opts,
         signInFallbackRedirectUrl: rest.fallbackRedirectUrl,
         signInForceRedirectUrl: rest.forceRedirectUrl

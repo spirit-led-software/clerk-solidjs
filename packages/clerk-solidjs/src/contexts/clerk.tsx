@@ -1,5 +1,5 @@
 import { isPublishableKey } from '@clerk/shared/keys';
-import { JSX, splitProps } from 'solid-js';
+import { createEffect, JSX, splitProps } from 'solid-js';
 import { errorThrower } from '../errors/error-thrower';
 import { multipleClerkProvidersError } from '../errors/messages';
 import type { ClerkProviderProps } from '../types';
@@ -12,18 +12,20 @@ function ClerkProviderBase(props: ClerkProviderProps): JSX.Element {
     'children'
   ]);
 
-  if (!restIsomorphicClerkOptions.Clerk) {
-    if (!restIsomorphicClerkOptions.publishableKey) {
-      errorThrower.throwMissingPublishableKeyError();
-    } else if (
-      restIsomorphicClerkOptions.publishableKey &&
-      !isPublishableKey(restIsomorphicClerkOptions.publishableKey)
-    ) {
-      errorThrower.throwInvalidPublishableKeyError({
-        key: restIsomorphicClerkOptions.publishableKey
-      });
+  createEffect(() => {
+    if (!restIsomorphicClerkOptions.Clerk) {
+      if (!restIsomorphicClerkOptions.publishableKey) {
+        errorThrower.throwMissingPublishableKeyError();
+      } else if (
+        restIsomorphicClerkOptions.publishableKey &&
+        !isPublishableKey(restIsomorphicClerkOptions.publishableKey)
+      ) {
+        errorThrower.throwInvalidPublishableKeyError({
+          key: restIsomorphicClerkOptions.publishableKey
+        });
+      }
     }
-  }
+  });
 
   return (
     <ClerkContextProvider
