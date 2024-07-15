@@ -21,7 +21,7 @@ const mockClerk = {
 vi.mock('../with-clerk', () => {
   return {
     withClerk: (Component: any) => (props: any) => (
-      <Component {...props} clerk={mockClerk} />
+      <Component {...props} clerk={() => mockClerk} />
     )
   };
 });
