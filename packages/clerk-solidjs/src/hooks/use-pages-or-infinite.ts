@@ -38,11 +38,11 @@ export const convertToSafeValues = <T extends PagesOrInfiniteOptions>(
   // Cache initialPage and initialPageSize until unmount
   const initialPageRef = shouldUseDefaults
     ? defaultValues.initialPage
-    : params?.initialPage ?? defaultValues.initialPage;
+    : (params?.initialPage ?? defaultValues.initialPage);
 
   const pageSizeRef = shouldUseDefaults
     ? defaultValues.pageSize
-    : params?.pageSize ?? defaultValues.pageSize;
+    : (params?.pageSize ?? defaultValues.pageSize);
 
   const newObj: Record<string, unknown> = {};
   for (const key of Object.keys(defaultValues)) {
@@ -50,7 +50,7 @@ export const convertToSafeValues = <T extends PagesOrInfiniteOptions>(
       ? // @ts-ignore
         defaultValues[key]
       : // @ts-ignore
-        params?.[key] ?? defaultValues[key];
+        (params?.[key] ?? defaultValues[key]);
   }
 
   return {
