@@ -89,7 +89,7 @@ See [SolidStart middleware](https://docs.solidjs.com/solid-start/advanced/middle
 // middleware.ts
 
 import { createMiddleware } from '@solidjs/start/middleware';
-import { clerkMiddleware } from 'clerk-solidjs';
+import { clerkMiddleware } from 'clerk-solidjs/server';
 
 export default createMiddleware({
   onRequest: [
