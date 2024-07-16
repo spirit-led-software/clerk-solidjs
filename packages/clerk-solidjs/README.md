@@ -14,9 +14,10 @@ This is an unofficial community-led port of the [Clerk React SDK](https://www.np
 
 ### Maintained on GitHub
 
-[![GitHub stars](https://img.shields.io/github/stars/ian-pascoe/clerk-solidjs.svg?style=for-the-badge&logo=github)](https://github.com/ian-pascoe/clerk-solidjs/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/watchers)
 [![GitHub license](https://img.shields.io/github/license/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/blob/master/LICENSE)
-[![GitHub forks](https://img.shields.io/github/forks/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/network)
+[![GitHub forks](https://img.shields.io/github/forks/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/forks)
 [![GitHub issues](https://img.shields.io/github/issues/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/pulls)
 [![GitHub contributors](https://img.shields.io/github/contributors/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/graphs/contributors)
@@ -88,12 +89,12 @@ If using Vite, set `VITE_CLERK_PUBLISHABLE_KEY` to your Publishable key in your 
 ```tsx
 // App.tsx
 
-import { Router } from '@solidjs/router';
-import { FileRoutes } from '@solidjs/start/router';
-import { Suspense } from 'solid-js/web';
-import { ClerkProvider } from 'clerk-solidjs';
+import { Router } from "@solidjs/router";
+import { FileRoutes } from "@solidjs/start/router";
+import { Suspense } from "solid-js/web";
+import { ClerkProvider } from "clerk-solidjs";
 
-import './app.css';
+import "./app.css";
 
 export default function App() {
   return (
@@ -114,27 +115,32 @@ export default function App() {
 
 Once you have wrapped your app in `<ClerkProvider />` you can access hooks and components.
 
-```ts
+```tsx
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   UserButton,
-  useAuth
-} from 'clerk-solidjs';
+  useAuth,
+} from "clerk-solidjs";
 
 export default function MyComponent() {
   const { userId } = useAuth();
 
   return (
     <div>
-      <SignedIn>
-        <UserButton />
-        <p>Welcome, {userId}</p>
-      </SignedIn>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
+      <ClerkLoading>
+        <p>Loading...</p>
+      </ClerkLoading>
+      <ClerkLoaded>
+        <SignedIn>
+          <UserButton />
+          <p>Welcome, {userId}</p>
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+      </ClerkLoaded>
     </div>
   );
 }
@@ -155,7 +161,7 @@ import { clerkMiddleware } from 'clerk-solidjs/server';
 export default createMiddleware({
   onRequest: [
     clerkMiddleware({
-        publishableKey: process.env.VITE_CLERK_PUBLISHABLE_KEY
+        publishableKey: process.env.VITE_CLERK_PUBLISHABLE_KEY,
         secretKey: process.env.CLERK_SECRET_KEY
     }),
     // ... other middleware
@@ -165,13 +171,13 @@ export default createMiddleware({
 Then you can use the `auth()` helper function to access the auth object.
 
 ```ts
-import { auth } from 'clerk-solidjs/server';
+import { auth } from "clerk-solidjs/server";
 
 async function myProtectedServerFunction() {
-  'use server';
+  "use server";
   const { userId } = auth();
   if (!userId) {
-    throw new Error('You must be signed in');
+    throw new Error("You must be signed in");
   }
 
   // ...
@@ -182,9 +188,9 @@ If you would like the access the auth object from `event.locals` directly, you m
 
 ```ts
 /// <reference types="@solidjs/start/server" />
-import { AuthReturn } from 'clerk-solidjs/server';
+import { AuthReturn } from "clerk-solidjs/server";
 
-declare module '@solidjs/start/server' {
+declare module "@solidjs/start/server" {
   export interface RequestEventLocals {
     auth: AuthReturn;
   }
