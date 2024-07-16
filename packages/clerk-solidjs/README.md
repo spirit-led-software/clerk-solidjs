@@ -89,12 +89,12 @@ If using Vite, set `VITE_CLERK_PUBLISHABLE_KEY` to your Publishable key in your 
 ```tsx
 // App.tsx
 
-import { Router } from '@solidjs/router';
-import { FileRoutes } from '@solidjs/start/router';
-import { Suspense } from 'solid-js/web';
-import { ClerkProvider } from 'clerk-solidjs';
+import { Router } from "@solidjs/router";
+import { FileRoutes } from "@solidjs/start/router";
+import { Suspense } from "solid-js/web";
+import { ClerkProvider } from "clerk-solidjs";
 
-import './app.css';
+import "./app.css";
 
 export default function App() {
   return (
@@ -121,8 +121,8 @@ import {
   SignedOut,
   SignInButton,
   UserButton,
-  useAuth
-} from 'clerk-solidjs';
+  useAuth,
+} from "clerk-solidjs";
 
 export default function MyComponent() {
   const { userId } = useAuth();
@@ -171,13 +171,13 @@ export default createMiddleware({
 Then you can use the `auth()` helper function to access the auth object.
 
 ```ts
-import { auth } from 'clerk-solidjs/server';
+import { auth } from "clerk-solidjs/server";
 
 async function myProtectedServerFunction() {
-  'use server';
+  "use server";
   const { userId } = auth();
   if (!userId) {
-    throw new Error('You must be signed in');
+    throw new Error("You must be signed in");
   }
 
   // ...
@@ -188,9 +188,9 @@ If you would like the access the auth object from `event.locals` directly, you m
 
 ```ts
 /// <reference types="@solidjs/start/server" />
-import { AuthReturn } from 'clerk-solidjs/server';
+import { AuthReturn } from "clerk-solidjs/server";
 
-declare module '@solidjs/start/server' {
+declare module "@solidjs/start/server" {
   export interface RequestEventLocals {
     auth: AuthReturn;
   }
@@ -198,6 +198,12 @@ declare module '@solidjs/start/server' {
 
 export {};
 ```
+
+## Examples
+
+### Basic
+
+[Basic example](./examples/basic)
 
 ## Support
 
