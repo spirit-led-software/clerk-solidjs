@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.0.5
+
+### Patch Changes
+
+- [#26](https://github.com/ian-pascoe/clerk-solidjs/pull/26) [`85df583`](https://github.com/ian-pascoe/clerk-solidjs/commit/85df583095dea1af29c377dff4a33a860f1c3a9f) Thanks [@dependabot](https://github.com/apps/dependabot)! - Dependency update & add provenance to npm
+
 ## 1.0.4
 
 ### Patch Changes
