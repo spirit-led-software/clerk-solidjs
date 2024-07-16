@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.0
+
+### Minor Changes
+
+- 8a7e778: Change ownership to LLC
+
 ## 1.0.6
 
 ### Patch Changes
