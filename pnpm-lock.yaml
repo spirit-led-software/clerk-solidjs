@@ -25,7 +25,7 @@ importers:
         version: 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.3(@types/node@20.14.10)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2))
       clerk-solidjs:
         specifier: latest
-        version: 1.0.6(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)
+        version: 1.1.0(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
@@ -64,8 +64,8 @@ importers:
         specifier: ^1
         version: 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.3(@types/node@20.14.10)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2))
       '@tanstack/solid-query':
-        specifier: ^5.51.2
-        version: 5.51.2(solid-js@1.8.18)
+        specifier: ^5.51.3
+        version: 5.51.3(solid-js@1.8.18)
       solid-js:
         specifier: ^1.8
         version: 1.8.18
@@ -1178,8 +1178,16 @@ packages:
   '@tanstack/query-core@5.51.1':
     resolution: {integrity: sha512-fJBMQMpo8/KSsWW5ratJR5+IFr7YNJ3K2kfP9l5XObYHsgfVy1w3FJUWU4FT2fj7+JMaEg33zOcNDBo0LMwHnw==}
 
+  '@tanstack/query-core@5.51.3':
+    resolution: {integrity: sha512-xgncI1B0OPfSsYcdqKHUxb/OF370GrtK7BxswlllDfyTVw6r3+9VdugJWaVVQT2LiSbkIqEwUteFXR2I0m2iqw==}
+
   '@tanstack/solid-query@5.51.2':
     resolution: {integrity: sha512-mFW9u6MeH72OYRg2dr4lEBrWiqnhG3aTq7PkKBfZ7BDAvOfox/tqOt3TYOKQZja3Y8XZqz5pMumsKKofYHMIQA==}
+    peerDependencies:
+      solid-js: ^1.6.0
+
+  '@tanstack/solid-query@5.51.3':
+    resolution: {integrity: sha512-seqis9iS0k8eSj67+OAzP29+Q2iebO8CDtbdaJ9oTN7YrrX83lgHihq118q6qL/a+GxSYBOkEMfuNuAYXmLOoA==}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -1662,8 +1670,8 @@ packages:
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
 
-  clerk-solidjs@1.0.6:
-    resolution: {integrity: sha512-kbHxVT7iPa12HhWYZkaKLUjaL6IIFyShmgsVLJSotfxG8YogyAF6S2dIlxouWQne1tAEOND/nGldR8qq0OKdaw==}
+  clerk-solidjs@1.1.0:
+    resolution: {integrity: sha512-48vMZib6T5Zst6F++ZAggkuQO4YmKqAr9MhLfRSUnGu+PTPw7yAY38pJXZ1pLUaPV+bRkvLFywcoj+OJLoFfTw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@solidjs/start': ^1
@@ -5258,9 +5266,16 @@ snapshots:
 
   '@tanstack/query-core@5.51.1': {}
 
+  '@tanstack/query-core@5.51.3': {}
+
   '@tanstack/solid-query@5.51.2(solid-js@1.8.18)':
     dependencies:
       '@tanstack/query-core': 5.51.1
+      solid-js: 1.8.18
+
+  '@tanstack/solid-query@5.51.3(solid-js@1.8.18)':
+    dependencies:
+      '@tanstack/query-core': 5.51.3
       solid-js: 1.8.18
 
   '@testing-library/dom@10.3.1':
@@ -5845,7 +5860,7 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.0.6(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18):
+  clerk-solidjs@1.1.0(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.10)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18):
     dependencies:
       '@clerk/backend': 1.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
