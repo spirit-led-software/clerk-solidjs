@@ -1,6 +1,7 @@
 {
   "name": "clerk-solidjs",
   "description": "Clerk for SolidJS",
+  "private": false,
   "version": "1.0.4",
   "keywords": [
     "solidjs",
@@ -158,7 +159,7 @@
     "tsup": "^8.1.0",
     "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^7.16.0",
+    "typescript-eslint": "^7.16.1",
     "vite-plugin-solid": "^2.10.2",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.0.3"
@@ -171,6 +172,7 @@
     "node": ">=18"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }
