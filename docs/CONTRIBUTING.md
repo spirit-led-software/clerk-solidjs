@@ -1,7 +1,7 @@
 # Contributing guide
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
-Please note we have a [code of conduct](https://github.com/ian-pascoe/clerk-solidjs/blob/main/docs/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
+Please note we have a [code of conduct](https://github.com/spirit-led-software/clerk-solidjs/blob/main/docs/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
 <details open="open">
 <summary><strong>Table of contents</strong></summary>
@@ -46,7 +46,7 @@ To set up your development environment, please follow these steps:
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/ian-pascoe/clerk-solidjs
+   git clone https://github.com/spirit-led-software/clerk-solidjs
    ```
 
 1. Install the dependencies. We're using pnpm, so you **should always run `pnpm install`**, as it will install all of the dependencies:
@@ -87,14 +87,14 @@ If your change can't only be tested by unit tests, you should add/edit an integr
 
 ## Opening a Pull Request
 
-1. Search our repository for open or closed [Pull Requests](https://github.com/ian-pascoe/clerk-solidjs/pulls) that relate to your submission. You don't want to duplicate effort.
+1. Search our repository for open or closed [Pull Requests](https://github.com/spirit-led-software/clerk-solidjs/pulls) that relate to your submission. You don't want to duplicate effort.
 1. Fork the project
 1. Create your feature branch (`git checkout -b feat/amazing_feature`)
 1. It's highly recommended to [write tests](#writing-tests) to ensure your change works and will continue to work in the future
 1. If required, create a `changeset` that describes your changes (`pnpm run changeset`). In cases where a changeset is not required, an empty changeset can be created instead (`pnpm run changeset:empty`) - an empty changeset will not generate a changelog entry for the change, so please use it as an escape hatch or for internal refactors only.
 1. Commit your changes (`git commit -m 'feat: Add amazing_feature'`)
 1. Push to the branch (`git push origin feat/amazing_feature`)
-1. [Open a Pull Request](https://github.com/ian-pascoe/clerk-solidjs/compare?expand=1). Make sure the description includes enough information for the reviewer to understand what the PR is about.
+1. [Open a Pull Request](https://github.com/spirit-led-software/clerk-solidjs/compare?expand=1). Make sure the description includes enough information for the reviewer to understand what the PR is about.
 1. Follow the instructions of the pull request template
 
 ### Changesets
@@ -110,7 +110,7 @@ For example:
 
 ```markdown
 ---
-'clerk-solidjs': minor
+"clerk-solidjs": minor
 ---
 
 Description goes here
@@ -175,7 +175,7 @@ All of these are used to describe changes in the codebase, but they have differe
 
 ## Issues and feature requests
 
-You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/ian-pascoe/clerk-solidjs/issues). Before you create an issue, make sure to search the issue archive - your issue may have already been addressed! Please ensure that you have read and followed the bug report template, otherwise we will have to close the issue. You can submit a feature request by visiting [feedback.clerk.com](https://feedback.clerk.com).
+You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/spirit-led-software/clerk-solidjs/issues). Before you create an issue, make sure to search the issue archive - your issue may have already been addressed! Please ensure that you have read and followed the bug report template, otherwise we will have to close the issue. You can submit a feature request by visiting [feedback.clerk.com](https://feedback.clerk.com).
 
 Issues that have the label `needs-triage` have been seen by our team and are queued for triage internally. Issues that have the label `prioritized` have been discussed and are either in our backlog or being worked on actively. We do our best to prioritize work across a wide variety of sources, only one of which is github issues. While we understand that it can be frustrating if it takes a while for a patch to land, we ask for your understanding in that we have quite a lot of things that need to be worked on at any given time and are still a small team. And remember, the best way to get something fixed in an open source library is to contribute the fix yourself!
 
@@ -189,7 +189,7 @@ If you want to add or edit localizations (e.g. how a button text is translated t
 
 _Note: Only maintainers can publish packages._
 
-For more information visit [publish documentation](https://github.com/ian-pascoe/clerk-solidjs/blob/main/docs/PUBLISH.md).
+For more information visit [publish documentation](https://github.com/spirit-led-software/clerk-solidjs/blob/main/docs/PUBLISH.md).
 
 ## License
 
