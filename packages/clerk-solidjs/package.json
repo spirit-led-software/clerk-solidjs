@@ -1,6 +1,7 @@
 {
   "name": "clerk-solidjs",
   "description": "Clerk for SolidJS",
+  "private": false,
   "version": "1.0.4",
   "keywords": [
     "solidjs",
@@ -171,6 +172,7 @@
     "node": ">=18"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }
