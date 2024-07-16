@@ -1,4 +1,4 @@
-import { Accessor, Component, createEffect } from 'solid-js';
+import { Accessor, Component, createEffect, onCleanup } from 'solid-js';
 import { errorThrower } from '../errors/error-thrower';
 
 const counts = new Map<string, number>();
@@ -13,9 +13,9 @@ export function useMaxAllowedInstancesGuard(
     }
     counts.set(props().name, count + 1);
 
-    return () => {
+    onCleanup(() => {
       counts.set(props().name, (counts.get(props().name) || 1) - 1);
-    };
+    });
   });
 }
 

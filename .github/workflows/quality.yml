@@ -8,7 +8,7 @@ on:
 
 jobs:
   prettier:
-    name: "Prettier"
+    name: Prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
         run: pnpm run format:check
 
   eslint:
-    name: "ESLint"
+    name: ESLint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
         run: pnpm run lint
 
   types:
-    name: "TypeScript"
+    name: TypeScript
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
