@@ -1,6 +1,5 @@
 name: Feature Request
 description: Propose a new feature for the SDK.
-labels: []
 body:
   - type: markdown
     attributes:

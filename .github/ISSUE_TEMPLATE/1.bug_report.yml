@@ -1,6 +1,5 @@
 name: Bug report
 description: Create a bug report for the SDK.
-labels: []
 body:
   - type: markdown
     attributes:
