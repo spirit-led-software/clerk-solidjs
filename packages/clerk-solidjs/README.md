@@ -14,14 +14,14 @@ This is an unofficial community-led port of the [Clerk React SDK](https://www.np
 
 ### Maintained on GitHub
 
-[![GitHub stars](https://img.shields.io/github/stars/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/stargazers)
-[![GitHub watchers](https://img.shields.io/github/watchers/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/watchers)
-[![GitHub license](https://img.shields.io/github/license/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/blob/master/LICENSE)
-[![GitHub forks](https://img.shields.io/github/forks/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/forks)
-[![GitHub issues](https://img.shields.io/github/issues/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)](https://github.com/ian-pascoe/clerk-solidjs/graphs/contributors)
-![GitHub last commit](https://img.shields.io/github/last-commit/ian-pascoe/clerk-solidjs.svg?style=for-the-badge)
+[![GitHub stars](https://img.shields.io/github/stars/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)](https://github.com/spirit-led-software/clerk-solidjs/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)](https://github.com/spirit-led-software/clerk-solidjs/watchers)
+[![GitHub license](https://img.shields.io/github/license/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)](https://github.com/spirit-led-software/clerk-solidjs/blob/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)](https://github.com/spirit-led-software/clerk-solidjs/forks)
+[![GitHub issues](https://img.shields.io/github/issues/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)](https://github.com/spirit-led-software/clerk-solidjs/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)](https://github.com/spirit-led-software/clerk-solidjs/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)](https://github.com/spirit-led-software/clerk-solidjs/graphs/contributors)
+![GitHub last commit](https://img.shields.io/github/last-commit/spirit-led-software/clerk-solidjs.svg?style=for-the-badge)
 
 [![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-yellow.svg?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
 [![turborepo](https://img.shields.io/badge/built%20with-turborepo-cc00ff.svg?style=for-the-badge&logo=turborepo)](https://turborepo.org/)
@@ -204,13 +204,13 @@ export {};
 You can get in touch in any of the following ways:
 
 - Join the Clerk official community [Discord server](https://clerk.com/discord)
-- Create a [GitHub Issue](https://github.com/ian-pascoe/clerk-solidjs/issues)
-- Create a [GitHub Discussion](https://github.com/ian-pascoe/clerk-solidjs/discussions)
+- Create a [GitHub Issue](https://github.com/spirit-led-software/clerk-solidjs/issues)
+- Create a [GitHub Discussion](https://github.com/spirit-led-software/clerk-solidjs/discussions)
 - Contact options listed on [the Clerk Support page](https://clerk.com/support?utm_source=github&utm_medium=clerk_solidjs)
 
 ## Contributing
 
-We're open to all community contributions! If you'd like to contribute in any way, please read [our contribution guidelines](https://github.com/ian-pascoe/clerk-solidjs/blob/master/docs/CONTRIBUTING.md).
+We're open to all community contributions! If you'd like to contribute in any way, please read [our contribution guidelines](https://github.com/spirit-led-software/clerk-solidjs/blob/master/docs/CONTRIBUTING.md).
 
 ## Security
 
@@ -218,10 +218,10 @@ We're open to all community contributions! If you'd like to contribute in any wa
 
 `clerk-solidjs` is provided **"as is"** without any **warranty**. Use at your own risk.
 
-_For more information and to report security issues, please refer to our [security documentation](https://github.com/ian-pascoe/clerk-solidjs/blob/master/docs/SECURITY.md)._
+_For more information and to report security issues, please refer to our [security documentation](https://github.com/spirit-led-software/clerk-solidjs/blob/master/docs/SECURITY.md)._
 
 ## License
 
 This project is licensed under the **MIT license**.
 
-See [LICENSE](https://github.com/ian-pascoe/clerk-solidjs/blob/master/LICENSE) for more information.
+See [LICENSE](https://github.com/spirit-led-software/clerk-solidjs/blob/master/LICENSE) for more information.
