@@ -19,8 +19,8 @@
   "author": "Ian Pascoe",
   "license": "MIT",
   "devDependencies": {
-    "turbo": "^2.0.6",
-    "@changesets/cli": "^2.27.7"
+    "@changesets/cli": "^2.27.7",
+    "turbo": "^2.0.6"
   },
   "packageManager": "pnpm@9.4.0"
 }

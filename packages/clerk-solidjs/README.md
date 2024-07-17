@@ -4,7 +4,7 @@
 
 ---
 
-This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com) and [SolidStart](https://start.solidjs.com).
+_This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com) and [SolidStart](https://start.solidjs.com)._
 
 [![Clerk documentation](https://img.shields.io/badge/documentation-clerk-lavender.svg?style=for-the-badge&logo=clerk)](https://clerk.com/docs?utm_source=github&utm_medium=clerk_solidjs)
 
@@ -40,15 +40,21 @@ Clerk is the easiest way to add authentication and user management to your appli
 
 This project has near-complete feature parity with @clerk/clerk-react:  
 &#10004; SSR support  
-&#10004; Headless components  
-&#10004; Hooks
+&#10004; [Components](https://clerk.com/docs/components/overview)  
+&#10004; [Hooks](https://clerk.com/docs/references/react/use-user)\*
 
 Missing features for SolidJS:  
 &#10006; [Custom pages for UI components](https://clerk.com/docs/components/customization/user-profile)
 
 Plus additional features for SolidStart:  
-&#10004; Middleware  
-&#10004; Server-side `auth()` helper
+&#10004; [Middleware](#middleware)  
+&#10004; [Server-side `auth()` helper](#the-auth-helper)
+
+\* = Hooks with parameters have been altered to use the `Accessor<Params>` type for reactivity. For example:
+
+```ts
+useOrganizationList(() => ({ infinite: true }));
+```
 
 ## Getting Started
 
@@ -170,7 +176,9 @@ export default createMiddleware({
 });
 ```
 
-Then you can use the `auth()` helper function to access the auth object.
+### The `auth()` Helper
+
+Once your have the `clerkMiddleware` middleware enabled, you can use the `auth()` helper to access the `AuthReturn` object.
 
 ```ts
 import { auth } from 'clerk-solidjs/server';
@@ -205,7 +213,7 @@ export {};
 
 ### Basic
 
-[Basic example](./examples/basic)
+[Basic example](/examples/basic)
 
 ## Support
 
