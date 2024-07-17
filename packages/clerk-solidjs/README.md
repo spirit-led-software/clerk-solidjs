@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![clerk-solidjs]("/assets/images/icon.svg")
+![clerk-solidjs]("./assets/images/icon.svg")
 
 This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com) and [SolidStart](https://start.solidjs.com).
 
