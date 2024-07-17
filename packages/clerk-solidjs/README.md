@@ -2,6 +2,8 @@
 
 <img src="https://raw.githubusercontent.com/spirit-led-software/clerk-solidjs/master/assets/images/icon.svg" alt="clerk-solidjs">
 
+---
+
 This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com) and [SolidStart](https://start.solidjs.com).
 
 [![Clerk documentation](https://img.shields.io/badge/documentation-clerk-lavender.svg?style=for-the-badge&logo=clerk)](https://clerk.com/docs?utm_source=github&utm_medium=clerk_solidjs)
