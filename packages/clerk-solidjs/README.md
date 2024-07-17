@@ -1,5 +1,3 @@
-![Banner](https://assets.solidjs.com/banner?project=clerk-solidjs&background=tiles)
-
 <div align="center">
 
 <img src="https://raw.githubusercontent.com/spirit-led-software/clerk-solidjs/master/assets/images/icon.svg" alt="clerk-solidjs">
