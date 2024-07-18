@@ -12,8 +12,8 @@ importers:
         specifier: ^2.27.7
         version: 2.27.7
       turbo:
-        specifier: ^2.0.6
-        version: 2.0.6
+        specifier: ^2.0.7
+        version: 2.0.7
 
   examples/basic:
     dependencies:
@@ -25,7 +25,7 @@ importers:
         version: 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.3(@types/node@20.14.11)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
       clerk-solidjs:
         specifier: latest
-        version: 1.1.2(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)
+        version: 1.1.3(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
@@ -1299,16 +1299,8 @@ packages:
       '@solidjs/router':
         optional: true
 
-  '@tanstack/query-core@5.51.3':
-    resolution: {integrity: sha512-xgncI1B0OPfSsYcdqKHUxb/OF370GrtK7BxswlllDfyTVw6r3+9VdugJWaVVQT2LiSbkIqEwUteFXR2I0m2iqw==}
-
   '@tanstack/query-core@5.51.9':
     resolution: {integrity: sha512-HsAwaY5J19MD18ykZDS3aVVh+bAt0i7m6uQlFC2b77DLV9djo+xEN7MWQAQQTR8IM+7r/zbozTQ7P0xr0bHuew==}
-
-  '@tanstack/solid-query@5.51.3':
-    resolution: {integrity: sha512-seqis9iS0k8eSj67+OAzP29+Q2iebO8CDtbdaJ9oTN7YrrX83lgHihq118q6qL/a+GxSYBOkEMfuNuAYXmLOoA==}
-    peerDependencies:
-      solid-js: ^1.6.0
 
   '@tanstack/solid-query@5.51.9':
     resolution: {integrity: sha512-1HAuqPfrXyXXWZ8ZmgJ7vIP+Px3ri96EAwNyWiHuMcTwgHzlwz+XiopKiQpuXlI009cTBbeituF+pbZYEYNkhA==}
@@ -1794,8 +1786,8 @@ packages:
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
 
-  clerk-solidjs@1.1.2:
-    resolution: {integrity: sha512-4M2jsasTXBLKtf52xVh5oS8TO4T8GEzGIfVlqcJJc/etIyk2zZEJlJeKMMfm3ySFif195lwG2M/lsAL1aOC5KQ==}
+  clerk-solidjs@1.1.3:
+    resolution: {integrity: sha512-I16r82kZsGH7nlE6qxmWN9vdekeMsEFSG+6YFh/Q3CYuTPHdi9al9iyuINnLyd+BQt+GMF0OIWazFXE1juICkw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@solidjs/start': ^1
@@ -3549,9 +3541,11 @@ packages:
 
   shikiji-core@0.9.19:
     resolution: {integrity: sha512-AFJu/vcNT21t0e6YrfadZ+9q86gvPum6iywRyt1OtIPjPFe25RQnYJyxHQPMLKCCWA992TPxmEmbNcOZCAJclw==}
+    deprecated: Shikiji is merged back to Shiki v1.0, please migrate over to get the latest updates
 
   shikiji@0.9.19:
     resolution: {integrity: sha512-Kw2NHWktdcdypCj1GkKpXH4o6Vxz8B8TykPlPuLHOGSV8VkhoCLcFOH4k19K4LXAQYRQmxg+0X/eM+m2sLhAkg==}
+    deprecated: Shikiji is merged back to Shiki v1.0, please migrate over to get the latest updates
 
   siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
@@ -3887,38 +3881,38 @@ packages:
       typescript:
         optional: true
 
-  turbo-darwin-64@2.0.6:
-    resolution: {integrity: sha512-XpgBwWj3Ggmz/gQVqXdMKXHC1iFPMDiuwugLwSzE7Ih0O13JuNtYZKhQnopvbDQnFQCeRq2Vsm5OTWabg/oB/g==}
+  turbo-darwin-64@2.0.7:
+    resolution: {integrity: sha512-J1RBvQGqKeUwLJrZbfrm4tHshagdMeGAwd7rpLpfUrw0PNmGfcBazJf6dIGXG59/GHzJmS0/eAZ8qDchfVbIFA==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.0.6:
-    resolution: {integrity: sha512-RfeZYXIAkiA21E8lsvfptGTqz/256YD+eI1x37fedfvnHFWuIMFZGAOwJxtZc6QasQunDZ9TRRREbJNI68tkIw==}
+  turbo-darwin-arm64@2.0.7:
+    resolution: {integrity: sha512-h1JK8uuEjoHx1SvvTZiottj+4kDmiv+hivnLUzNwO75qKblMsd38IsFB0J2sMRz7JacFlf+3ry8SItznBW67Xw==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.0.6:
-    resolution: {integrity: sha512-92UDa0xNQQbx0HdSp9ag3YSS3xPdavhc7q9q9mxIAcqyjjD6VElA4Y85m4F/DDGE5SolCrvBz2sQhVmkOd6Caw==}
+  turbo-linux-64@2.0.7:
+    resolution: {integrity: sha512-dsr7GFeHAYVMnXWDDjhpsAQetejU4OlkNBRA5hfmnIcl2sSyOYa3EvoeJ6j5z5vTNIJ9VO4I1h0jK3lTjEoonA==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.0.6:
-    resolution: {integrity: sha512-eQKu6utCVUkIH2kqOzD8OS6E0ba6COjWm6PRDTNCHQRljZW503ycaTUIdMOiJrVg1MkEjDyOReUg8s8D18aJ4Q==}
+  turbo-linux-arm64@2.0.7:
+    resolution: {integrity: sha512-bJbwXvyX1XPzY1jHgkqggls/L4yFyHVK8GGACF3kcg6x7lYV2SXkUYRyOC3WqzW7euqa9Zw/32jrIPP4Qy31Vw==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.0.6:
-    resolution: {integrity: sha512-+9u4EPrpoeHYCQ46dRcou9kbkSoelhOelHNcbs2d86D6ruYD/oIAHK9qgYK8LeARRz0jxhZIA/dWYdYsxJJWkw==}
+  turbo-windows-64@2.0.7:
+    resolution: {integrity: sha512-aBH+5A7IN957MqXMrw8xN0CWtH/fPFL+xTlloO6074Eaa8WfnctSAnaSujm6f4xF2T8lFx+ZprBvnO9oKvLQQQ==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.0.6:
-    resolution: {integrity: sha512-rdrKL+p+EjtdDVg0wQ/7yTbzkIYrnb0Pw4IKcjsy3M0RqUM9UcEi67b94XOAyTa5a0GqJL1+tUj2ebsFGPgZbg==}
+  turbo-windows-arm64@2.0.7:
+    resolution: {integrity: sha512-ButUCpO5nTi+jyTSIY2mQ9dVz+mCGxJ6sHyn0xGlNoJWdisKXb0BtWCLAjM26gg/yp9Kt1MBowMQyYVruPV0Qw==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.0.6:
-    resolution: {integrity: sha512-/Ftmxd5Mq//a9yMonvmwENNUN65jOVTwhhBPQjEtNZutYT9YKyzydFGLyVM1nzhpLWahQSMamRc/RDBv5EapzA==}
+  turbo@2.0.7:
+    resolution: {integrity: sha512-76iNWZpmKAKjj+yL0Wtcu2LpDIM5Nz7JS3fHOZPYS0AKuC2boJ24276VAiK4PKwbpBB//TYKDpSLuQ6cfR49pg==}
     hasBin: true
 
   type-check@0.4.0:
@@ -5464,14 +5458,7 @@ snapshots:
     optionalDependencies:
       '@solidjs/router': 0.14.1(solid-js@1.8.18)
 
-  '@tanstack/query-core@5.51.3': {}
-
   '@tanstack/query-core@5.51.9': {}
-
-  '@tanstack/solid-query@5.51.3(solid-js@1.8.18)':
-    dependencies:
-      '@tanstack/query-core': 5.51.3
-      solid-js: 1.8.18
 
   '@tanstack/solid-query@5.51.9(solid-js@1.8.18)':
     dependencies:
@@ -6060,7 +6047,7 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.1.2(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18):
+  clerk-solidjs@1.1.3(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18):
     dependencies:
       '@clerk/backend': 1.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.3.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6068,7 +6055,7 @@ snapshots:
       '@solid-primitives/destructure': 0.1.17(solid-js@1.8.18)
       '@solid-primitives/memo': 1.3.9(solid-js@1.8.18)
       '@solidjs/start': 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.3(@types/node@20.14.11)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
-      '@tanstack/solid-query': 5.51.3(solid-js@1.8.18)
+      '@tanstack/solid-query': 5.51.9(solid-js@1.8.18)
       solid-js: 1.8.18
     transitivePeerDependencies:
       - react
@@ -8241,32 +8228,32 @@ snapshots:
       - tsx
       - yaml
 
-  turbo-darwin-64@2.0.6:
+  turbo-darwin-64@2.0.7:
     optional: true
 
-  turbo-darwin-arm64@2.0.6:
+  turbo-darwin-arm64@2.0.7:
     optional: true
 
-  turbo-linux-64@2.0.6:
+  turbo-linux-64@2.0.7:
     optional: true
 
-  turbo-linux-arm64@2.0.6:
+  turbo-linux-arm64@2.0.7:
     optional: true
 
-  turbo-windows-64@2.0.6:
+  turbo-windows-64@2.0.7:
     optional: true
 
-  turbo-windows-arm64@2.0.6:
+  turbo-windows-arm64@2.0.7:
     optional: true
 
-  turbo@2.0.6:
+  turbo@2.0.7:
     optionalDependencies:
-      turbo-darwin-64: 2.0.6
-      turbo-darwin-arm64: 2.0.6
-      turbo-linux-64: 2.0.6
-      turbo-linux-arm64: 2.0.6
-      turbo-windows-64: 2.0.6
-      turbo-windows-arm64: 2.0.6
+      turbo-darwin-64: 2.0.7
+      turbo-darwin-arm64: 2.0.7
+      turbo-linux-64: 2.0.7
+      turbo-linux-arm64: 2.0.7
+      turbo-windows-64: 2.0.7
+      turbo-windows-arm64: 2.0.7
 
   type-check@0.4.0:
     dependencies:
