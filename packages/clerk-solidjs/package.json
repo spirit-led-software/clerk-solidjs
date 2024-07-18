@@ -2,7 +2,7 @@
   "name": "clerk-solidjs",
   "description": "Clerk for SolidJS",
   "private": false,
-  "version": "1.1.2",
+  "version": "1.1.3",
   "keywords": [
     "solidjs",
     "clerk",
