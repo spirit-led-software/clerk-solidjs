@@ -21,11 +21,11 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1(solid-js@1.8.18)
       '@solidjs/start':
-        specifier: ^1.0.4
-        version: 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.3(@types/node@20.14.11)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
+        specifier: ^1.0.5
+        version: 1.0.5(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
       clerk-solidjs:
         specifier: latest
-        version: 1.1.3(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)
+        version: 1.1.3(@solidjs/start@1.0.5(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
@@ -1289,6 +1289,9 @@ packages:
   '@solidjs/start@1.0.4':
     resolution: {integrity: sha512-r+2gENJ+nIdbLR2QcFxw92PBYLBr8a7DBHc1Wy2/eAbW9uIddPz/ZHyHsWjFewrADcvfjLGG+bBGqM/vCTrpAw==}
 
+  '@solidjs/start@1.0.5':
+    resolution: {integrity: sha512-tt1JCKBOoBz2owrSQIA5LCbgsolXcj/p43xMChMVt6MFF2MP4xwTmRZHuGCZ3wXODc11Ol8WBrPmn5argSd/LA==}
+
   '@solidjs/testing-library@0.8.8':
     resolution: {integrity: sha512-47J9Aw+iG45Fs5Kxu/IJmkaaucpF7qhDazW+iXeNssAYI0FH+4MeM/SfYRhPbIMH/hBpMh/XjbK1Wpyu9PcSwg==}
     engines: {node: '>= 14'}
@@ -1452,15 +1455,30 @@ packages:
     peerDependencies:
       vinxi: ^0.3.10
 
+  '@vinxi/plugin-directives@0.4.1':
+    resolution: {integrity: sha512-NsHCDyqU00i4RKGBoNNcBuONEirg/XfGgPCLFK1CZw3AYBE19haFSgvuo21Bx+BFGcwdRU3BRtaBMvwjLrUCnw==}
+    peerDependencies:
+      vinxi: ^0.4.0
+
   '@vinxi/server-components@0.3.3':
     resolution: {integrity: sha512-xaW92nj9HUMLyswPcCmsIXOsS3TJll0m9u3WEjWjLrtZWheHggina6+kTCSeltp/Qe8WlUfNU5G02Xy8L4xQxA==}
     peerDependencies:
       vinxi: ^0.3.10
 
+  '@vinxi/server-components@0.4.1':
+    resolution: {integrity: sha512-rMS+RCGr1tujO1xWgILMLpOWIyw2OwDO46EtkuhTfqaVgLLt/w7+hxzOnh4s3O9sXoKKuUswtj9/MpQQkFoMOQ==}
+    peerDependencies:
+      vinxi: ^0.4.0
+
   '@vinxi/server-functions@0.3.3':
     resolution: {integrity: sha512-yUrHov1gc+NM/YCEOekM1DCdu2tNSH1/j0mZPyIOhPZH/yAZKWA+t3dP79Q3g4QLDHchf6xf8z9u1INEADTlXw==}
     peerDependencies:
       vinxi: ^0.3.12
+
+  '@vinxi/server-functions@0.4.1':
+    resolution: {integrity: sha512-dj5v9V+DurXK8w/nBDgJof+UsK3bkcgk6K/xBUg+WVmn7sUrLTurDTGRkCaknC6tQCyadNzj4FWGGc+qlrWf9g==}
+    peerDependencies:
+      vinxi: ^0.4.0
 
   '@vitest/expect@2.0.3':
     resolution: {integrity: sha512-X6AepoOYePM0lDNUPsGXTxgXZAl3EXd0GYe/MZyVE4HzkUqyUVC6S3PrY5mClDJ6/7/7vALLMV3+xD/Ko60Hqg==}
@@ -5451,6 +5469,32 @@ snapshots:
       - vinxi
       - vite
 
+  '@solidjs/start@1.0.5(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))':
+    dependencies:
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))
+      '@vinxi/server-components': 0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))
+      '@vinxi/server-functions': 0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))
+      defu: 6.1.4
+      error-stack-parser: 2.1.4
+      glob: 10.4.5
+      html-to-image: 1.11.11
+      radix3: 1.1.2
+      seroval: 1.0.7
+      seroval-plugins: 1.0.7(seroval@1.0.7)
+      shikiji: 0.9.19
+      source-map-js: 1.2.0
+      terracotta: 1.0.5(solid-js@1.8.18)
+      vite-plugin-inspect: 0.7.42(rollup@4.18.1)(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
+      vite-plugin-solid: 2.10.2(@testing-library/jest-dom@6.4.6(vitest@2.0.3(@types/node@20.14.11)(jsdom@24.1.0)(terser@5.31.2)))(solid-js@1.8.18)(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
+    transitivePeerDependencies:
+      - '@nuxt/kit'
+      - '@testing-library/jest-dom'
+      - rollup
+      - solid-js
+      - supports-color
+      - vinxi
+      - vite
+
   '@solidjs/testing-library@0.8.8(@solidjs/router@0.14.1(solid-js@1.8.18))(solid-js@1.8.18)':
     dependencies:
       '@testing-library/dom': 10.3.1
@@ -5674,6 +5718,19 @@ snapshots:
       tslib: 2.6.3
       vinxi: 0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2)
 
+  '@vinxi/plugin-directives@0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))':
+    dependencies:
+      '@babel/parser': 7.24.8
+      acorn: 8.12.1
+      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn-loose: 8.4.0
+      acorn-typescript: 1.4.13(acorn@8.12.1)
+      astring: 1.8.6
+      magicast: 0.2.11
+      recast: 0.23.9
+      tslib: 2.6.3
+      vinxi: 0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2)
+
   '@vinxi/server-components@0.3.3(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))':
     dependencies:
       '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))
@@ -5685,9 +5742,31 @@ snapshots:
       recast: 0.23.9
       vinxi: 0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2)
 
+  '@vinxi/server-components@0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))':
+    dependencies:
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))
+      acorn: 8.12.1
+      acorn-loose: 8.4.0
+      acorn-typescript: 1.4.13(acorn@8.12.1)
+      astring: 1.8.6
+      magicast: 0.2.11
+      recast: 0.23.9
+      vinxi: 0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2)
+
   '@vinxi/server-functions@0.3.3(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))':
     dependencies:
       '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))
+      acorn: 8.12.1
+      acorn-loose: 8.4.0
+      acorn-typescript: 1.4.13(acorn@8.12.1)
+      astring: 1.8.6
+      magicast: 0.2.11
+      recast: 0.23.9
+      vinxi: 0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2)
+
+  '@vinxi/server-functions@0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))':
+    dependencies:
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
@@ -6047,14 +6126,14 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.1.3(@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18):
+  clerk-solidjs@1.1.3(@solidjs/start@1.0.5(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18):
     dependencies:
       '@clerk/backend': 1.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.3.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@solid-primitives/context': 0.2.3(solid-js@1.8.18)
       '@solid-primitives/destructure': 0.1.17(solid-js@1.8.18)
       '@solid-primitives/memo': 1.3.9(solid-js@1.8.18)
-      '@solidjs/start': 1.0.4(@testing-library/jest-dom@6.4.6(vitest@2.0.3(@types/node@20.14.11)(jsdom@24.1.0)(terser@5.31.2)))(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
+      '@solidjs/start': 1.0.5(@testing-library/jest-dom@6.4.6)(rollup@4.18.1)(solid-js@1.8.18)(vinxi@0.3.14(@types/node@20.14.11)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
       '@tanstack/solid-query': 5.51.9(solid-js@1.8.18)
       solid-js: 1.8.18
     transitivePeerDependencies:
