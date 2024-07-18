@@ -74,8 +74,8 @@ importers:
         specifier: ^5.9.0
         version: 5.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/localizations':
-        specifier: ^2.4.6
-        version: 2.4.6
+        specifier: ^2.4.8
+        version: 2.4.8
       '@clerk/themes':
         specifier: ^2.1.12
         version: 2.1.12
@@ -379,10 +379,6 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-  '@clerk/localizations@2.4.6':
-    resolution: {integrity: sha512-uRu8RJb7zBlmr61jDhnXwB+mZLYpjctdxeg2qD5jjFzWKIdF2xqdyzKd1jCF25aBHAzT9hvi+C/++rZuKcDklA==}
-    engines: {node: '>=18.17.0'}
-
   '@clerk/localizations@2.4.8':
     resolution: {integrity: sha512-8ww3OMuqJjCHW6ocJqCoS4kJKpZlsCAfbIe/Rmzj8Vj8EkmtPHMj7iUsY6bUSgNocmuzyOKh98T25hs8XUZI3Q==}
     engines: {node: '>=18.17.0'}
@@ -401,10 +397,6 @@ packages:
 
   '@clerk/themes@2.1.12':
     resolution: {integrity: sha512-9YxHyfWKiuopwQQp4APl8S8JY5qowQBbVOTJgw0VP3XwCc22UrQACo+hPCOcQA0j7xXLI2XfafPaS+CWRqOHlw==}
-    engines: {node: '>=18.17.0'}
-
-  '@clerk/types@4.6.1':
-    resolution: {integrity: sha512-QFeNKPYDmTJ88l5QYG0SPwbABk42wRMalW3M/wAtr+wnQxBCXyX2XRZe9h4g2rH1VF+wG4Xe56abeeD+xE4iEw==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.8.0':
@@ -4759,10 +4751,6 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@clerk/localizations@2.4.6':
-    dependencies:
-      '@clerk/types': 4.6.1
-
   '@clerk/localizations@2.4.8':
     dependencies:
       '@clerk/types': 4.8.0
@@ -4782,10 +4770,6 @@ snapshots:
     dependencies:
       '@clerk/types': 4.8.0
       tslib: 2.4.1
-
-  '@clerk/types@4.6.1':
-    dependencies:
-      csstype: 3.1.1
 
   '@clerk/types@4.8.0':
     dependencies:
