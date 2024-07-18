@@ -53,7 +53,7 @@ Plus additional features for SolidStart:
 \* = Hooks with parameters have been altered to use the `Accessor<Params>` type for reactivity. For example:
 
 ```ts
-useOrganizationList(() => ({ infinite: true }));
+useOrganizationList(() => ({ userMemberships: { infinite: true } }));
 ```
 
 ## Getting Started
