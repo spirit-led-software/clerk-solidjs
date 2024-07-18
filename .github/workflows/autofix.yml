@@ -13,6 +13,8 @@ jobs:
   autofix:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: CI setup
         uses: ./.github/actions/ci-setup
       - name: Run format
