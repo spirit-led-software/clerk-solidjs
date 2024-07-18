@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.4
+
+### Patch Changes
+
+- fb0fce1: Dependency updates
+
 ## 1.1.3
 
 ### Patch Changes
