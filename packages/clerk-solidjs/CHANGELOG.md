@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.5
+
+### Patch Changes
+
+- 2df1e5d: Dependency updates
+
 ## 1.1.4
 
 ### Patch Changes
