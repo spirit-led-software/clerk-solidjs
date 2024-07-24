@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.6
+
+### Patch Changes
+
+- 9e5638d: Updates @clerk/backend from 1.3.2 to 1.4.1. Updates @clerk/shared from 2.3.3 to 2.4.0
+
 ## 1.1.5
 
 ### Patch Changes
