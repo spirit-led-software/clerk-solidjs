@@ -19,16 +19,16 @@ importers:
     dependencies:
       '@solidjs/router':
         specifier: ^0.14.1
-        version: 0.14.1(solid-js@1.8.18)
+        version: 0.14.1(solid-js@1.8.19)
       '@solidjs/start':
         specifier: ^1.0.6
-        version: 1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.18)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
+        version: 1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
       clerk-solidjs:
         specifier: latest
-        version: 1.1.6(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.18)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18)
+        version: 1.1.6(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19)
       solid-js:
-        specifier: ^1.8.18
-        version: 1.8.18
+        specifier: ^1.8.19
+        version: 1.8.19
     devDependencies:
       autoprefixer:
         specifier: ^10.4.19
@@ -46,11 +46,11 @@ importers:
   packages/clerk-solidjs:
     dependencies:
       '@clerk/backend':
-        specifier: ^1.4.1
-        version: 1.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.4.3
+        version: 1.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared':
-        specifier: ^2.4.0
-        version: 2.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.4.1
+        version: 2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@solid-primitives/context':
         specifier: ^0.2.3
         version: 0.2.3(solid-js@1.8.18)
@@ -64,8 +64,8 @@ importers:
         specifier: ^1
         version: 1.0.4(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.18)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
       '@tanstack/solid-query':
-        specifier: ^5.51.9
-        version: 5.51.9(solid-js@1.8.18)
+        specifier: ^5.51.15
+        version: 5.51.15(solid-js@1.8.18)
       solid-js:
         specifier: ^1.8
         version: 1.8.18
@@ -370,6 +370,10 @@ packages:
 
   '@clerk/backend@1.4.1':
     resolution: {integrity: sha512-cERP/71pIGZvA7WtJaMCrTf33pu4H6NI89LJXXBcUnMTj8YJy7XAGURKi8jzFTUAeMiQXjV7NESzkEzRWtgCGw==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/backend@1.4.3':
+    resolution: {integrity: sha512-wj4qsZO6iNiY9vF7vLH5v1f3oLh1yCLgFa0PedLzJAIJgepZl23C1/ubrRm7vyewjQEMHZwod4816mZlHDfoqA==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/clerk-js@5.10.2':
@@ -1318,8 +1322,16 @@ packages:
       '@solidjs/router':
         optional: true
 
+  '@tanstack/query-core@5.51.15':
+    resolution: {integrity: sha512-xyobHDJ0yhPE3+UkSQ2/4X1fLSg7ICJI5J1JyU9yf7F3deQfEwSImCDrB1WSRrauJkMtXW7YIEcC0oA6ZZWt5A==}
+
   '@tanstack/query-core@5.51.9':
     resolution: {integrity: sha512-HsAwaY5J19MD18ykZDS3aVVh+bAt0i7m6uQlFC2b77DLV9djo+xEN7MWQAQQTR8IM+7r/zbozTQ7P0xr0bHuew==}
+
+  '@tanstack/solid-query@5.51.15':
+    resolution: {integrity: sha512-+o1D6InXDESoHW+PUaSe7cL4APdUIYpD757DJGwsuTVjjbbaOa+fw3N+A/e3Juz7QjsHCc/YWKlYtEV0B7MXKQ==}
+    peerDependencies:
+      solid-js: ^1.6.0
 
   '@tanstack/solid-query@5.51.9':
     resolution: {integrity: sha512-1HAuqPfrXyXXWZ8ZmgJ7vIP+Px3ri96EAwNyWiHuMcTwgHzlwz+XiopKiQpuXlI009cTBbeituF+pbZYEYNkhA==}
@@ -3526,8 +3538,18 @@ packages:
     peerDependencies:
       seroval: ^1.0
 
+  seroval-plugins@1.1.0:
+    resolution: {integrity: sha512-KtcJg590L3X3dd7ixs6am4UGVcV69TyjYhHtanIdQJq4dy2OceWXmmvWrYx7oFDNe+LNdxdWd0I5BQXuV5fBhA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      seroval: ^1.0
+
   seroval@1.0.7:
     resolution: {integrity: sha512-n6ZMQX5q0Vn19Zq7CIKNIo7E75gPkGCFUEqDpa8jgwpYr/vScjqnQ6H09t1uIiZ0ZSK0ypEGvrYK2bhBGWsGdw==}
+    engines: {node: '>=10'}
+
+  seroval@1.1.0:
+    resolution: {integrity: sha512-74Wpe+hhPx4V8NFe00I2Fu9gTJopKoH5vE7nCqFzVgKOXV8AnN23T58K79QLYQotzGpH93UZ+UN2Y11j9huZJg==}
     engines: {node: '>=10'}
 
   serve-placeholder@2.0.2:
@@ -3605,6 +3627,9 @@ packages:
 
   solid-js@1.8.18:
     resolution: {integrity: sha512-cpkxDPvO/AuKBugVv6xKFd1C9VC0XZMu4VtF56IlHoux8HgyW44uqNSWbozMnVcpIzHIhS3vVXPAVZYM26jpWw==}
+
+  solid-js@1.8.19:
+    resolution: {integrity: sha512-h8z/TvTQYsf894LM9Iau/ZW2iAKrCzAWDwjPhMcXnonmW1OIIihc28wp82b1wwei1p81fH5+gnfNOe8RzLbDRQ==}
 
   solid-refresh@0.6.3:
     resolution: {integrity: sha512-F3aPsX6hVw9ttm5LYlth8Q15x6MlI/J3Dn+o3EQyRTtTxidepSTwAYdozt01/YA+7ObcciagGEyXIopGZzQtbA==}
@@ -4742,6 +4767,17 @@ snapshots:
       - react
       - react-dom
 
+  '@clerk/backend@1.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@clerk/shared': 2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/types': 4.9.1
+      cookie: 0.5.0
+      snakecase-keys: 5.4.4
+      tslib: 2.4.1
+    transitivePeerDependencies:
+      - react
+      - react-dom
+
   '@clerk/clerk-js@5.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/localizations': 2.5.2
@@ -5438,10 +5474,19 @@ snapshots:
     dependencies:
       solid-js: 1.8.18
 
+  '@solid-primitives/context@0.2.3(solid-js@1.8.19)':
+    dependencies:
+      solid-js: 1.8.19
+
   '@solid-primitives/destructure@0.1.17(solid-js@1.8.18)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
       solid-js: 1.8.18
+
+  '@solid-primitives/destructure@0.1.17(solid-js@1.8.19)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.19)
+      solid-js: 1.8.19
 
   '@solid-primitives/memo@1.3.9(solid-js@1.8.18)':
     dependencies:
@@ -5449,17 +5494,36 @@ snapshots:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
       solid-js: 1.8.18
 
+  '@solid-primitives/memo@1.3.9(solid-js@1.8.19)':
+    dependencies:
+      '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.19)
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.19)
+      solid-js: 1.8.19
+
   '@solid-primitives/scheduled@1.4.3(solid-js@1.8.18)':
     dependencies:
       solid-js: 1.8.18
+
+  '@solid-primitives/scheduled@1.4.3(solid-js@1.8.19)':
+    dependencies:
+      solid-js: 1.8.19
 
   '@solid-primitives/utils@6.2.3(solid-js@1.8.18)':
     dependencies:
       solid-js: 1.8.18
 
+  '@solid-primitives/utils@6.2.3(solid-js@1.8.19)':
+    dependencies:
+      solid-js: 1.8.19
+
   '@solidjs/router@0.14.1(solid-js@1.8.18)':
     dependencies:
       solid-js: 1.8.18
+    optional: true
+
+  '@solidjs/router@0.14.1(solid-js@1.8.19)':
+    dependencies:
+      solid-js: 1.8.19
 
   '@solidjs/start@1.0.4(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.18)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))':
     dependencies:
@@ -5487,7 +5551,7 @@ snapshots:
       - vinxi
       - vite
 
-  '@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.18)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))':
+  '@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))':
     dependencies:
       '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))
       '@vinxi/server-components': 0.4.1(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))
@@ -5501,9 +5565,9 @@ snapshots:
       seroval-plugins: 1.0.7(seroval@1.0.7)
       shikiji: 0.9.19
       source-map-js: 1.2.0
-      terracotta: 1.0.5(solid-js@1.8.18)
+      terracotta: 1.0.5(solid-js@1.8.19)
       vite-plugin-inspect: 0.7.42(rollup@4.19.0)(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
-      vite-plugin-solid: 2.10.2(@testing-library/jest-dom@6.4.8)(solid-js@1.8.18)(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
+      vite-plugin-solid: 2.10.2(@testing-library/jest-dom@6.4.8)(solid-js@1.8.19)(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
     transitivePeerDependencies:
       - '@nuxt/kit'
       - '@testing-library/jest-dom'
@@ -5520,12 +5584,19 @@ snapshots:
     optionalDependencies:
       '@solidjs/router': 0.14.1(solid-js@1.8.18)
 
+  '@tanstack/query-core@5.51.15': {}
+
   '@tanstack/query-core@5.51.9': {}
 
-  '@tanstack/solid-query@5.51.9(solid-js@1.8.18)':
+  '@tanstack/solid-query@5.51.15(solid-js@1.8.18)':
+    dependencies:
+      '@tanstack/query-core': 5.51.15
+      solid-js: 1.8.18
+
+  '@tanstack/solid-query@5.51.9(solid-js@1.8.19)':
     dependencies:
       '@tanstack/query-core': 5.51.9
-      solid-js: 1.8.18
+      solid-js: 1.8.19
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -6142,16 +6213,16 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.1.6(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.18)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.18):
+  clerk-solidjs@1.1.6(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19):
     dependencies:
       '@clerk/backend': 1.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/shared': 2.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@solid-primitives/context': 0.2.3(solid-js@1.8.18)
-      '@solid-primitives/destructure': 0.1.17(solid-js@1.8.18)
-      '@solid-primitives/memo': 1.3.9(solid-js@1.8.18)
-      '@solidjs/start': 1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.18)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
-      '@tanstack/solid-query': 5.51.9(solid-js@1.8.18)
-      solid-js: 1.8.18
+      '@clerk/shared': 2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@solid-primitives/context': 0.2.3(solid-js@1.8.19)
+      '@solid-primitives/destructure': 0.1.17(solid-js@1.8.19)
+      '@solid-primitives/memo': 1.3.9(solid-js@1.8.19)
+      '@solidjs/start': 1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.0)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.0)(ioredis@5.4.1)(terser@5.31.2))(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
+      '@tanstack/solid-query': 5.51.9(solid-js@1.8.19)
+      solid-js: 1.8.19
     transitivePeerDependencies:
       - react
       - react-dom
@@ -7950,7 +8021,13 @@ snapshots:
     dependencies:
       seroval: 1.0.7
 
+  seroval-plugins@1.1.0(seroval@1.1.0):
+    dependencies:
+      seroval: 1.1.0
+
   seroval@1.0.7: {}
+
+  seroval@1.1.0: {}
 
   serve-placeholder@2.0.2:
     dependencies:
@@ -8024,6 +8101,12 @@ snapshots:
       seroval: 1.0.7
       seroval-plugins: 1.0.7(seroval@1.0.7)
 
+  solid-js@1.8.19:
+    dependencies:
+      csstype: 3.1.3
+      seroval: 1.1.0
+      seroval-plugins: 1.1.0(seroval@1.1.0)
+
   solid-refresh@0.6.3(solid-js@1.8.18):
     dependencies:
       '@babel/generator': 7.24.8
@@ -8033,9 +8116,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  solid-refresh@0.6.3(solid-js@1.8.19):
+    dependencies:
+      '@babel/generator': 7.24.8
+      '@babel/helper-module-imports': 7.24.7
+      '@babel/types': 7.24.8
+      solid-js: 1.8.19
+    transitivePeerDependencies:
+      - supports-color
+
   solid-use@0.8.0(solid-js@1.8.18):
     dependencies:
       solid-js: 1.8.18
+
+  solid-use@0.8.0(solid-js@1.8.19):
+    dependencies:
+      solid-js: 1.8.19
 
   source-map-js@1.2.0: {}
 
@@ -8207,6 +8303,11 @@ snapshots:
     dependencies:
       solid-js: 1.8.18
       solid-use: 0.8.0(solid-js@1.8.18)
+
+  terracotta@1.0.5(solid-js@1.8.19):
+    dependencies:
+      solid-js: 1.8.19
+      solid-use: 0.8.0(solid-js@1.8.19)
 
   terser@5.31.2:
     dependencies:
@@ -8602,6 +8703,21 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.8.18
       solid-refresh: 0.6.3(solid-js@1.8.18)
+      vite: 5.3.3(@types/node@22.0.0)(terser@5.31.2)
+      vitefu: 0.2.5(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
+    optionalDependencies:
+      '@testing-library/jest-dom': 6.4.8
+    transitivePeerDependencies:
+      - supports-color
+
+  vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.4.8)(solid-js@1.8.19)(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2)):
+    dependencies:
+      '@babel/core': 7.24.8
+      '@types/babel__core': 7.20.5
+      babel-preset-solid: 1.8.18(@babel/core@7.24.8)
+      merge-anything: 5.1.7
+      solid-js: 1.8.19
+      solid-refresh: 0.6.3(solid-js@1.8.19)
       vite: 5.3.3(@types/node@22.0.0)(terser@5.31.2)
       vitefu: 0.2.5(vite@5.3.3(@types/node@22.0.0)(terser@5.31.2))
     optionalDependencies:
