@@ -164,8 +164,8 @@
     "vitest": "^2.0.4"
   },
   "peerDependencies": {
-    "@solidjs/start": "^1",
-    "solid-js": "^1.8"
+    "@solidjs/start": ">=1",
+    "solid-js": ">=1"
   },
   "engines": {
     "node": ">=18"
