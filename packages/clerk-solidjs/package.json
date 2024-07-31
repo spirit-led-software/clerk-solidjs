@@ -158,10 +158,10 @@
     "tsup": "^8.2.3",
     "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^7.18.0",
+    "typescript-eslint": "^8.0.0",
     "vite-plugin-solid": "^2.10.2",
     "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.5"
   },
   "peerDependencies": {
     "@solidjs/start": ">=1",

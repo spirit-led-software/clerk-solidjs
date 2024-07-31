@@ -20,7 +20,7 @@ export const assertSingleChild =
         }
       }
       return children;
-    } catch (e) {
+    } catch {
       return errorThrower.throw(multipleChildrenInButtonComponent(name));
     }
   };
