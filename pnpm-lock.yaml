@@ -12,8 +12,8 @@ importers:
         specifier: ^2.27.7
         version: 2.27.7
       turbo:
-        specifier: ^2.0.10
-        version: 2.0.10
+        specifier: ^2.0.11
+        version: 2.0.11
 
   examples/basic:
     dependencies:
@@ -25,7 +25,7 @@ importers:
         version: 1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.2)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.0.2)(terser@5.31.3))
       clerk-solidjs:
         specifier: latest
-        version: 1.1.7(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.2)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.0.2)(terser@5.31.3)))(solid-js@1.8.19)
+        version: 1.1.8(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.2)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.0.2)(terser@5.31.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19)
       solid-js:
         specifier: ^1.8.19
         version: 1.8.19
@@ -71,17 +71,17 @@ importers:
         version: 1.8.19
     devDependencies:
       '@clerk/clerk-js':
-        specifier: ^5.10.2
-        version: 5.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^5.11.0
+        version: 5.11.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/localizations':
-        specifier: ^2.5.2
-        version: 2.5.2
+        specifier: ^2.5.3
+        version: 2.5.3
       '@clerk/themes':
-        specifier: ^2.1.14
-        version: 2.1.14
+        specifier: ^2.1.15
+        version: 2.1.15
       '@clerk/types':
-        specifier: ^4.9.1
-        version: 4.9.1
+        specifier: ^4.10.0
+        version: 4.10.0
       '@eslint/js':
         specifier: ^9.8.0
         version: 9.8.0
@@ -104,8 +104,8 @@ importers:
         specifier: ^0.19.0
         version: 0.19.0
       globals:
-        specifier: ^15.8.0
-        version: 15.8.0
+        specifier: ^15.9.0
+        version: 15.9.0
       jsdom:
         specifier: ^24.1.1
         version: 24.1.1
@@ -356,15 +356,15 @@ packages:
     resolution: {integrity: sha512-wj4qsZO6iNiY9vF7vLH5v1f3oLh1yCLgFa0PedLzJAIJgepZl23C1/ubrRm7vyewjQEMHZwod4816mZlHDfoqA==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/clerk-js@5.10.2':
-    resolution: {integrity: sha512-YzVT7FlILQIy9l/89rCZ1X77+QCLRoUbOZJTlwI8QXSQrxsDlfvU7vtqOFofT8MGF00fTSu98q/bNbEAwKMv8Q==}
+  '@clerk/clerk-js@5.11.0':
+    resolution: {integrity: sha512-Sj1ywFplka1wPK2xpEb9dQQBD8UiBwoJHHyBPIi0iMNg6lezmYhQAwHIy0xvhn+qWCcPUIsT5Z/9rLgJeYHg/Q==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  '@clerk/localizations@2.5.2':
-    resolution: {integrity: sha512-3zX5dolhx5+6AdbUBtau+AY/7XjUwpl0iL2dnTf9luq/XcxftZTgPxZdN6fQZLWRd8q/IEVPSkhOrYrHgUJADA==}
+  '@clerk/localizations@2.5.3':
+    resolution: {integrity: sha512-lCxN/KbgrbCf20Nrr+racdJaDTEclQHpNkjB9s7r6cr3IbDqvRULWv0PpEm+WDKfMPw3IzCDsrLn2BkWCejHXA==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/shared@2.4.1':
@@ -379,8 +379,24 @@ packages:
       react-dom:
         optional: true
 
-  '@clerk/themes@2.1.14':
-    resolution: {integrity: sha512-j0nZ7cDmn5XBWg/bx8msvlPnoNZCTb6ovfhldvCxy0/VVn6v1zDwSgJM3hVVPKwdM20tNNMvhWrseS4248jgTg==}
+  '@clerk/shared@2.4.2':
+    resolution: {integrity: sha512-8AZg7Qus7nGBwhbdJINV1NR0vAbOYtv/m8C9VdASHW/DzamNJvyf9d61E1DLZGTTjQw/Fja9zolq9CcWT5d6NA==}
+    engines: {node: '>=18.17.0'}
+    peerDependencies:
+      react: '>=18 || >=19.0.0-beta'
+      react-dom: '>=18 || >=19.0.0-beta'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
+  '@clerk/themes@2.1.15':
+    resolution: {integrity: sha512-JpT82KfeZIABXcKZhvPObOymh0JleEHJv8wP62EHtVJFFGfU0Tny7Jmn7kA8e1Zjrp8kGkqx6+1m4woSr2pGbw==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.10.0':
+    resolution: {integrity: sha512-Yy4m+aCrvVHT8BVNGDi40hcSUTwMf5o+cBHhAQQTofzCikc+DRI6yL7aYT6nf2YJ5gfm7WdeUwPM8Zz08TDzNA==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.9.1':
@@ -1755,8 +1771,8 @@ packages:
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
 
-  clerk-solidjs@1.1.7:
-    resolution: {integrity: sha512-9PvtpQ0dbEglHMCXbcMnTvWncMgICmD4x5OWCs5bOumqQQ6vevrGEpDT0sxQ0q3En6LGmCuIauoLf/MKXdJs0Q==}
+  clerk-solidjs@1.1.8:
+    resolution: {integrity: sha512-T6AFtMpIBtnmKQc/EDmEPKFOazW2gDsPEXx51fxyqPD3nftWV2VN7e3QrjPm3/myRquUH0x17vVJGEHq2ulQsA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@solidjs/start': '>=1'
@@ -2383,8 +2399,8 @@ packages:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
 
-  globals@15.8.0:
-    resolution: {integrity: sha512-VZAJ4cewHTExBWDHR6yptdIBlx9YSSZuwojj9Nt5mBRXQzrKakDsVKQ1J63sklLvzAJm0X5+RpO4i3Y2hcOnFw==}
+  globals@15.9.0:
+    resolution: {integrity: sha512-SmSKyLLKFbSr6rptvP8izbyxJL4ILwqO9Jg23UA0sDlGlu58V59D1//I3vlc0KJphVdUR7vMjHIplYnzBxorQA==}
     engines: {node: '>=18'}
 
   globby@11.1.0:
@@ -3853,38 +3869,38 @@ packages:
       typescript:
         optional: true
 
-  turbo-darwin-64@2.0.10:
-    resolution: {integrity: sha512-ND4hohx0wrd0AUsCf2RsdavlzUWVi0JU3vX5Vn2+wk3GG5RcZWIKi3y+it9MjgYuqqlCystkDbeamfH05iiQBQ==}
+  turbo-darwin-64@2.0.11:
+    resolution: {integrity: sha512-YlHEEhcm+jI1BSZoLugGHUWDfRXaNaQIv7tGQBfadYjo9kixBnqoTOU6s1ubOrQMID+lizZZQs79GXwqM6vohg==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.0.10:
-    resolution: {integrity: sha512-cvHMMi1jDiiVl5ls1nWwXyanH7mB+xD3oYyZOC3NzZdFAfce3CWpL6hgUnK2CFxbdvaHQTizkQEgsHvUeD9nTQ==}
+  turbo-darwin-arm64@2.0.11:
+    resolution: {integrity: sha512-K/YW+hWzRQ/wGmtffxllH4M1tgy8OlwgXODrIiAGzkSpZl9+pIsem/F86UULlhsIeavBYK/LS5+dzV3DPMjJ9w==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.0.10:
-    resolution: {integrity: sha512-dPRwHrKkzyc/VuQLfhOeYLkBxA60vvLZyn9pXChRF0zyimg04OnhBYcKBNkfWMUU+Z1gQDFEvfyvnV9EEHLh0Q==}
+  turbo-linux-64@2.0.11:
+    resolution: {integrity: sha512-mv8CwGP06UPweMh1Vlp6PI6OWnkuibxfIJ4Vlof7xqjohAaZU5FLqeOeHkjQflH/6YrCVuS9wrK0TFOu+meTtA==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.0.10:
-    resolution: {integrity: sha512-6qsYl+b1gf243QbL6cw+TbgUEWo6/krCCWDQjVg/8Znx45rkXnTJUqtIAMkQQsT+t7d3UU8hreQ77pjOW59LcQ==}
+  turbo-linux-arm64@2.0.11:
+    resolution: {integrity: sha512-wLE5tl4oriTmHbuayc0ki0csaCplmVLj+uCWtecM/mfBuZgNS9ICNM9c4sB+Cfl5tlBBFeepqRNgvRvn8WeVZg==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.0.10:
-    resolution: {integrity: sha512-rkMOqvwN7hmMJNeChj63ZpLlIF6b9QC0jW/IbOMgcZMLcvz9iF+qCc2yaeDWgfOgLsNjhtv1rlhimShUuasSXw==}
+  turbo-windows-64@2.0.11:
+    resolution: {integrity: sha512-tja3zvVCSWu3HizOoeQv0qDJ+GeWGWRFOOM6a8i3BYnXLgGKAaDZFcjwzgC50tWiAw4aowIVR4OouwIyRhLBaQ==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.0.10:
-    resolution: {integrity: sha512-r7HQScx+CpO0p+Mw97Yq63uUAIwTfEUXRX6qxzeipBK+mTsnV1A6dTTYeVLD3S5AlL8GGdXddx0swyDeeVkQng==}
+  turbo-windows-arm64@2.0.11:
+    resolution: {integrity: sha512-sYjXP6k94Bqh99R+y3M1Ks6LRIEZybMz+7enA8GKl6JJ2ZFaXxTnS6q+/2+ii1+rRwxohj5OBb4gxODcF8Jd4w==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.0.10:
-    resolution: {integrity: sha512-1t10h9bWl94/zktjzVWwTerJL3kIMDSA8mfibr1bevGLjF0DsiHOJFkCQFa5QABK0eXb0Af5mdRehLRBVem0Qg==}
+  turbo@2.0.11:
+    resolution: {integrity: sha512-imDlFFAvitbCm1JtDFJ6eG882qwxHUmVT2noPb3p2jq5o5DuXOchMbkVS9kUeC3/4WpY5N0GBZ3RvqNyjHZw1Q==}
     hasBin: true
 
   type-check@0.4.0:
@@ -4671,11 +4687,11 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/clerk-js@5.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/clerk-js@5.11.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/localizations': 2.5.2
-      '@clerk/shared': 2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/types': 4.9.1
+      '@clerk/localizations': 2.5.3
+      '@clerk/shared': 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/types': 4.10.0
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.1(react@18.3.1)
       '@floating-ui/react': 0.25.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4695,9 +4711,9 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@clerk/localizations@2.5.2':
+  '@clerk/localizations@2.5.3':
     dependencies:
-      '@clerk/types': 4.9.1
+      '@clerk/types': 4.10.0
 
   '@clerk/shared@2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -4710,10 +4726,25 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@clerk/themes@2.1.14':
+  '@clerk/shared@2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/types': 4.9.1
+      '@clerk/types': 4.10.0
+      glob-to-regexp: 0.4.1
+      js-cookie: 3.0.5
+      std-env: 3.7.0
+      swr: 2.2.5(react@18.3.1)
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@clerk/themes@2.1.15':
+    dependencies:
+      '@clerk/types': 4.10.0
       tslib: 2.4.1
+
+  '@clerk/types@4.10.0':
+    dependencies:
+      csstype: 3.1.1
 
   '@clerk/types@4.9.1':
     dependencies:
@@ -5997,7 +6028,7 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.1.7(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.2)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.0.2)(terser@5.31.3)))(solid-js@1.8.19):
+  clerk-solidjs@1.1.8(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.0.2)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.0.2)(terser@5.31.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19):
     dependencies:
       '@clerk/backend': 1.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6211,7 +6242,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   dot-prop@8.0.2:
     dependencies:
@@ -6665,7 +6696,7 @@ snapshots:
 
   globals@14.0.0: {}
 
-  globals@15.8.0: {}
+  globals@15.9.0: {}
 
   globby@11.1.0:
     dependencies:
@@ -7085,7 +7116,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   lru-cache@10.4.3: {}
 
@@ -7299,7 +7330,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   node-addon-api@7.1.1: {}
 
@@ -7865,7 +7896,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   snakecase-keys@5.4.4:
     dependencies:
@@ -8181,32 +8212,32 @@ snapshots:
       - tsx
       - yaml
 
-  turbo-darwin-64@2.0.10:
+  turbo-darwin-64@2.0.11:
     optional: true
 
-  turbo-darwin-arm64@2.0.10:
+  turbo-darwin-arm64@2.0.11:
     optional: true
 
-  turbo-linux-64@2.0.10:
+  turbo-linux-64@2.0.11:
     optional: true
 
-  turbo-linux-arm64@2.0.10:
+  turbo-linux-arm64@2.0.11:
     optional: true
 
-  turbo-windows-64@2.0.10:
+  turbo-windows-64@2.0.11:
     optional: true
 
-  turbo-windows-arm64@2.0.10:
+  turbo-windows-arm64@2.0.11:
     optional: true
 
-  turbo@2.0.10:
+  turbo@2.0.11:
     optionalDependencies:
-      turbo-darwin-64: 2.0.10
-      turbo-darwin-arm64: 2.0.10
-      turbo-linux-64: 2.0.10
-      turbo-linux-arm64: 2.0.10
-      turbo-windows-64: 2.0.10
-      turbo-windows-arm64: 2.0.10
+      turbo-darwin-64: 2.0.11
+      turbo-darwin-arm64: 2.0.11
+      turbo-linux-64: 2.0.11
+      turbo-linux-arm64: 2.0.11
+      turbo-windows-64: 2.0.11
+      turbo-windows-arm64: 2.0.11
 
   type-check@0.4.0:
     dependencies:
