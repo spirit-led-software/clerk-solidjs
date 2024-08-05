@@ -139,10 +139,10 @@
     "@tanstack/solid-query": "^5.51.21"
   },
   "devDependencies": {
-    "@clerk/clerk-js": "^5.12.0",
-    "@clerk/localizations": "^2.5.4",
-    "@clerk/themes": "^2.1.16",
-    "@clerk/types": "^4.11.0",
+    "@clerk/clerk-js": "^5.13.0",
+    "@clerk/localizations": "^2.5.5",
+    "@clerk/themes": "^2.1.17",
+    "@clerk/types": "^4.12.0",
     "@eslint/js": "^9.8.0",
     "@solidjs/testing-library": "^0.8.9",
     "@testing-library/jest-dom": "^6.4.8",
@@ -158,7 +158,7 @@
     "tsup": "^8.2.4",
     "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.0",
+    "typescript-eslint": "^8.0.1",
     "vite-plugin-solid": "^2.10.2",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.0.5"
