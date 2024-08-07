@@ -25,7 +25,7 @@ importers:
         version: 1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.1.0)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))
       clerk-solidjs:
         specifier: latest
-        version: 1.1.9(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.1.0)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19)
+        version: 1.1.10(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.1.0)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19)
       solid-js:
         specifier: ^1.8.19
         version: 1.8.19
@@ -37,8 +37,8 @@ importers:
         specifier: ^8.4.41
         version: 8.4.41
       tailwindcss:
-        specifier: ^3.4.7
-        version: 3.4.7
+        specifier: ^3.4.8
+        version: 3.4.8
       vinxi:
         specifier: ^0.4.1
         version: 0.4.1(@types/node@22.1.0)(ioredis@5.4.1)(terser@5.31.3)
@@ -352,10 +352,6 @@ packages:
   '@changesets/write@0.3.1':
     resolution: {integrity: sha512-SyGtMXzH3qFqlHKcvFY2eX+6b0NGiFcNav8AFsYwy5l8hejOeoeTDemu5Yjmke2V5jpzY+pBvM0vCCQ3gdZpfw==}
 
-  '@clerk/backend@1.6.0':
-    resolution: {integrity: sha512-MsUR+70/dSdHCOykBvtmUuU4opHYpNnFKNIzZcNgDyYhEA0HSxnJXaeLdZ+LKwxdR88fgzbeAOlD5A2l+cx48w==}
-    engines: {node: '>=18.17.0'}
-
   '@clerk/backend@1.6.1':
     resolution: {integrity: sha512-UA1zLXuHQBZ7CQtRXTKl5siejmfqOYs4jLfAyMnsHjY0r+PJ2/oZ4WsFepJNw1CdQdP2hi8wmrSuV3EZA6VjnQ==}
     engines: {node: '>=18.17.0'}
@@ -371,18 +367,6 @@ packages:
     resolution: {integrity: sha512-qGjAgPJ1s89LY4RYFoQEQUPy4/+He347jZN30js6CbTll3H5eFxnH7lCZ2301kOWJOi1WyQRJ2pfnmkulZhzKQ==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/shared@2.4.4':
-    resolution: {integrity: sha512-DcyuVFoBzPC9ZIdLN8P0fIv+ACfWMc19hD9Jye4vXyM0HNh18X/2KUg8IPAaNBUusT5/RyBVtxK2g3MHR+x/0Q==}
-    engines: {node: '>=18.17.0'}
-    peerDependencies:
-      react: '>=18 || >=19.0.0-beta'
-      react-dom: '>=18 || >=19.0.0-beta'
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
   '@clerk/shared@2.4.5':
     resolution: {integrity: sha512-WK8/LLow7q+OXzsRWtSAkqsBbtt16TcivfvN5bIhbcs52jIiA1EvIOetwFk5yXDNBHdEn2GxL7UXxdBaodselA==}
     engines: {node: '>=18.17.0'}
@@ -397,10 +381,6 @@ packages:
 
   '@clerk/themes@2.1.18':
     resolution: {integrity: sha512-n9IFNxgoWUNDx/ME37pxKvfRz8glXoJOcIGYrRmkNzmo96QxqFKAg3ZebskVYekiYkF/Z7HBy4EG6LNMNpC7Ng==}
-    engines: {node: '>=18.17.0'}
-
-  '@clerk/types@4.12.0':
-    resolution: {integrity: sha512-y5P36XMWRphFPwcC8NxptAvPbeH6MZcicULn4x7c1K6gHyGwoieGywwPHAdrc5c/aKGIVp8Zlg93iQi7Vj0qJg==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.12.1':
@@ -1775,8 +1755,8 @@ packages:
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
 
-  clerk-solidjs@1.1.9:
-    resolution: {integrity: sha512-kHG4gDdddO/OqAkakrtGXXreAoCBYuEXypqu4lFlVk3j/e2XnkyOPj1fTKyIIzHfVvVbWD4fDj64onTzdljlOQ==}
+  clerk-solidjs@1.1.10:
+    resolution: {integrity: sha512-qU+ABaHuKrdqWiIsEkemhk6tAs5/eaFy+ZeokfoDkCxkP4y7G0rrK5FYXRgyTeKX1hOZUy7QEvi+Vob4wHwuIw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@solidjs/start': '>=1'
@@ -3721,8 +3701,8 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwindcss@3.4.7:
-    resolution: {integrity: sha512-rxWZbe87YJb4OcSopb7up2Ba4U82BoiSGUdoDr3Ydrg9ckxFS/YWsvhN323GMcddgU65QRy7JndC7ahhInhvlQ==}
+  tailwindcss@3.4.8:
+    resolution: {integrity: sha512-GkP17r9GQkxgZ9FKHJQEnjJuKBcbFhMFzKu5slmN6NjlCuFnYJMQ8N4AZ6VrUyiRXlDtPKHkesuQ/MS913Nvdg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -4680,17 +4660,6 @@ snapshots:
       human-id: 1.0.2
       prettier: 2.8.8
 
-  '@clerk/backend@1.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@clerk/shared': 2.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/types': 4.12.0
-      cookie: 0.5.0
-      snakecase-keys: 5.4.4
-      tslib: 2.4.1
-    transitivePeerDependencies:
-      - react
-      - react-dom
-
   '@clerk/backend@1.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/shared': 2.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4730,17 +4699,6 @@ snapshots:
     dependencies:
       '@clerk/types': 4.12.1
 
-  '@clerk/shared@2.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@clerk/types': 4.12.0
-      glob-to-regexp: 0.4.1
-      js-cookie: 3.0.5
-      std-env: 3.7.0
-      swr: 2.2.5(react@18.3.1)
-    optionalDependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
   '@clerk/shared@2.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/types': 4.12.1
@@ -4756,10 +4714,6 @@ snapshots:
     dependencies:
       '@clerk/types': 4.12.1
       tslib: 2.4.1
-
-  '@clerk/types@4.12.0':
-    dependencies:
-      csstype: 3.1.1
 
   '@clerk/types@4.12.1':
     dependencies:
@@ -6043,9 +5997,9 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.1.9(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.1.0)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19):
+  clerk-solidjs@1.1.10(@solidjs/start@1.0.6(@testing-library/jest-dom@6.4.8)(rollup@4.19.1)(solid-js@1.8.19)(vinxi@0.4.1(@types/node@22.1.0)(ioredis@5.4.1)(terser@5.31.3))(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.19):
     dependencies:
-      '@clerk/backend': 1.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/backend': 1.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@solid-primitives/context': 0.2.3(solid-js@1.8.19)
       '@solid-primitives/destructure': 0.1.17(solid-js@1.8.19)
@@ -8060,7 +8014,7 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwindcss@3.4.7:
+  tailwindcss@3.4.8:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
