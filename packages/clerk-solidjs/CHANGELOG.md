@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.10
+
+### Patch Changes
+
+- 3413ae1: Bump dependencies
+
 ## 1.1.9
 
 ### Patch Changes
