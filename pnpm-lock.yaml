@@ -37,8 +37,8 @@ importers:
         specifier: ^8.4.41
         version: 8.4.41
       tailwindcss:
-        specifier: ^3.4.8
-        version: 3.4.8
+        specifier: ^3.4.9
+        version: 3.4.9
       vinxi:
         specifier: ^0.4.1
         version: 0.4.1(@types/node@22.1.0)(ioredis@5.4.1)(terser@5.31.3)
@@ -71,17 +71,17 @@ importers:
         version: 1.8.19
     devDependencies:
       '@clerk/clerk-js':
-        specifier: ^5.13.2
-        version: 5.13.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^5.14.0
+        version: 5.14.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/localizations':
-        specifier: ^2.5.6
-        version: 2.5.6
+        specifier: ^2.5.7
+        version: 2.5.7
       '@clerk/themes':
-        specifier: ^2.1.18
-        version: 2.1.18
+        specifier: ^2.1.19
+        version: 2.1.19
       '@clerk/types':
-        specifier: ^4.12.1
-        version: 4.12.1
+        specifier: ^4.13.0
+        version: 4.13.0
       '@eslint/js':
         specifier: ^9.8.0
         version: 9.8.0
@@ -134,8 +134,8 @@ importers:
         specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.4.8)(solid-js@1.8.19)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))
       vite-tsconfig-paths:
-        specifier: ^4.3.2
-        version: 4.3.2(typescript@5.5.4)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))
+        specifier: ^5.0.0
+        version: 5.0.0(typescript@5.5.4)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))
       vitest:
         specifier: ^2.0.5
         version: 2.0.5(@types/node@22.1.0)(jsdom@24.1.1)(terser@5.31.3)
@@ -360,15 +360,15 @@ packages:
     resolution: {integrity: sha512-Tiidp1dBs/vBQ82yL+HgRa7GlNjTNjBPNUQj2+Tn176i02wglgTfLWivDzuRwAe/cdf7gu/8OBWTxOF59L4KRQ==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/clerk-js@5.13.2':
-    resolution: {integrity: sha512-iwLDmwDg/qU2qvZGPLEI16gWpd/Z6H47Dci+lKN/jfq4iewmzWNfCfu+CVtHEhLKVtU6CqLUvb5CtvjyXpZ2qw==}
+  '@clerk/clerk-js@5.14.0':
+    resolution: {integrity: sha512-h2KcoNss8r6vG1Rehyyt+z8YRUMdw/vXyHXCm6Cz335FEhHlRbHDzGc2ym+1q7AP6aO/0f49k9mVvYb0sXdeyg==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  '@clerk/localizations@2.5.6':
-    resolution: {integrity: sha512-qGjAgPJ1s89LY4RYFoQEQUPy4/+He347jZN30js6CbTll3H5eFxnH7lCZ2301kOWJOi1WyQRJ2pfnmkulZhzKQ==}
+  '@clerk/localizations@2.5.7':
+    resolution: {integrity: sha512-W3bnpzpvmY42hO8smyBysjN3nXSYDnOFgmvYqR+usdHid2zW51icZwc/qa0R6tRiNp8k4mdmpiYblGkDGYV3Iw==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/shared@2.4.5':
@@ -395,8 +395,8 @@ packages:
       react-dom:
         optional: true
 
-  '@clerk/themes@2.1.18':
-    resolution: {integrity: sha512-n9IFNxgoWUNDx/ME37pxKvfRz8glXoJOcIGYrRmkNzmo96QxqFKAg3ZebskVYekiYkF/Z7HBy4EG6LNMNpC7Ng==}
+  '@clerk/themes@2.1.19':
+    resolution: {integrity: sha512-SCdmIEY+mw2v8YboA55uQvYPqzpsjYa0tjMhib7Kra2jJF/PoUuhrAbx0tusm64vG1QKCW24T/1bt7mLmP/g7A==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.12.1':
@@ -3721,8 +3721,8 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwindcss@3.4.8:
-    resolution: {integrity: sha512-GkP17r9GQkxgZ9FKHJQEnjJuKBcbFhMFzKu5slmN6NjlCuFnYJMQ8N4AZ6VrUyiRXlDtPKHkesuQ/MS913Nvdg==}
+  tailwindcss@3.4.9:
+    resolution: {integrity: sha512-1SEOvRr6sSdV5IDf9iC+NU4dhwdqzF4zKKq3sAbasUWHEM6lsMhX+eNN5gkPx1BvLFEnZQEUFbXnGj8Qlp83Pg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -4091,8 +4091,8 @@ packages:
       '@testing-library/jest-dom':
         optional: true
 
-  vite-tsconfig-paths@4.3.2:
-    resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
+  vite-tsconfig-paths@5.0.0:
+    resolution: {integrity: sha512-sCdKc6uC7ir102lW8deBiMnS0NGEs0100OJX8WZQmf3Uf7tJ/T3uQnzznq/tZWph7tkG+44JYOsKE7YTZjDn+Q==}
     peerDependencies:
       vite: '*'
     peerDependenciesMeta:
@@ -4702,11 +4702,11 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/clerk-js@5.13.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/clerk-js@5.14.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/localizations': 2.5.6
-      '@clerk/shared': 2.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/types': 4.12.1
+      '@clerk/localizations': 2.5.7
+      '@clerk/shared': 2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/types': 4.13.0
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.1(react@18.3.1)
       '@floating-ui/react': 0.25.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4726,9 +4726,9 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@clerk/localizations@2.5.6':
+  '@clerk/localizations@2.5.7':
     dependencies:
-      '@clerk/types': 4.12.1
+      '@clerk/types': 4.13.0
 
   '@clerk/shared@2.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -4752,9 +4752,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@clerk/themes@2.1.18':
+  '@clerk/themes@2.1.19':
     dependencies:
-      '@clerk/types': 4.12.1
+      '@clerk/types': 4.13.0
       tslib: 2.4.1
 
   '@clerk/types@4.12.1':
@@ -8060,7 +8060,7 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwindcss@3.4.8:
+  tailwindcss@3.4.9:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -8510,7 +8510,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3)):
+  vite-tsconfig-paths@5.0.0(typescript@5.5.4)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3)):
     dependencies:
       debug: 4.3.6
       globrex: 0.1.2

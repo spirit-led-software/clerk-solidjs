@@ -3,7 +3,7 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
@@ -18,5 +18,6 @@
     "types": ["@types/node"],
     "baseUrl": "."
   },
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist", "example"]
 }
