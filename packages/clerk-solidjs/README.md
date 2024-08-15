@@ -129,7 +129,7 @@ import {
   SignedOut,
   SignInButton,
   UserButton,
-  useAuth
+  useAuth,
 } from 'clerk-solidjs';
 
 export default function MyComponent() {
@@ -169,10 +169,11 @@ import { clerkMiddleware } from 'clerk-solidjs/server';
 export default createMiddleware({
   onRequest: [
     clerkMiddleware({
-        publishableKey: process.env.VITE_CLERK_PUBLISHABLE_KEY,
-        secretKey: process.env.CLERK_SECRET_KEY
+      publishableKey: process.env.VITE_CLERK_PUBLISHABLE_KEY,
+      secretKey: process.env.CLERK_SECRET_KEY,
     }),
     // ... other middleware
+  ],
 });
 ```
 
