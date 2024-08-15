@@ -130,6 +130,8 @@ import {
   SignInButton,
   UserButton,
   useAuth,
+  ClerkLoading,
+  ClerkLoaded,
 } from 'clerk-solidjs';
 
 export default function MyComponent() {
@@ -143,7 +145,7 @@ export default function MyComponent() {
       <ClerkLoaded>
         <SignedIn>
           <UserButton />
-          <p>Welcome, {userId}</p>
+          <p>Welcome, {userId()}</p>
         </SignedIn>
         <SignedOut>
           <SignInButton />
