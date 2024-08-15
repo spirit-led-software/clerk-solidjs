@@ -131,7 +131,7 @@ import {
   UserButton,
   useAuth,
   ClerkLoading,
-  ClerkLoaded,
+  ClerkLoaded
 } from 'clerk-solidjs';
 
 export default function MyComponent() {
@@ -172,10 +172,10 @@ export default createMiddleware({
   onRequest: [
     clerkMiddleware({
       publishableKey: process.env.VITE_CLERK_PUBLISHABLE_KEY,
-      secretKey: process.env.CLERK_SECRET_KEY,
-    }),
+      secretKey: process.env.CLERK_SECRET_KEY
+    })
     // ... other middleware
-  ],
+  ]
 });
 ```
 
