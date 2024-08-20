@@ -71,17 +71,17 @@ importers:
         version: 1.8.21
     devDependencies:
       '@clerk/clerk-js':
-        specifier: ^5.14.1
-        version: 5.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^5.15.0
+        version: 5.15.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/localizations':
-        specifier: ^2.5.8
-        version: 2.5.8
+        specifier: ^2.6.0
+        version: 2.6.0
       '@clerk/themes':
-        specifier: ^2.1.20
-        version: 2.1.20
+        specifier: ^2.1.21
+        version: 2.1.21
       '@clerk/types':
-        specifier: ^4.13.1
-        version: 4.13.1
+        specifier: ^4.14.0
+        version: 4.14.0
       '@eslint/js':
         specifier: ^9.9.0
         version: 9.9.0
@@ -101,8 +101,8 @@ importers:
         specifier: ^9.9.0
         version: 9.9.0(jiti@1.21.6)
       expect-type:
-        specifier: ^0.19.0
-        version: 0.19.0
+        specifier: ^0.20.0
+        version: 0.20.0
       globals:
         specifier: ^15.9.0
         version: 15.9.0
@@ -356,15 +356,15 @@ packages:
     resolution: {integrity: sha512-rZHrbVpmHF9T61EVM2mksocLVQ9/7oWY/Q+Fq0lZGtIVfBPJa1QMYGosPooOw9MeMvpBK21BujjBg4OxrT9ToQ==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/clerk-js@5.14.1':
-    resolution: {integrity: sha512-d7q4UEsY1WZJj02RJX7E3bu9eqmE2L1WFyJ3EgdPh+VlxqZ95zJGWkeqRIFWP+7Q7bi8iFu5R4Mk/MPUQ4+SvA==}
+  '@clerk/clerk-js@5.15.0':
+    resolution: {integrity: sha512-ewIs9trwj1HlQiOp89wl4dfpYv14A1HbWR1zCDPwbcrx0lBwMKZVS14IlaTS0Rx6mT8KUd8eicH423CmeV8ZAg==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  '@clerk/localizations@2.5.8':
-    resolution: {integrity: sha512-C3heP/dCO1b5xCggABQsMKwumkaXW3+BR+fc0HdmPAA1vwDqFWrom0ESlfer9/p3XZ9zOTRSD91oNU4pNLg3oA==}
+  '@clerk/localizations@2.6.0':
+    resolution: {integrity: sha512-uQYCMl2eIjdEvjd+LBo/e6B3ua4ElBgx+s6/JcIbuMuAx7q1oiP5wmpaIn0DxEhOywDMrfT6J+1n5oqSP3M0YA==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/shared@2.5.1':
@@ -379,12 +379,28 @@ packages:
       react-dom:
         optional: true
 
-  '@clerk/themes@2.1.20':
-    resolution: {integrity: sha512-8dCVetxtFTUFDSlUIeHqFTGZf/FINSlspxZ51iOPXW6qtay73A1GmquHVfJAfBkGs8S26IO2L5wJytfRBUtkMQ==}
+  '@clerk/shared@2.5.2':
+    resolution: {integrity: sha512-3+I5vMhkn3wSqCuoxIIXRma3m8zpLJBH11MO2uxKOAeZJRyeALY0jGPeyptskl+Fl9j9Rtan0OWJIisMN8TiAA==}
+    engines: {node: '>=18.17.0'}
+    peerDependencies:
+      react: '>=18 || >=19.0.0-beta'
+      react-dom: '>=18 || >=19.0.0-beta'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
+  '@clerk/themes@2.1.21':
+    resolution: {integrity: sha512-eJTji2x6XMt6FOD5deNjTe86foHIUEBNuaCWVywjVnLbqHX5/uYsJkiexpUrKGGfyEjTr7z5j7V7jZNLsYRSRw==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.13.1':
     resolution: {integrity: sha512-AfFTA1Du0pog62CSl23Y8NNDN+iHwXdUQAp/sQ/LbE+/wYBOMSaV5d+cS5F4HX+/uzXgKsc3BpCNI/Th3CLNHg==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.14.0':
+    resolution: {integrity: sha512-d3MUcWtXGTOS7QYCRVrOra7NYAGRiNWlb+Ke2KMSb+Z3lea6WlKeHa18uVnAkIVxBXtHlzdU2kwW0PrHkx8j9Q==}
     engines: {node: '>=18.17.0'}
 
   '@cloudflare/kv-asset-handler@0.3.4':
@@ -2203,8 +2219,8 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
-  expect-type@0.19.0:
-    resolution: {integrity: sha512-piv9wz3IrAG4Wnk2A+n2VRCHieAyOSxrRLU872Xo6nyn39kYXKDALk4OcqnvLRnFvkz659CnWC8MWZLuuQnoqg==}
+  expect-type@0.20.0:
+    resolution: {integrity: sha512-uHaC9LYNv6BcW+8SvXcwUUDCrrUxt3GSa61DFvTHj8JC+M0hekMFBwMlCarLQDk5bbpZ2vStpnQPIwRuV98YMw==}
     engines: {node: '>=12.0.0'}
 
   extendable-error@0.1.7:
@@ -4679,11 +4695,11 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/clerk-js@5.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/clerk-js@5.15.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/localizations': 2.5.8
-      '@clerk/shared': 2.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/types': 4.13.1
+      '@clerk/localizations': 2.6.0
+      '@clerk/shared': 2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/types': 4.14.0
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.1(react@18.3.1)
       '@floating-ui/react': 0.25.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4703,9 +4719,9 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@clerk/localizations@2.5.8':
+  '@clerk/localizations@2.6.0':
     dependencies:
-      '@clerk/types': 4.13.1
+      '@clerk/types': 4.14.0
 
   '@clerk/shared@2.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -4718,12 +4734,27 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@clerk/themes@2.1.20':
+  '@clerk/shared@2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/types': 4.13.1
+      '@clerk/types': 4.14.0
+      glob-to-regexp: 0.4.1
+      js-cookie: 3.0.5
+      std-env: 3.7.0
+      swr: 2.2.5(react@18.3.1)
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@clerk/themes@2.1.21':
+    dependencies:
+      '@clerk/types': 4.14.0
       tslib: 2.4.1
 
   '@clerk/types@4.13.1':
+    dependencies:
+      csstype: 3.1.1
+
+  '@clerk/types@4.14.0':
     dependencies:
       csstype: 3.1.1
 
@@ -6219,7 +6250,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   dot-prop@8.0.2:
     dependencies:
@@ -6479,7 +6510,7 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  expect-type@0.19.0: {}
+  expect-type@0.20.0: {}
 
   extendable-error@0.1.7: {}
 
@@ -7095,7 +7126,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   lru-cache@10.4.3: {}
 
@@ -7309,7 +7340,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   node-addon-api@7.1.1: {}
 
@@ -7875,7 +7906,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   snakecase-keys@5.4.4:
     dependencies:
