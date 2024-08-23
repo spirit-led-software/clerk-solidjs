@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.13
+
+### Patch Changes
+
+- 1b89ee5: Bump deps
+
 ## 1.1.12
 
 ### Patch Changes
