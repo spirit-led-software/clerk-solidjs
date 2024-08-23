@@ -5,6 +5,7 @@
     "build": "turbo build",
     "changeset": "changeset",
     "clean": "turbo clean",
+    "clean-install": "rimraf pnpm-lock.yaml --glob **/node_modules && pnpm install",
     "dev": "turbo dev",
     "format:check": "turbo format:check",
     "format": "turbo format",
@@ -16,10 +17,11 @@
     "type-check": "turbo type-check",
     "version": "changeset version && pnpm install --no-frozen-lockfile"
   },
-  "author": "Ian Pascoe",
+  "author": "Spirit-Led Software",
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
+    "rimraf": "^6.0.1",
     "turbo": "^2.0.14"
   },
   "packageManager": "pnpm@9.4.0"

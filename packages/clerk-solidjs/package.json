@@ -17,7 +17,7 @@
     "url": "https://github.com/spirit-led-software/clerk-solidjs"
   },
   "license": "MIT",
-  "author": "Ian Pascoe",
+  "author": "Spirit-Led Software",
   "type": "module",
   "main": "./dist/index/server.cjs",
   "module": "./dist/index/server.js",
