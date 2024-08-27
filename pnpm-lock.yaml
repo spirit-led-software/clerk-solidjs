@@ -15,8 +15,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       turbo:
-        specifier: ^2.0.14
-        version: 2.0.14
+        specifier: ^2.1.0
+        version: 2.1.0
 
   examples/basic:
     dependencies:
@@ -25,10 +25,10 @@ importers:
         version: 0.14.3(solid-js@1.8.21)
       '@solidjs/start':
         specifier: ^1.0.6
-        version: 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
+        version: 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
       clerk-solidjs:
         specifier: latest
-        version: 1.1.13(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.21)
+        version: 1.1.13(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.21)
       solid-js:
         specifier: ^1.8.21
         version: 1.8.21
@@ -43,8 +43,8 @@ importers:
         specifier: ^3.4.10
         version: 3.4.10
       vinxi:
-        specifier: ^0.4.1
-        version: 0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
+        specifier: ^0.4.2
+        version: 0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
 
   packages/clerk-solidjs:
     dependencies:
@@ -65,7 +65,7 @@ importers:
         version: 1.3.9(solid-js@1.8.21)
       '@solidjs/start':
         specifier: '>=1'
-        version: 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
+        version: 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
       '@tanstack/solid-query':
         specifier: ^5.52.0
         version: 5.52.0(solid-js@1.8.21)
@@ -74,17 +74,17 @@ importers:
         version: 1.8.21
     devDependencies:
       '@clerk/clerk-js':
-        specifier: ^5.15.1
-        version: 5.15.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^5.16.0
+        version: 5.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/localizations':
-        specifier: ^2.6.1
-        version: 2.6.1
+        specifier: ^2.6.2
+        version: 2.6.2
       '@clerk/themes':
-        specifier: ^2.1.21
-        version: 2.1.21
+        specifier: ^2.1.22
+        version: 2.1.22
       '@clerk/types':
-        specifier: ^4.14.0
-        version: 4.14.0
+        specifier: ^4.15.0
+        version: 4.15.0
       '@eslint/js':
         specifier: ^9.9.1
         version: 9.9.1
@@ -359,15 +359,15 @@ packages:
     resolution: {integrity: sha512-csIF8eHM84JPP6ZuOdE37saDRIY7Dp5B8Yt26FZSehCveUTeI16iCCbVb8Co4hutlKZa08Mcb2GEcXavRnkvfA==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/clerk-js@5.15.1':
-    resolution: {integrity: sha512-ZYGtGmbu00fjfRr57zal51TTZXkOWAwra1XJFuDSGUQv5FuWm5WC0cojggXPUConHj67A4T4VFumfs3jwMQPXQ==}
+  '@clerk/clerk-js@5.16.0':
+    resolution: {integrity: sha512-E1igyt7w1C52D4G5YGLn7JMDyVr1EwSqcGWwd3Zl/887/wVxgMgXKERCVCXXLcBwx1nlOTZbe3s1HCCYQB5+SA==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  '@clerk/localizations@2.6.1':
-    resolution: {integrity: sha512-CsYkl7HUuqXYl86Y2aOTQE4kiHp2u8/AI4VpBFO9M7rZHd3PrbOBcJw2S1KHo+tLnRCoJi1mxkor8t+J55DyQQ==}
+  '@clerk/localizations@2.6.2':
+    resolution: {integrity: sha512-ALZhGrYL1h8QJNRLgtLxfAEno05nmK5kJ8IrJn5nudiTUZyDOIP9PmTsC3n4u6v5okUkAQNIycPNs/kAN5niug==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/shared@2.5.2':
@@ -382,12 +382,28 @@ packages:
       react-dom:
         optional: true
 
-  '@clerk/themes@2.1.21':
-    resolution: {integrity: sha512-eJTji2x6XMt6FOD5deNjTe86foHIUEBNuaCWVywjVnLbqHX5/uYsJkiexpUrKGGfyEjTr7z5j7V7jZNLsYRSRw==}
+  '@clerk/shared@2.5.3':
+    resolution: {integrity: sha512-9y4Zrn5gIfXwF3kZQ6A4TIyDzEhvuOQ9Eb2sRfGebmKtN40Mq8HyTlsd9CjJvAC9m5AGH7f6o7n9k8Gytf+x2w==}
+    engines: {node: '>=18.17.0'}
+    peerDependencies:
+      react: '>=18 || >=19.0.0-beta'
+      react-dom: '>=18 || >=19.0.0-beta'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
+  '@clerk/themes@2.1.22':
+    resolution: {integrity: sha512-21N+bMwV5YlFmU6/F0gZeML+DT+UxUq5bJzBQwR4FcPb8qgq3YYjczeNwb1wNvShQf0W0vTYDIgycynd3Z+jzw==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.14.0':
     resolution: {integrity: sha512-d3MUcWtXGTOS7QYCRVrOra7NYAGRiNWlb+Ke2KMSb+Z3lea6WlKeHa18uVnAkIVxBXtHlzdU2kwW0PrHkx8j9Q==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.15.0':
+    resolution: {integrity: sha512-ENe/8arwL/EZw/htHMiFtLT17reBbA/qey26SXrayUn53FCoYDhctt3tf9pQXy4zd7jXxz3v3DlOqV3G7WCMIA==}
     engines: {node: '>=18.17.0'}
 
   '@cloudflare/kv-asset-handler@0.3.4':
@@ -3861,38 +3877,38 @@ packages:
       typescript:
         optional: true
 
-  turbo-darwin-64@2.0.14:
-    resolution: {integrity: sha512-kwfDmjNwlNfvtrvT29+ZBg5n1Wvxl891bFHchMJyzMoR0HOE9N1NSNdSZb9wG3e7sYNIu4uDkNk+VBEqJW0HzQ==}
+  turbo-darwin-64@2.1.0:
+    resolution: {integrity: sha512-gHwpDk2gyB7qZ57gUUwDIS/IkglqEjjVtPZCTxmCRg28Tiwjui0azsLVKrnHP9UZHllozwbi28x8HXLXLEFF1w==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.0.14:
-    resolution: {integrity: sha512-m3LXYEshCx3wc4ZClM6gb01KYpFmtjQ9IBF3A7ofjb6ahux3xlYZJZ3uFCLAGHuvGLuJ3htfiPbwlDPTdknqqw==}
+  turbo-darwin-arm64@2.1.0:
+    resolution: {integrity: sha512-GLaqGetNC6eS4eqXgsheLOHic/OcnGCGDi5boVf+TFZTXYH6YE15L4ugZha4xHXCr1KouCLILHh+f8EHEmWylg==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.0.14:
-    resolution: {integrity: sha512-7vBzCPdoTtR92SNn2JMgj1FlMmyonGmpMaQdgAB1OVYtuQ6NVGoh7/lODfaILqXjpvmFSVbpBIDrKOT6EvcprQ==}
+  turbo-linux-64@2.1.0:
+    resolution: {integrity: sha512-VzBOsj7JyGoZtiNZZ6brjnY7UehRnClluw7pwznuLPzClkqOOPMd2jOcgkWxnP/xW4NBmOoFANXXrtvKBD4f2w==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.0.14:
-    resolution: {integrity: sha512-jwH+c0bfjpBf26K/tdEFatmnYyXwGROjbr6bZmNcL8R+IkGAc/cglL+OToqJnQZTgZvH7uDGbeSyUo7IsHyjuA==}
+  turbo-linux-arm64@2.1.0:
+    resolution: {integrity: sha512-St7svJnOO5g4F6R7Z32e10I/0M3e6qpNjEYybXwPNul9NSfnUXeky4WoKaALwqNhyJ7nYemoFpZ1d+i8hFQTHg==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.0.14:
-    resolution: {integrity: sha512-w9/XwkHSzvLjmioo6cl3S1yRfI6swxsV1j1eJwtl66JM4/pn0H2rBa855R0n7hZnmI6H5ywLt/nLt6Ae8RTDmw==}
+  turbo-windows-64@2.1.0:
+    resolution: {integrity: sha512-iSobNud2MrJ1SZ1upVPlErT8xexsr0MQtKapdfq6z0M0rBnrDGEq5bUCSScWyGu+O4+glB4br9xkTAkGFqaxqQ==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.0.14:
-    resolution: {integrity: sha512-XaQlyYk+Rf4xS5XWCo8XCMIpssgGGy8blzLfolN6YBp4baElIWMlkLZHDbGyiFmCbNf9I9gJI64XGRG+LVyyjA==}
+  turbo-windows-arm64@2.1.0:
+    resolution: {integrity: sha512-d61jN4rjE5PnUfF66GKrKoj8S8Ql4FGXzFFzZz4kjsHpZZzCTtqlzPZBmd1byzGYhDPTorTqG3G1USohbdyohA==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.0.14:
-    resolution: {integrity: sha512-00JjdCMD/cpsjP0Izkjcm8Oaor5yUCfDwODtaLb+WyblyadkaDEisGhy3Dbd5az9n+5iLSPiUgf+WjPbns6MRg==}
+  turbo@2.1.0:
+    resolution: {integrity: sha512-A969/LO/sPHKlapIarY2VVzqQ5JnnW2/1kksZlnMEpsRD6gwOELvVL+ozfMiO7av9RILt3UeN02L17efr6HUCA==}
     hasBin: true
 
   type-check@0.4.0:
@@ -4050,8 +4066,8 @@ packages:
   validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
 
-  vinxi@0.4.1:
-    resolution: {integrity: sha512-WGEYqIuJ2/P3sBoSVKsGvp/UKpW4wVSaAFdA18gthyMCEExN6nVteoA+Rv1wQFLKXTVL9JRpeGJjcLzcRRgGCA==}
+  vinxi@0.4.2:
+    resolution: {integrity: sha512-BbvIum9BLUQ22O/lU1RX0+aKNMXXcl58hofNoWFnFcKkm+efgVsHiD2d7HG3w8QLdb2Asdhmz5/ZzI1Y3zTBXw==}
     hasBin: true
 
   vite-node@2.0.5:
@@ -4682,11 +4698,11 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/clerk-js@5.15.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/clerk-js@5.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/localizations': 2.6.1
-      '@clerk/shared': 2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/types': 4.14.0
+      '@clerk/localizations': 2.6.2
+      '@clerk/shared': 2.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/types': 4.15.0
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.1(react@18.3.1)
       '@floating-ui/react': 0.25.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4706,9 +4722,9 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@clerk/localizations@2.6.1':
+  '@clerk/localizations@2.6.2':
     dependencies:
-      '@clerk/types': 4.14.0
+      '@clerk/types': 4.15.0
 
   '@clerk/shared@2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -4721,12 +4737,27 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@clerk/themes@2.1.21':
+  '@clerk/shared@2.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/types': 4.14.0
+      '@clerk/types': 4.15.0
+      glob-to-regexp: 0.4.1
+      js-cookie: 3.0.5
+      std-env: 3.7.0
+      swr: 2.2.5(react@18.3.1)
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@clerk/themes@2.1.22':
+    dependencies:
+      '@clerk/types': 4.15.0
       tslib: 2.4.1
 
   '@clerk/types@4.14.0':
+    dependencies:
+      csstype: 3.1.1
+
+  '@clerk/types@4.15.0':
     dependencies:
       csstype: 3.1.1
 
@@ -5388,11 +5419,11 @@ snapshots:
     dependencies:
       solid-js: 1.8.21
 
-  '@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))':
+  '@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
-      '@vinxi/server-components': 0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
-      '@vinxi/server-functions': 0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/server-components': 0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/server-functions': 0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
       defu: 6.1.4
       error-stack-parser: 2.1.4
       glob: 10.4.5
@@ -5608,7 +5639,7 @@ snapshots:
       consola: 3.2.3
       defu: 6.1.4
       get-port-please: 3.1.2
-      h3: 1.11.1
+      h3: 1.12.0
       http-shutdown: 1.2.2
       jiti: 1.21.6
       mlly: 1.7.1
@@ -5621,7 +5652,7 @@ snapshots:
     transitivePeerDependencies:
       - uWebSockets.js
 
-  '@vinxi/plugin-directives@0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))':
+  '@vinxi/plugin-directives@0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))':
     dependencies:
       '@babel/parser': 7.25.4
       acorn: 8.12.1
@@ -5632,29 +5663,29 @@ snapshots:
       magicast: 0.2.11
       recast: 0.23.9
       tslib: 2.6.3
-      vinxi: 0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
+      vinxi: 0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
 
-  '@vinxi/server-components@0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))':
+  '@vinxi/server-components@0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
+      vinxi: 0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
 
-  '@vinxi/server-functions@0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))':
+  '@vinxi/server-functions@0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
+      vinxi: 0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6)
 
   '@vitest/expect@2.0.5':
     dependencies:
@@ -6007,14 +6038,14 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.1.13(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.21):
+  clerk-solidjs@1.1.13(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.21):
     dependencies:
       '@clerk/backend': 1.8.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@solid-primitives/context': 0.2.3(solid-js@1.8.21)
       '@solid-primitives/destructure': 0.1.17(solid-js@1.8.21)
       '@solid-primitives/memo': 1.3.9(solid-js@1.8.21)
-      '@solidjs/start': 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
+      '@solidjs/start': 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.0)(solid-js@1.8.21)(vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
       '@tanstack/solid-query': 5.52.0(solid-js@1.8.21)
       solid-js: 1.8.21
     transitivePeerDependencies:
@@ -6221,7 +6252,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   dot-prop@8.0.2:
     dependencies:
@@ -7097,7 +7128,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   lru-cache@10.4.3: {}
 
@@ -7311,7 +7342,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   node-addon-api@7.1.1: {}
 
@@ -7877,7 +7908,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   snakecase-keys@5.4.4:
     dependencies:
@@ -8193,32 +8224,32 @@ snapshots:
       - tsx
       - yaml
 
-  turbo-darwin-64@2.0.14:
+  turbo-darwin-64@2.1.0:
     optional: true
 
-  turbo-darwin-arm64@2.0.14:
+  turbo-darwin-arm64@2.1.0:
     optional: true
 
-  turbo-linux-64@2.0.14:
+  turbo-linux-64@2.1.0:
     optional: true
 
-  turbo-linux-arm64@2.0.14:
+  turbo-linux-arm64@2.1.0:
     optional: true
 
-  turbo-windows-64@2.0.14:
+  turbo-windows-64@2.1.0:
     optional: true
 
-  turbo-windows-arm64@2.0.14:
+  turbo-windows-arm64@2.1.0:
     optional: true
 
-  turbo@2.0.14:
+  turbo@2.1.0:
     optionalDependencies:
-      turbo-darwin-64: 2.0.14
-      turbo-darwin-arm64: 2.0.14
-      turbo-linux-64: 2.0.14
-      turbo-linux-arm64: 2.0.14
-      turbo-windows-64: 2.0.14
-      turbo-windows-arm64: 2.0.14
+      turbo-darwin-64: 2.1.0
+      turbo-darwin-arm64: 2.1.0
+      turbo-linux-64: 2.1.0
+      turbo-linux-arm64: 2.1.0
+      turbo-windows-64: 2.1.0
+      turbo-windows-arm64: 2.1.0
 
   type-check@0.4.0:
     dependencies:
@@ -8306,7 +8337,7 @@ snapshots:
       anymatch: 3.1.3
       chokidar: 3.6.0
       destr: 2.0.3
-      h3: 1.11.1
+      h3: 1.12.0
       listhen: 1.7.2
       lru-cache: 10.4.3
       mri: 1.2.0
@@ -8362,7 +8393,7 @@ snapshots:
 
   validate-html-nesting@1.2.2: {}
 
-  vinxi@0.4.1(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6):
+  vinxi@0.4.2(@types/node@22.5.0)(ioredis@5.4.1)(terser@5.31.6):
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)

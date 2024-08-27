@@ -139,10 +139,10 @@
     "@tanstack/solid-query": "^5.52.0"
   },
   "devDependencies": {
-    "@clerk/clerk-js": "^5.15.1",
-    "@clerk/localizations": "^2.6.1",
-    "@clerk/themes": "^2.1.21",
-    "@clerk/types": "^4.14.0",
+    "@clerk/clerk-js": "^5.16.0",
+    "@clerk/localizations": "^2.6.2",
+    "@clerk/themes": "^2.1.22",
+    "@clerk/types": "^4.15.0",
     "@eslint/js": "^9.9.1",
     "@solidjs/testing-library": "^0.8.9",
     "@testing-library/jest-dom": "^6.5.0",
