@@ -222,10 +222,8 @@ export {};
 
 You can get in touch in any of the following ways:
 
-- Join the Clerk official community [Discord server](https://clerk.com/discord)
 - Create a [GitHub Issue](https://github.com/spirit-led-software/clerk-solidjs/issues)
 - Create a [GitHub Discussion](https://github.com/spirit-led-software/clerk-solidjs/discussions)
-- Contact options listed on [the Clerk Support page](https://clerk.com/support?utm_source=github&utm_medium=clerk_solidjs)
 
 ## Contributing
 
