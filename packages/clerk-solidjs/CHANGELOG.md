@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.15
+
+### Patch Changes
+
+- efdef59: Update README to adjust support contact options
+
 ## 1.1.14
 
 ### Patch Changes
