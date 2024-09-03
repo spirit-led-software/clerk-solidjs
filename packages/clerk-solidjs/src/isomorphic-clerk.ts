@@ -1,11 +1,16 @@
 import { inBrowser } from '@clerk/shared/browser';
 import { handleValueOrFn } from '@clerk/shared/handleValueOrFn';
+import { loadClerkJsScript } from '@clerk/shared/loadClerkJsScript';
 import type { TelemetryCollector } from '@clerk/shared/telemetry';
 import type {
+  __experimental_UserVerificationModalProps,
+  __experimental_UserVerificationProps,
   ActiveSessionResource,
+  AuthenticateWithCoinbaseParams,
   AuthenticateWithGoogleOneTapParams,
   AuthenticateWithMetamaskParams,
   Clerk,
+  ClerkAuthenticateWithWeb3Params,
   ClientResource,
   CreateOrganizationParams,
   CreateOrganizationProps,
@@ -48,7 +53,7 @@ import type {
   HeadlessBrowserClerkConstructor,
   IsomorphicClerkOptions
 } from './types';
-import { isConstructor, loadClerkJsScript } from './utils';
+import { isConstructor } from './utils';
 
 const SDK_METADATA = {
   name: PACKAGE_NAME,
@@ -89,6 +94,8 @@ type IsomorphicLoadedClerk = Without<
   | 'handleGoogleOneTapCallback'
   | 'handleUnauthenticated'
   | 'authenticateWithMetamask'
+  | 'authenticateWithCoinbase'
+  | 'authenticateWithWeb3'
   | 'authenticateWithGoogleOneTap'
   | 'createOrganization'
   | 'getOrganization'
@@ -100,6 +107,7 @@ type IsomorphicLoadedClerk = Without<
   | 'mountSignUp'
   | 'mountSignIn'
   | 'mountUserProfile'
+  | '__experimental_mountUserVerification'
   | 'client'
 > & {
   // TODO: Align return type and parms
@@ -112,6 +120,12 @@ type IsomorphicLoadedClerk = Without<
   // TODO: Align Promise unknown
   authenticateWithMetamask: (
     params: AuthenticateWithMetamaskParams
+  ) => Promise<void>;
+  authenticateWithCoinbase: (
+    params: AuthenticateWithCoinbaseParams
+  ) => Promise<void>;
+  authenticateWithWeb3: (
+    params: ClerkAuthenticateWithWeb3Params
   ) => Promise<void>;
   authenticateWithGoogleOneTap: (
     params: AuthenticateWithGoogleOneTapParams
@@ -141,6 +155,8 @@ type IsomorphicLoadedClerk = Without<
   buildAfterSignUpUrl: () => string | void;
   // TODO: Align return type
   buildAfterSignOutUrl: () => string | void;
+  // TODO: Align return type
+  buildAfterMultiSessionSingleSignOutUrl: () => string | void;
   // TODO: Align optional props
   mountUserButton: (node: HTMLDivElement, props: UserButtonProps) => void;
   mountOrganizationList: (
@@ -162,6 +178,10 @@ type IsomorphicLoadedClerk = Without<
   mountSignUp: (node: HTMLDivElement, props: SignUpProps) => void;
   mountSignIn: (node: HTMLDivElement, props: SignInProps) => void;
   mountUserProfile: (node: HTMLDivElement, props: UserProfileProps) => void;
+  __experimental_mountUserVerification: (
+    node: HTMLDivElement,
+    props: __experimental_UserVerificationProps
+  ) => void;
   client: ClientResource | undefined;
 };
 
@@ -171,6 +191,8 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
   private readonly Clerk: ClerkProp;
   private clerkjs: BrowserClerk | HeadlessBrowserClerk | null = null;
   private preopenOneTap?: null | GoogleOneTapProps = null;
+  private preopenUserVerification?: null | __experimental_UserVerificationProps =
+    null;
   private preopenSignIn?: null | SignInProps = null;
   private preopenSignUp?: null | SignUpProps = null;
   private preopenUserProfile?: null | UserProfileProps = null;
@@ -199,9 +221,21 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
     HTMLDivElement,
     OrganizationListProps
   >();
+  private premountUserVerificationNodes = new Map<
+    HTMLDivElement,
+    __experimental_UserVerificationProps
+  >();
   private premountMethodCalls = new Map<
     MethodName<BrowserClerk>,
     MethodCallback
+  >();
+  // A separate Map of `addListener` method calls to handle multiple listeners.
+  private premountAddListenerCalls = new Map<
+    ListenerCallback,
+    {
+      unsubscribe: UnsubscribeCallback;
+      nativeUnsubscribe?: UnsubscribeCallback;
+    }
   >();
   private loadedListeners: Array<() => void> = [];
 
@@ -358,6 +392,19 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
     }
   };
 
+  buildAfterMultiSessionSingleSignOutUrl = (): string | void => {
+    const callback = () =>
+      this.clerkjs?.buildAfterMultiSessionSingleSignOutUrl() || '';
+    if (this.clerkjs && this.#loaded) {
+      return callback();
+    } else {
+      this.premountMethodCalls.set(
+        'buildAfterMultiSessionSingleSignOutUrl',
+        callback
+      );
+    }
+  };
+
   buildUserProfileUrl = (): string | void => {
     const callback = () => this.clerkjs?.buildUserProfileUrl() || '';
     if (this.clerkjs && this.#loaded) {
@@ -416,6 +463,16 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
       return;
     }
 
+    // Store frontendAPI value on window as a fallback. This value can be used as a
+    // fallback during ClerkJS hot loading in case ClerkJS fails to find the
+    // "data-clerk-frontend-api" attribute on its script tag.
+
+    // This can happen when the DOM is altered completely during client rehydration.
+    // For example, in Remix with React 18 the document changes completely via `hydrateRoot(document)`.
+
+    // For more information refer to:
+    // - https://github.com/remix-run/remix/issues/2947
+    // - https://github.com/facebook/react/issues/24430
     if (typeof window !== 'undefined') {
       window.__clerk_publishable_key = this.#publishableKey;
       window.__clerk_proxy_url = this.proxyUrl;
@@ -456,7 +513,8 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
             ...this.options,
             publishableKey: this.#publishableKey,
             proxyUrl: this.proxyUrl,
-            domain: this.domain
+            domain: this.domain,
+            nonce: this.options.nonce
           });
         }
 
@@ -512,6 +570,9 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
     this.clerkjs = clerkjs;
 
     this.premountMethodCalls.forEach((cb) => cb());
+    this.premountAddListenerCalls.forEach((listenerHandlers, listener) => {
+      listenerHandlers.nativeUnsubscribe = clerkjs.addListener(listener);
+    });
 
     if (this.preopenSignIn !== null) {
       clerkjs.openSignIn(this.preopenSignIn);
@@ -523,6 +584,10 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
 
     if (this.preopenUserProfile !== null) {
       clerkjs.openUserProfile(this.preopenUserProfile);
+    }
+
+    if (this.preopenUserVerification !== null) {
+      clerkjs.__experimental_openUserVerification(this.preopenUserVerification);
     }
 
     if (this.preopenOneTap !== null) {
@@ -552,6 +617,12 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
     this.premountUserProfileNodes.forEach(
       (props: UserProfileProps, node: HTMLDivElement) => {
         clerkjs.mountUserProfile(node, props);
+      }
+    );
+
+    this.premountUserVerificationNodes.forEach(
+      (props: __experimental_UserVerificationProps, node: HTMLDivElement) => {
+        clerkjs.__experimental_mountUserVerification(node, props);
       }
     );
 
@@ -637,7 +708,7 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
 
   __unstable__updateProps = async (props: any): Promise<void> => {
     const clerkjs = await this.#waitForClerkJS();
-    // Handle case where accounts has clerk-solidjs@4 installed, but clerk-js@3 is manually loaded
+    // Handle case where accounts has clerk-react@4 installed, but clerk-js@3 is manually loaded
     if (clerkjs && '__unstable__updateProps' in clerkjs) {
       return (clerkjs as any).__unstable__updateProps(props);
     }
@@ -671,6 +742,24 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
       this.clerkjs.closeSignIn();
     } else {
       this.preopenSignIn = null;
+    }
+  };
+
+  __experimental_openUserVerification = (
+    props?: __experimental_UserVerificationModalProps
+  ): void => {
+    if (this.clerkjs && this.#loaded) {
+      this.clerkjs.__experimental_openUserVerification(props);
+    } else {
+      this.preopenUserVerification = props;
+    }
+  };
+
+  __experimental_closeUserVerification = (): void => {
+    if (this.clerkjs && this.#loaded) {
+      this.clerkjs.__experimental_closeUserVerification();
+    } else {
+      this.preopenUserVerification = null;
     }
   };
 
@@ -767,6 +856,25 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
       this.clerkjs.unmountSignIn(node);
     } else {
       this.premountSignInNodes.delete(node);
+    }
+  };
+
+  __experimental_mountUserVerification = (
+    node: HTMLDivElement,
+    props: __experimental_UserVerificationProps
+  ): void => {
+    if (this.clerkjs && this.#loaded) {
+      this.clerkjs.__experimental_mountUserVerification(node, props);
+    } else {
+      this.premountUserVerificationNodes.set(node, props);
+    }
+  };
+
+  __experimental_unmountUserVerification = (node: HTMLDivElement): void => {
+    if (this.clerkjs && this.#loaded) {
+      this.clerkjs.__experimental_unmountUserVerification(node);
+    } else {
+      this.premountUserVerificationNodes.delete(node);
     }
   };
 
@@ -898,13 +1006,21 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
   };
 
   addListener = (listener: ListenerCallback): UnsubscribeCallback => {
-    const callback = () => this.clerkjs?.addListener(listener);
-
     if (this.clerkjs) {
-      return callback() as UnsubscribeCallback;
+      return this.clerkjs.addListener(listener);
     } else {
-      this.premountMethodCalls.set('addListener', callback);
-      return () => this.premountMethodCalls.delete('addListener');
+      const unsubscribe = () => {
+        const listenerHandlers = this.premountAddListenerCalls.get(listener);
+        if (listenerHandlers) {
+          listenerHandlers.nativeUnsubscribe?.();
+          this.premountAddListenerCalls.delete(listener);
+        }
+      };
+      this.premountAddListenerCalls.set(listener, {
+        unsubscribe,
+        nativeUnsubscribe: undefined
+      });
+      return unsubscribe;
     }
   };
 
@@ -1009,7 +1125,15 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
   handleRedirectCallback = (params: HandleOAuthCallbackParams): void => {
     const callback = () => this.clerkjs?.handleRedirectCallback(params);
     if (this.clerkjs && this.#loaded) {
-      void callback();
+      void callback()?.catch(() => {
+        // This error is caused when the host app is using React18
+        // and strictMode is enabled. This useEffects runs twice because
+        // the clerk-react ui components mounts, unmounts and mounts again
+        // so the clerk-js component loses its state because of the custom
+        // unmount callback we're using.
+        // This needs to be solved by tweaking the logic in uiComponents.tsx
+        // or by making handleRedirectCallback idempotent
+      });
     } else {
       this.premountMethodCalls.set('handleRedirectCallback', callback);
     }
@@ -1022,7 +1146,15 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
     const callback = () =>
       this.clerkjs?.handleGoogleOneTapCallback(signInOrUp, params);
     if (this.clerkjs && this.#loaded) {
-      void callback();
+      void callback()?.catch(() => {
+        // This error is caused when the host app is using React18
+        // and strictMode is enabled. This useEffects runs twice because
+        // the clerk-react ui components mounts, unmounts and mounts again
+        // so the clerk-js component loses its state because of the custom
+        // unmount callback we're using.
+        // This needs to be solved by tweaking the logic in uiComponents.tsx
+        // or by making handleRedirectCallback idempotent
+      });
     } else {
       this.premountMethodCalls.set('handleGoogleOneTapCallback', callback);
     }
@@ -1047,6 +1179,28 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
       return callback() as Promise<void>;
     } else {
       this.premountMethodCalls.set('authenticateWithMetamask', callback);
+    }
+  };
+
+  authenticateWithCoinbase = async (
+    params: AuthenticateWithCoinbaseParams
+  ): Promise<void> => {
+    const callback = () => this.clerkjs?.authenticateWithCoinbase(params);
+    if (this.clerkjs && this.#loaded) {
+      return callback() as Promise<void>;
+    } else {
+      this.premountMethodCalls.set('authenticateWithCoinbase', callback);
+    }
+  };
+
+  authenticateWithWeb3 = async (
+    params: ClerkAuthenticateWithWeb3Params
+  ): Promise<void> => {
+    const callback = () => this.clerkjs?.authenticateWithWeb3(params);
+    if (this.clerkjs && this.#loaded) {
+      return callback() as Promise<void>;
+    } else {
+      this.premountMethodCalls.set('authenticateWithWeb3', callback);
     }
   };
 
