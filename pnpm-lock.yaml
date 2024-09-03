@@ -28,7 +28,7 @@ importers:
         version: 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.2)(solid-js@1.8.22)(vinxi@0.4.2(@types/node@22.5.2)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.2)(terser@5.31.6))
       clerk-solidjs:
         specifier: latest
-        version: 1.1.15(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.2)(solid-js@1.8.22)(vinxi@0.4.2(@types/node@22.5.2)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.2)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.22)
+        version: 1.1.16(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.2)(solid-js@1.8.22)(vinxi@0.4.2(@types/node@22.5.2)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.2)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.22)
       solid-js:
         specifier: ^1.8.21
         version: 1.8.22
@@ -49,11 +49,11 @@ importers:
   packages/clerk-solidjs:
     dependencies:
       '@clerk/backend':
-        specifier: ^1.8.1
-        version: 1.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.9.2
+        version: 1.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared':
-        specifier: ^2.5.3
-        version: 2.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.6.2
+        version: 2.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@solid-primitives/context':
         specifier: ^0.2.3
         version: 0.2.3(solid-js@1.8.22)
@@ -359,6 +359,10 @@ packages:
     resolution: {integrity: sha512-thSyyS7SWLkJCEiYrEzoyc/P+F+EUQarMHAVjruyLYWtEwng/0bSjpZVSBsmm4qYxR71M4Ofy+yz6ZkIO2iQPA==}
     engines: {node: '>=18.17.0'}
 
+  '@clerk/backend@1.9.2':
+    resolution: {integrity: sha512-8vCYux8Xbu5TQ2iq9tYuDnNhv3K/XhZ+34QJG+n4ZX4w4FfTTuzwb5OylcmP69vPvYybhoQfjpK57kBOW22deg==}
+    engines: {node: '>=18.17.0'}
+
   '@clerk/clerk-js@5.19.0':
     resolution: {integrity: sha512-IzlbJVwfhyHIL9zkdzwtM6++2T1c2kUKx8b9rw1G5aUo9sO1PY+BOxt67smQH1DIE0qts1H176fk94+wxtriHg==}
     engines: {node: '>=18.17.0'}
@@ -382,12 +386,28 @@ packages:
       react-dom:
         optional: true
 
+  '@clerk/shared@2.6.2':
+    resolution: {integrity: sha512-RkrNknIr98GPu3srXLhjJViC1Mom1gUsRMNnf1deibX2yvRnndloZGnFb0qxf+pFL/NCkKd3nSHtK3eCJQrVYQ==}
+    engines: {node: '>=18.17.0'}
+    peerDependencies:
+      react: '>=18 || >=19.0.0-beta'
+      react-dom: '>=18 || >=19.0.0-beta'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   '@clerk/themes@2.1.26':
     resolution: {integrity: sha512-1viZbfXU+JDhN+oWGuc3oREifIuT2xVJMzm529T7EM8G9na6i8yYLOboTS3ccsKy9lLpotTzLdWiqpRDG1okzQ==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.18.0':
     resolution: {integrity: sha512-c/wo6EcwtdpXEMJr/uPqSgffRFw0/SI5g1o+IeeNQmcEvAWJJgeCD015BiRAHgWomKln9NUgdZwFWQgSlmVK6Q==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.19.0':
+    resolution: {integrity: sha512-bDN/nRUD5PFCehQ+Kjdcft0I3b9CIyCcY3OBNDSc1L6RQhlXH+J48EtaP/cbRdslb83LJiBPQ2i/gV4VgblzwA==}
     engines: {node: '>=18.17.0'}
 
   '@cloudflare/kv-asset-handler@0.3.4':
@@ -1758,8 +1778,8 @@ packages:
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
 
-  clerk-solidjs@1.1.15:
-    resolution: {integrity: sha512-93EMiHuzP4LovjdLy4ygvmAkHU4tWlj/xqgZrOr/1THMNecnONClEiiwuwQzL6S8eVDyLxeCst5vFfCGT0pHnw==}
+  clerk-solidjs@1.1.16:
+    resolution: {integrity: sha512-y6aQzzIpk6a1/9dkWCHOaqoYhMfsB3MqWz6Vh3CZ3JF4J5vTXGh5ocEJuebR1vLXrwDpXPtQ1PpJeucc9EJRIw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@solidjs/start': '>=1'
@@ -4682,6 +4702,17 @@ snapshots:
       - react
       - react-dom
 
+  '@clerk/backend@1.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@clerk/shared': 2.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/types': 4.19.0
+      cookie: 0.5.0
+      snakecase-keys: 5.4.4
+      tslib: 2.4.1
+    transitivePeerDependencies:
+      - react
+      - react-dom
+
   '@clerk/clerk-js@5.19.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/localizations': 2.8.0
@@ -4721,12 +4752,27 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  '@clerk/shared@2.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@clerk/types': 4.19.0
+      glob-to-regexp: 0.4.1
+      js-cookie: 3.0.5
+      std-env: 3.7.0
+      swr: 2.2.5(react@18.3.1)
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@clerk/themes@2.1.26':
     dependencies:
       '@clerk/types': 4.18.0
       tslib: 2.4.1
 
   '@clerk/types@4.18.0':
+    dependencies:
+      csstype: 3.1.1
+
+  '@clerk/types@4.19.0':
     dependencies:
       csstype: 3.1.1
 
@@ -6007,10 +6053,10 @@ snapshots:
     dependencies:
       consola: 3.2.3
 
-  clerk-solidjs@1.1.15(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.2)(solid-js@1.8.22)(vinxi@0.4.2(@types/node@22.5.2)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.2)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.22):
+  clerk-solidjs@1.1.16(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.2)(solid-js@1.8.22)(vinxi@0.4.2(@types/node@22.5.2)(ioredis@5.4.1)(terser@5.31.6))(vite@5.4.2(@types/node@22.5.2)(terser@5.31.6)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.8.22):
     dependencies:
       '@clerk/backend': 1.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/shared': 2.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/shared': 2.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@solid-primitives/context': 0.2.3(solid-js@1.8.22)
       '@solid-primitives/destructure': 0.1.17(solid-js@1.8.22)
       '@solid-primitives/memo': 1.3.9(solid-js@1.8.22)
@@ -6221,7 +6267,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   dot-prop@8.0.2:
     dependencies:
@@ -7097,7 +7143,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   lru-cache@10.4.3: {}
 
@@ -7311,7 +7357,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   node-addon-api@7.1.1: {}
 
@@ -7877,7 +7923,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   snakecase-keys@5.4.4:
     dependencies:
