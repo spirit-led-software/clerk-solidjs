@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.16
+
+### Patch Changes
+
+- 43bd09c: Use shared clerk functions
+
 ## 1.1.15
 
 ### Patch Changes
