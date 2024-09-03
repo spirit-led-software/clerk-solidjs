@@ -1,3 +1,4 @@
+import { deriveState } from '@clerk/shared';
 import type { ClientResource, InitialState, Resources } from '@clerk/types';
 import {
   Accessor,
@@ -12,7 +13,6 @@ import {
 } from 'solid-js';
 import { IsomorphicClerk } from '../isomorphic-clerk';
 import type { IsomorphicClerkOptions } from '../types';
-import { deriveState } from '../utils/derive-state';
 import { AuthContextProvider } from './auth';
 import { ClientContextProvider } from './client';
 import { IsomorphicClerkContextProvider } from './isomorphic-clerk';
