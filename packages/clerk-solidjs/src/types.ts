@@ -37,6 +37,7 @@ export type IsomorphicClerkOptions = Without<ClerkOptions, 'isSatellite'> & {
   clerkJSVersion?: string;
   sdkMetadata?: SDKMetadata;
   publishableKey: string;
+  nonce?: string;
 } & MultiDomainAndOrProxy;
 
 export type ClerkProviderProps = IsomorphicClerkOptions & {
