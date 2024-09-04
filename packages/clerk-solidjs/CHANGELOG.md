@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.17
+
+### Patch Changes
+
+- 41d8f77: Add capabilities to isomorphic clerk to match react
+
 ## 1.1.16
 
 ### Patch Changes
