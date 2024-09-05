@@ -147,7 +147,7 @@
     "@solidjs/testing-library": "^0.8.9",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/user-event": "^14.5.2",
-    "@types/node": "^22.5.2",
+    "@types/node": "^22.5.4",
     "eslint": "^9.9.1",
     "expect-type": "^0.20.0",
     "globals": "^15.9.0",
