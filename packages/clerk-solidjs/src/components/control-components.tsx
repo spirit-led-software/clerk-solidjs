@@ -41,14 +41,16 @@ export const ClerkLoaded = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoaded');
 
   const isomorphicClerk = useIsomorphicClerkContext();
-  return <Show when={isomorphicClerk().loaded}>{props.children}</Show>;
+  const isLoaded = createMemo(() => isomorphicClerk().loaded);
+  return <Show when={isLoaded()}>{props.children}</Show>;
 };
 
 export const ClerkLoading = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoading');
 
   const isomorphicClerk = useIsomorphicClerkContext();
-  return <Show when={!isomorphicClerk().loaded}>{props.children}</Show>;
+  const isLoaded = createMemo(() => isomorphicClerk().loaded);
+  return <Show when={!isLoaded()}>{props.children}</Show>;
 };
 
 export type ProtectProps = ParentProps<
@@ -90,12 +92,13 @@ export type ProtectProps = ParentProps<
  * <Protect fallback={<p>Unauthorized</p>} />
  * ```
  */
-export const Protect = ({
-  children,
-  fallback,
-  ...restAuthorizedParams
-}: ProtectProps) => {
+export const Protect = (props: ProtectProps) => {
   useAssertWrappedByClerkProvider('Protect');
+
+  const [local, restAuthorizedParams] = splitProps(props, [
+    'children',
+    'fallback'
+  ]);
 
   const { isLoaded, has, userId } = useAuth();
 
@@ -109,9 +112,9 @@ export const Protect = ({
   /**
    * Fallback to UI provided by user or `null` if authorization checks failed
    */
-  const unauthorized = <>{fallback ?? null}</>;
+  const unauthorized = <>{local.fallback ?? null}</>;
 
-  const authorized = <>{children}</>;
+  const authorized = <>{local.children}</>;
 
   if (!userId) {
     return unauthorized;

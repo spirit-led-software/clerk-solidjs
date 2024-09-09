@@ -98,18 +98,18 @@ const Portal: Component<MountProps | OpenProps> = (props) => {
         props.open(props.props);
       }
     }
-  });
 
-  onCleanup(() => {
-    const ref = portalRef();
-    if (ref) {
-      if (isMountProps(props)) {
-        props.unmount(ref);
+    onCleanup(() => {
+      const ref = portalRef();
+      if (ref) {
+        if (isMountProps(props)) {
+          props.unmount(ref);
+        }
+        if (isOpenProps(props)) {
+          props.close();
+        }
       }
-      if (isOpenProps(props)) {
-        props.close();
-      }
-    }
+    });
   });
 
   createEffect(() => {
