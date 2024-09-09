@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.2.0
+
+### Minor Changes
+
+- b0f0f1c: Fixing reactive props
+
 ## 1.1.18
 
 ### Patch Changes
