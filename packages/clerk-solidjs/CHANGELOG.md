@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.1.18
+
+### Patch Changes
+
+- fc47cbf: Fix reactivity, bump deps
+
 ## 1.1.17
 
 ### Patch Changes
