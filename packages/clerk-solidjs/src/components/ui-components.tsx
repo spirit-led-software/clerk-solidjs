@@ -87,39 +87,38 @@ const isOpenProps = (props: any): props is OpenProps => {
 const Portal: Component<MountProps | OpenProps> = (props) => {
   const [portalRef, setPortalRef] = createSignal<HTMLDivElement>();
 
+  const componentProps = () => props.props;
+
+  createEffect(() => {
+    const ref = portalRef();
+    if (ref && isMountProps(props)) {
+      props.updateProps({
+        node: ref,
+        props: componentProps()
+      });
+    }
+  });
+
   onMount(() => {
     const ref = portalRef();
     if (ref) {
       if (isMountProps(props)) {
-        props.mount(ref, props.props);
-      }
-
-      if (isOpenProps(props)) {
-        props.open(props.props);
+        props.mount(ref, componentProps());
+      } else if (isOpenProps(props)) {
+        props.open(componentProps());
       }
     }
-
-    onCleanup(() => {
-      const ref = portalRef();
-      if (ref) {
-        if (isMountProps(props)) {
-          props.unmount(ref);
-        }
-        if (isOpenProps(props)) {
-          props.close();
-        }
-      }
-    });
   });
 
-  createEffect(() => {
-    if (!isMountProps(props)) {
-      return;
+  onCleanup(() => {
+    const ref = portalRef();
+    if (ref) {
+      if (isMountProps(props)) {
+        props.unmount(ref);
+      } else if (isOpenProps(props)) {
+        props.close();
+      }
     }
-    props.updateProps({
-      node: portalRef(),
-      props: props.props
-    });
   });
 
   return <div ref={setPortalRef} />;

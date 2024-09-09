@@ -8,9 +8,11 @@ import {
   createEffect,
   createMemo,
   JSX,
+  Match,
   ParentProps,
   Show,
-  splitProps
+  splitProps,
+  Switch
 } from 'solid-js';
 import { useAuthContext } from '../contexts/auth';
 import { useIsomorphicClerkContext } from '../contexts/isomorphic-clerk';
@@ -25,31 +27,27 @@ import { withClerk } from './with-clerk';
 
 export const SignedIn = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('SignedIn');
-
   const { userId } = useAuthContext();
   return <Show when={userId()}>{props.children}</Show>;
 };
 
 export const SignedOut = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('SignedOut');
-
   const { userId } = useAuthContext();
   return <Show when={userId() === null}>{props.children}</Show>;
 };
 
 export const ClerkLoaded = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoaded');
-
   const isomorphicClerk = useIsomorphicClerkContext();
-  const isLoaded = createMemo(() => isomorphicClerk().loaded);
+  const isLoaded = () => isomorphicClerk().loaded;
   return <Show when={isLoaded()}>{props.children}</Show>;
 };
 
 export const ClerkLoading = (props: ParentProps<unknown>): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoading');
-
   const isomorphicClerk = useIsomorphicClerkContext();
-  const isLoaded = createMemo(() => isomorphicClerk().loaded);
+  const isLoaded = () => isomorphicClerk().loaded;
   return <Show when={!isLoaded()}>{props.children}</Show>;
 };
 
@@ -103,45 +101,33 @@ export const Protect = (props: ProtectProps) => {
   const { isLoaded, has, userId } = useAuth();
 
   /**
-   * Avoid flickering children or fallback while clerk is loading sessionId or userId
-   */
-  if (!isLoaded) {
-    return null;
-  }
-
-  /**
    * Fallback to UI provided by user or `null` if authorization checks failed
    */
   const unauthorized = <>{local.fallback ?? null}</>;
-
   const authorized = <>{local.children}</>;
 
-  if (!userId) {
-    return unauthorized;
-  }
-
-  /**
-   * Check against the results of `has` called inside the callback
-   */
-  if (typeof restAuthorizedParams.condition === 'function') {
-    if (restAuthorizedParams.condition(has)) {
-      return authorized;
-    }
-    return unauthorized;
-  }
-
-  if (restAuthorizedParams.role || restAuthorizedParams.permission) {
-    if (has(restAuthorizedParams)) {
-      return authorized;
-    }
-    return unauthorized;
-  }
-
-  /**
-   * If neither of the authorization params are passed behave as the `<SignedIn/>`.
-   * If fallback is present render that instead of rendering nothing.
-   */
-  return authorized;
+  return (
+    <Switch fallback={unauthorized}>
+      <Match when={!isLoaded()}>{unauthorized}</Match>
+      <Match when={!userId()}>{unauthorized}</Match>
+      <Match
+        when={
+          typeof restAuthorizedParams.condition === 'function' &&
+          restAuthorizedParams.condition(has)
+        }
+      >
+        {authorized}
+      </Match>
+      <Match
+        when={
+          (restAuthorizedParams.role || restAuthorizedParams.permission) &&
+          has(restAuthorizedParams)
+        }
+      >
+        {authorized}
+      </Match>
+    </Switch>
+  );
 };
 
 export const RedirectToSignIn = withClerk(

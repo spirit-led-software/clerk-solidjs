@@ -1,5 +1,10 @@
 import { deriveState } from '@clerk/shared';
-import type { ClientResource, InitialState, Resources } from '@clerk/types';
+import type {
+  ClientResource,
+  InitialState,
+  LoadedClerk,
+  Resources
+} from '@clerk/types';
 import {
   Accessor,
   createEffect,
@@ -39,19 +44,20 @@ export function ClerkContextProvider(props: ClerkContextProvider): JSX.Element {
     organization: clerk().organization
   });
   createEffect(() => {
-    onCleanup(clerk().addListener((e) => setState({ ...e })));
+    const fn = clerk().addListener((e) => setState({ ...e }));
+    onCleanup(fn);
   });
 
   const derivedState = createMemo(() =>
     deriveState(clerkLoaded(), state(), props.initialState)
   );
 
-  // Hacky way to get clerk to update when the loading state changes
   const clerkCtx = () => (clerkLoaded() ? clerk() : clerk());
 
   return (
-    // @ts-expect-error - IsomorphicClerk and Loaded clerk are the same
-    <IsomorphicClerkContextProvider clerk={clerkCtx}>
+    <IsomorphicClerkContextProvider
+      clerk={clerkCtx as unknown as Accessor<LoadedClerk>}
+    >
       <ClientContextProvider client={() => state().client}>
         <SessionContextProvider session={() => derivedState().session}>
           <OrganizationContextProvider

@@ -21,8 +21,7 @@ const mockClerk = {
 vi.mock('../with-clerk', () => {
   return {
     withClerk: (Component: any) => (props: any) => {
-      const reactiveProps = () => props;
-      return <Component {...reactiveProps()} clerk={() => mockClerk} />;
+      return <Component {...props} clerk={() => mockClerk} />;
     }
   };
 });
