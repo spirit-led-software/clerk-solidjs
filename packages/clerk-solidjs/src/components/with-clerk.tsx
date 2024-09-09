@@ -15,9 +15,11 @@ export const withClerk = <P extends { clerk: Accessor<LoadedClerk> }>(
 
     const clerk = useIsomorphicClerkContext();
 
+    const reactiveProps = () => props;
+
     return (
       <Show when={clerk().loaded}>
-        <Component {...(props as P)} clerk={clerk} />
+        <Component {...(reactiveProps() as P)} clerk={clerk} />
       </Show>
     );
   };
