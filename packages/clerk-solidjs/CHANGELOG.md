@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 2.0.0
+
+### Major Changes
+
+- 69a85bd: Refactor solid start code
+
 ## 1.2.1
 
 ### Patch Changes
