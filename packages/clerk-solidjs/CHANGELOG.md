@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 1.2.1
+
+### Patch Changes
+
+- c73195c: Update all deps
+
 ## 1.2.0
 
 ### Minor Changes
