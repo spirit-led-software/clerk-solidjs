@@ -1,2 +1,7 @@
-export { auth, type AuthReturn } from './auth';
-export { clerkMiddleware } from './middleware';
+import { auth, clerkMiddleware } from '../start/server';
+
+/**
+ * Import from `clerk-solidjs/start/server` instead.
+ * @deprecated
+ */
+export { auth, clerkMiddleware };

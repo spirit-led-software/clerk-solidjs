@@ -66,7 +66,7 @@ export interface Global {
   Clerk?: HeadlessBrowserClerk | BrowserClerk;
 }
 
-declare const global: Global;
+declare const globalThis: Global;
 
 type GenericFunction<TArgs = never> = (...args: TArgs[]) => unknown;
 
@@ -506,10 +506,10 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
           }
         }
 
-        global.Clerk = c;
+        globalThis.Clerk = c;
       } else {
         // Hot-load latest ClerkJS from Clerk CDN
-        if (!global.Clerk) {
+        if (!globalThis.Clerk) {
           await loadClerkJsScript({
             ...this.options,
             publishableKey: this.#publishableKey,
@@ -519,17 +519,17 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
           });
         }
 
-        if (!global.Clerk) {
+        if (!globalThis.Clerk) {
           throw new Error(
             'Failed to download latest ClerkJS. Contact support@clerk.com.'
           );
         }
 
-        await global.Clerk.load(this.options);
+        await globalThis.Clerk.load(this.options);
       }
 
-      if (global.Clerk?.loaded) {
-        return this.hydrateClerkJS(global.Clerk);
+      if (globalThis.Clerk?.loaded) {
+        return this.hydrateClerkJS(globalThis.Clerk);
       }
       return;
     } catch (err) {

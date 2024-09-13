@@ -6,7 +6,7 @@ import {
   useAuth,
   useUser,
 } from "clerk-solidjs";
-import { auth } from "clerk-solidjs/server";
+import { auth } from "clerk-solidjs/start/server";
 import { createResource, Show } from "solid-js";
 import { getRequestEvent } from "solid-js/web";
 

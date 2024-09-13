@@ -103,18 +103,26 @@ const useLoadedIsomorphicClerk = (
   );
 
   createEffect(
-    on(options, (options) => {
-      void isomorphicClerk().__unstable__updateProps({ options });
-    })
+    on(
+      () => options().localization,
+      (localization) => {
+        void isomorphicClerk().__unstable__updateProps({
+          options: {
+            localization
+          }
+        });
+      }
+    )
   );
 
   createEffect(() => {
     isomorphicClerk().addOnLoaded(() => {
       setLoaded(true);
     });
-    onCleanup(() => {
-      IsomorphicClerk.clearInstance();
-    });
+  });
+
+  onCleanup(() => {
+    IsomorphicClerk.clearInstance();
   });
 
   return { isomorphicClerk, loaded };

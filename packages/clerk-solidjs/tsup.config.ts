@@ -27,6 +27,15 @@ export default defineConfig((config) => {
         {
           name: 'server',
           entry: 'src/server/index.ts'
+        },
+        {
+          name: 'start',
+          entry: 'src/start/index.tsx',
+          server_entry: true
+        },
+        {
+          name: 'start/server',
+          entry: 'src/start/server/index.ts'
         }
       ],
       cjs: true,
