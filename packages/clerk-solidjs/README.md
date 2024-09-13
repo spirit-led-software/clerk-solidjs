@@ -166,7 +166,7 @@ See [SolidStart middleware](https://docs.solidjs.com/solid-start/advanced/middle
 // middleware.ts
 
 import { createMiddleware } from '@solidjs/start/middleware';
-import { clerkMiddleware } from 'clerk-solidjs/server';
+import { clerkMiddleware } from 'clerk-solidjs/start/server';
 
 export default createMiddleware({
   onRequest: [
@@ -184,7 +184,7 @@ export default createMiddleware({
 Once your have the `clerkMiddleware` middleware enabled, you can use the `auth()` helper to access the `AuthReturn` object.
 
 ```ts
-import { auth } from 'clerk-solidjs/server';
+import { auth } from 'clerk-solidjs/start/server';
 
 async function myProtectedServerFunction() {
   'use server';
@@ -201,11 +201,11 @@ If you would like the access the auth object from `event.locals` directly, you m
 
 ```ts
 /// <reference types="@solidjs/start/server" />
-import { AuthReturn } from 'clerk-solidjs/server';
+import { AuthObject } from '@clerk/backend';
 
 declare module '@solidjs/start/server' {
   export interface RequestEventLocals {
-    auth: AuthReturn;
+    auth: AuthObject;
   }
 }
 

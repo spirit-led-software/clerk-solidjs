@@ -1,10 +1,10 @@
 /// <reference types="@solidjs/start/server" />
 
-import { AuthReturn } from '.';
+import { AuthObject } from '@clerk/backend';
 
 declare module '@solidjs/start/server' {
   export interface RequestEventLocals {
-    auth: AuthReturn;
+    auth: AuthObject;
   }
 }
 
