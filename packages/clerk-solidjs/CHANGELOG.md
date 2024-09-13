@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 2.0.1
+
+### Patch Changes
+
+- a6f51d8: Update deps
+
 ## 2.0.0
 
 ### Major Changes
