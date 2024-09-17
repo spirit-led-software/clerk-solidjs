@@ -24,8 +24,8 @@ importers:
         specifier: ^2.0.26
         version: 2.0.26(solid-js@1.8.22)
       '@solidjs/router':
-        specifier: ^0.14.3
-        version: 0.14.3(solid-js@1.8.22)
+        specifier: ^0.14.5
+        version: 0.14.5(solid-js@1.8.22)
       '@solidjs/start':
         specifier: ^1.0.6
         version: 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.21.3)(solid-js@1.8.22)(vinxi@0.4.2(@types/node@22.5.4)(ioredis@5.4.1)(terser@5.32.0))(vite@5.4.5(@types/node@22.5.4)(terser@5.32.0))
@@ -55,11 +55,11 @@ importers:
   packages/clerk-solidjs:
     dependencies:
       '@clerk/backend':
-        specifier: ^1.11.1
-        version: 1.11.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.13.1
+        version: 1.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared':
-        specifier: ^2.7.2
-        version: 2.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.8.1
+        version: 2.8.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@solid-primitives/context':
         specifier: ^0.2.3
         version: 0.2.3(solid-js@1.8.22)
@@ -364,8 +364,8 @@ packages:
   '@changesets/write@0.3.2':
     resolution: {integrity: sha512-kDxDrPNpUgsjDbWBvUo27PzKX4gqeKOlhibaOXDJA6kuBisGqNHv/HwGJrAu8U/dSf8ZEFIeHIPtvSlZI1kULw==}
 
-  '@clerk/backend@1.11.1':
-    resolution: {integrity: sha512-g+jk1wxS0j6s1or6e3rf8KK4bHaIxajCMHAASyhfl9a9OVBqtkeMgbQ3+LIFDRAOSQLxLKrIqJgPGPfOoHz17Q==}
+  '@clerk/backend@1.13.1':
+    resolution: {integrity: sha512-6W5ifwmL7xpwHQMubnoRRpVC/OxrI8iLLFZFP/C4fH10MXGVcgxZFJq/9++Rpdvqwf+ur6YrONom/p7Qoo5eqQ==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/clerk-js@5.21.2':
@@ -391,12 +391,28 @@ packages:
       react-dom:
         optional: true
 
+  '@clerk/shared@2.8.1':
+    resolution: {integrity: sha512-8LxnrQDj9xdKcOFQa4FSKb3P5loZeLMiynzD9yBJgCBTCJ8dNV//qySlP6xK6z172L8RwnDk29yO9J+v+FS9Sw==}
+    engines: {node: '>=18.17.0'}
+    peerDependencies:
+      react: '>=18 || >=19.0.0-beta'
+      react-dom: '>=18 || >=19.0.0-beta'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   '@clerk/themes@2.1.29':
     resolution: {integrity: sha512-uwhVLw6jLTQQLnPhwJmncEElbGit/55+IHsLSgaUm6shB01fSK7lfoHFaWpopRsNvGZKZ6bv6v6pgP8bB2ZokQ==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@4.20.1':
     resolution: {integrity: sha512-s2v3wFgLsB+d0Ot5yN+5IjRNKWl63AAeEczTZDZYSWuNkGihvEXYjS2NtnYuhROBRgWEHEsm0JOp0rQkfTMkBw==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.21.0':
+    resolution: {integrity: sha512-yyPNF4agzub9zXOht9Bk8HG+OkHfLKIpsQuTCiZJszehcKNUqKvJZRxUwdRREBYnBdMl632PKCwbckZsChVxVQ==}
     engines: {node: '>=18.17.0'}
 
   '@cloudflare/kv-asset-handler@0.3.4':
@@ -1367,6 +1383,11 @@ packages:
 
   '@solidjs/router@0.14.3':
     resolution: {integrity: sha512-9p4k4zL2baK/1XRQALbFcaQ4IikjkWmxqYQtFqLzjONUejhL1uqJHtzxB4tZjmNqtRANVRnTDbJfzjvaD9k+pQ==}
+    peerDependencies:
+      solid-js: ^1.8.6
+
+  '@solidjs/router@0.14.5':
+    resolution: {integrity: sha512-J8ZMntnkDvNCSO9n4HyhlQlGdxYa1mandQLt5LMd0YiWAXGlYzjj+bB+OVtzsH1woWfoEJlVnBnGkMpf2lY/ig==}
     peerDependencies:
       solid-js: ^1.8.6
 
@@ -4781,10 +4802,10 @@ snapshots:
       human-id: 1.0.2
       prettier: 2.8.8
 
-  '@clerk/backend@1.11.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/backend@1.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/shared': 2.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/types': 4.20.1
+      '@clerk/shared': 2.8.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/types': 4.21.0
       cookie: 0.5.0
       snakecase-keys: 5.4.4
       tslib: 2.4.1
@@ -4832,12 +4853,27 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  '@clerk/shared@2.8.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@clerk/types': 4.21.0
+      glob-to-regexp: 0.4.1
+      js-cookie: 3.0.5
+      std-env: 3.7.0
+      swr: 2.2.5(react@18.3.1)
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@clerk/themes@2.1.29':
     dependencies:
       '@clerk/types': 4.20.1
       tslib: 2.4.1
 
   '@clerk/types@4.20.1':
+    dependencies:
+      csstype: 3.1.1
+
+  '@clerk/types@4.21.0':
     dependencies:
       csstype: 3.1.1
 
@@ -5616,6 +5652,10 @@ snapshots:
       solid-js: 1.8.22
 
   '@solidjs/router@0.14.3(solid-js@1.8.22)':
+    dependencies:
+      solid-js: 1.8.22
+
+  '@solidjs/router@0.14.5(solid-js@1.8.22)':
     dependencies:
       solid-js: 1.8.22
 
@@ -6449,7 +6489,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   dot-prop@8.0.2:
     dependencies:
@@ -7323,7 +7363,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   lru-cache@10.4.3: {}
 
@@ -7536,7 +7576,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   node-addon-api@2.0.2: {}
 
@@ -8100,7 +8140,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.7.0
 
   snakecase-keys@5.4.4:
     dependencies:
