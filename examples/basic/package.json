@@ -21,7 +21,7 @@
     "@solidjs/router": "^0.14.5",
     "@solidjs/start": "^1.0.6",
     "clerk-solidjs": "workspace:*",
-    "solid-js": "^1.8.22"
+    "solid-js": "^1.8.23"
   },
   "engines": {
     "node": ">=18"
