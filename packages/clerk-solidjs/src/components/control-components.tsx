@@ -25,26 +25,26 @@ import type {
 } from '../types';
 import { withClerk } from './with-clerk';
 
-export const SignedIn = (props: ParentProps<unknown>): JSX.Element => {
+export const SignedIn = (props: ParentProps): JSX.Element => {
   useAssertWrappedByClerkProvider('SignedIn');
   const { userId } = useAuthContext();
   return <Show when={userId()}>{props.children}</Show>;
 };
 
-export const SignedOut = (props: ParentProps<unknown>): JSX.Element => {
+export const SignedOut = (props: ParentProps): JSX.Element => {
   useAssertWrappedByClerkProvider('SignedOut');
   const { userId } = useAuthContext();
   return <Show when={userId() === null}>{props.children}</Show>;
 };
 
-export const ClerkLoaded = (props: ParentProps<unknown>): JSX.Element => {
+export const ClerkLoaded = (props: ParentProps): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoaded');
   const isomorphicClerk = useIsomorphicClerkContext();
   const isLoaded = () => isomorphicClerk().loaded;
   return <Show when={isLoaded()}>{props.children}</Show>;
 };
 
-export const ClerkLoading = (props: ParentProps<unknown>): JSX.Element => {
+export const ClerkLoading = (props: ParentProps): JSX.Element => {
   useAssertWrappedByClerkProvider('ClerkLoading');
   const isomorphicClerk = useIsomorphicClerkContext();
   const isLoaded = () => isomorphicClerk().loaded;

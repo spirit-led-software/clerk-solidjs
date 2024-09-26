@@ -19,14 +19,14 @@ export function useMaxAllowedInstancesGuard(
   });
 }
 
-export function withMaxAllowedInstancesGuard<P>(
+export function withMaxAllowedInstancesGuard<P extends Record<string, any>>(
   WrappedComponent: Component<P>,
   name: string,
   error: string
 ): Component<P> {
   const HOC = (props: P) => {
     useMaxAllowedInstancesGuard(() => ({ name, error }));
-    return <WrappedComponent {...(props as any)} />;
+    return <WrappedComponent {...props} />;
   };
   return HOC;
 }
