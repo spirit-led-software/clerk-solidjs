@@ -30,8 +30,8 @@ importers:
         specifier: ^1.0.6
         version: 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.22.4)(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
       clerk-solidjs:
-        specifier: ^2.0.1
-        version: 2.0.1(@solidjs/router@0.14.5(solid-js@1.9.1))(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.22.4)(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.9.1)
+        specifier: workspace:*
+        version: link:../../packages/clerk-solidjs
       solid-js:
         specifier: ^1.9.1
         version: 1.9.1
@@ -1880,14 +1880,6 @@ packages:
 
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
-
-  clerk-solidjs@2.0.1:
-    resolution: {integrity: sha512-JA3OUX5YnPn5Xv28SGu4OoO4yk4p4AE6RdxcMfyN8OvGX5Ox6/D8SbQCQSNXFeTX/zKJs4MPsvSEOducY/dCog==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@solidjs/router': '>=0.14'
-      '@solidjs/start': '>=1'
-      solid-js: '>=1'
 
   cli-boxes@3.0.0:
     resolution: {integrity: sha512-/lzGpEWL/8PfI0BmBOPRwp0c/wFNX1RdUML3jK/RcSBA9T8mZDdQpqYBKtCFTOfQbwPqWEOpjqW+Fnayc0969g==}
@@ -6311,21 +6303,6 @@ snapshots:
   citty@0.1.6:
     dependencies:
       consola: 3.2.3
-
-  clerk-solidjs@2.0.1(@solidjs/router@0.14.5(solid-js@1.9.1))(@solidjs/start@1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.22.4)(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(solid-js@1.9.1):
-    dependencies:
-      '@clerk/backend': 1.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/shared': 2.8.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@solid-primitives/context': 0.2.3(solid-js@1.9.1)
-      '@solid-primitives/destructure': 0.1.17(solid-js@1.9.1)
-      '@solid-primitives/memo': 1.3.9(solid-js@1.9.1)
-      '@solidjs/router': 0.14.5(solid-js@1.9.1)
-      '@solidjs/start': 1.0.6(@testing-library/jest-dom@6.5.0)(rollup@4.22.4)(solid-js@1.9.1)(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
-      '@tanstack/solid-query': 5.56.2(solid-js@1.9.1)
-      solid-js: 1.9.1
-    transitivePeerDependencies:
-      - react
-      - react-dom
 
   cli-boxes@3.0.0: {}
 
