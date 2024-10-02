@@ -1,5 +1,11 @@
 # clerk-solidjs
 
+## 2.0.4
+
+### Patch Changes
+
+- b4d4d47: Add some in-code documentation
+
 ## 2.0.3
 
 ### Patch Changes
