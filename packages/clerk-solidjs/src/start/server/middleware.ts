@@ -17,6 +17,21 @@ import { getResponseClerkState } from './utils';
  * @param {LoaderOptions} options - The options for creating a Clerk client.
  * @return {RequestMiddleware} A middleware function that authenticates a request using Clerk.
  * @throws {Error} Throws an error if there is an unexpected handshake without a redirect.
+ *
+ * @example
+ * ```ts
+ * import { createMiddleware } from "@solidjs/start/middleware";
+ * import { clerkMiddleware } from 'clerk-solidjs/start/server';
+ *
+ * export default createMiddleware({
+ *   onRequest: [
+ *     clerkMiddleware({
+ *       publishableKey: import.meta.env.VITE_CLERK_PUBLISHABLE_KEY,
+ *       secretKey: import.meta.env.CLERK_SECRET_KEY,
+ *     }),
+ *   ],
+ * });
+ * ```
  */
 export const clerkMiddleware = (
   options: LoaderOptions = {}
