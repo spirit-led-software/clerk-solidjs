@@ -108,7 +108,6 @@ type IsomorphicLoadedClerk = Without<
   | 'mountSignUp'
   | 'mountSignIn'
   | 'mountUserProfile'
-  | '__experimental_mountUserVerification'
   | 'client'
 > & {
   // TODO: Align return type and parms
@@ -179,10 +178,6 @@ type IsomorphicLoadedClerk = Without<
   mountSignUp: (node: HTMLDivElement, props: SignUpProps) => void;
   mountSignIn: (node: HTMLDivElement, props: SignInProps) => void;
   mountUserProfile: (node: HTMLDivElement, props: UserProfileProps) => void;
-  __experimental_mountUserVerification: (
-    node: HTMLDivElement,
-    props: __experimental_UserVerificationProps
-  ) => void;
   client: ClientResource | undefined;
 };
 
@@ -221,10 +216,6 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
   private premountOrganizationListNodes = new Map<
     HTMLDivElement,
     OrganizationListProps
-  >();
-  private premountUserVerificationNodes = new Map<
-    HTMLDivElement,
-    __experimental_UserVerificationProps
   >();
   private premountMethodCalls = new Map<
     MethodName<BrowserClerk>,
@@ -621,12 +612,6 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
       }
     );
 
-    this.premountUserVerificationNodes.forEach(
-      (props: __experimental_UserVerificationProps, node: HTMLDivElement) => {
-        clerkjs.__experimental_mountUserVerification(node, props);
-      }
-    );
-
     this.premountUserButtonNodes.forEach(
       (props: UserButtonProps, node: HTMLDivElement) => {
         clerkjs.mountUserButton(node, props);
@@ -857,25 +842,6 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
       this.clerkjs.unmountSignIn(node);
     } else {
       this.premountSignInNodes.delete(node);
-    }
-  };
-
-  __experimental_mountUserVerification = (
-    node: HTMLDivElement,
-    props: __experimental_UserVerificationProps
-  ): void => {
-    if (this.clerkjs && this.#loaded) {
-      this.clerkjs.__experimental_mountUserVerification(node, props);
-    } else {
-      this.premountUserVerificationNodes.set(node, props);
-    }
-  };
-
-  __experimental_unmountUserVerification = (node: HTMLDivElement): void => {
-    if (this.clerkjs && this.#loaded) {
-      this.clerkjs.__experimental_unmountUserVerification(node);
-    } else {
-      this.premountUserVerificationNodes.delete(node);
     }
   };
 

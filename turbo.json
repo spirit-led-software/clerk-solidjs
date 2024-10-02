@@ -13,23 +13,15 @@
       "cache": false,
       "persistent": true
     },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "lint:fix": {
-      "dependsOn": ["^lint:fix"]
-    },
-    "format": {
-      "dependsOn": ["^format"]
-    },
-    "format:check": {
-      "dependsOn": ["^format:check"]
-    },
-    "type-check": {
-      "dependsOn": ["^build", "build"]
-    },
-    "test": {
-      "dependsOn": ["^build", "build"]
+    "lint": {},
+    "lint:fix": {},
+    "format": {},
+    "format:check": {},
+    "type-check": {},
+    "test": {},
+    "test:watch": {
+      "cache": false,
+      "persistent": true
     }
   },
   "globalEnv": ["CI", "GITHUB_ACTIONS", "PORT"]
