@@ -1,5 +1,12 @@
 # clerk-solidjs
 
+## 2.0.3
+
+### Patch Changes
+
+- 97efc9e: Dependency updates
+- dbe3a4a: Fix CI issues and isomorphic clerk updates
+
 ## 2.0.2
 
 ### Patch Changes
