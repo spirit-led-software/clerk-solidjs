@@ -14,6 +14,7 @@
     "prepare": "husky",
     "prerelease": "turbo clean && turbo type-check && turbo format:check && turbo lint && turbo test",
     "release": "turbo clean && turbo build && changeset publish",
+    "test:watch": "turbo test:watch",
     "test": "turbo test",
     "type-check": "turbo type-check",
     "version": "changeset version && pnpm install --no-frozen-lockfile"
