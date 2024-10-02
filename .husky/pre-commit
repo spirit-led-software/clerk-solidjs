@@ -1,0 +1,5 @@
+pnpm run format
+pnpm run lint:fix
+git add .
+
+pnpm run test
