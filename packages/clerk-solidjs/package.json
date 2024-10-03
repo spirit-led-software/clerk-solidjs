@@ -222,7 +222,7 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^22.7.4",
     "eslint": "^9.11.1",
-    "expect-type": "^0.20.0",
+    "expect-type": "^1.0.0",
     "globals": "^15.10.0",
     "jsdom": "^25.0.1",
     "prettier": "3.3.3",
@@ -234,7 +234,7 @@
     "typescript-eslint": "^8.8.0",
     "vite-plugin-solid": "^2.10.2",
     "vite-tsconfig-paths": "^5.0.1",
-    "vitest": "^2.1.1"
+    "vitest": "^2.1.2"
   },
   "peerDependencies": {
     "@solidjs/router": ">=0.14",
