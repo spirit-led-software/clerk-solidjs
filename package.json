@@ -22,7 +22,7 @@
   "author": "Spirit-Led Software",
   "license": "MIT",
   "devDependencies": {
-    "@changesets/cli": "^2.27.8",
+    "@changesets/cli": "^2.27.9",
     "husky": "^9.1.6",
     "rimraf": "^6.0.1",
     "turbo": "^2.1.3"

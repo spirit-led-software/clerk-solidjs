@@ -212,17 +212,17 @@
     "@tanstack/solid-query": "^5.59.0"
   },
   "devDependencies": {
-    "@clerk/clerk-js": "^5.24.1",
+    "@clerk/clerk-js": "^5.26.1",
     "@clerk/localizations": "^3.1.0",
     "@clerk/themes": "^2.1.33",
     "@clerk/types": "^4.23.0",
-    "@eslint/js": "^9.11.1",
+    "@eslint/js": "^9.12.0",
     "@solidjs/testing-library": "^0.8.10",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^22.7.4",
     "eslint": "^9.11.1",
-    "expect-type": "^0.20.0",
+    "expect-type": "^1.0.0",
     "globals": "^15.10.0",
     "jsdom": "^25.0.1",
     "prettier": "3.3.3",
@@ -234,7 +234,7 @@
     "typescript-eslint": "^8.8.0",
     "vite-plugin-solid": "^2.10.2",
     "vite-tsconfig-paths": "^5.0.1",
-    "vitest": "^2.1.1"
+    "vitest": "^2.1.2"
   },
   "peerDependencies": {
     "@solidjs/router": ">=0.14",
