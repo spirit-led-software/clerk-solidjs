@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@solid-primitives/resize-observer": "^2.0.26",
-    "@solidjs/router": "^0.14.10",
-    "@solidjs/start": "^1.0.9",
+    "@solidjs/router": "^0.15.1",
+    "@solidjs/start": "^1.0.10",
     "clerk-solidjs": "workspace:*",
     "solid-js": "^1.9.3"
   },
