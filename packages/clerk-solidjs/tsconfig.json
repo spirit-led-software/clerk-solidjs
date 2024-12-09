@@ -15,8 +15,7 @@
     "noFallthroughCasesInSwitch": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["@types/node"],
-    "baseUrl": "."
+    "types": ["@types/node"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist", "example"]
