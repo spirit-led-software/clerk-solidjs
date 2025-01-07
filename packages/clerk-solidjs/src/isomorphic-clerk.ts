@@ -61,13 +61,6 @@ import type {
 } from './types';
 import { isConstructor } from './utils';
 
-export interface Global {
-  __BUILD_DISABLE_RHC__: boolean;
-  Clerk?: HeadlessBrowserClerk | BrowserClerk;
-}
-
-declare const globalThis: Global;
-
 if (typeof __BUILD_DISABLE_RHC__ === 'undefined') {
   globalThis.__BUILD_DISABLE_RHC__ = false;
 }
@@ -77,6 +70,13 @@ const SDK_METADATA = {
   version: PACKAGE_VERSION,
   environment: process.env.NODE_ENV
 };
+
+export interface Global {
+  Clerk?: HeadlessBrowserClerk | BrowserClerk;
+  __BUILD_DISABLE_RHC__?: boolean;
+}
+
+declare const globalThis: Global;
 
 type GenericFunction<TArgs = never> = (...args: TArgs[]) => unknown;
 
@@ -122,8 +122,10 @@ type IsomorphicLoadedClerk = Without<
   | 'mountUserProfile'
   | 'mountWaitlist'
   | 'client'
+  | '__internal_getCachedResources'
+  | '__internal_reloadInitialResources'
 > & {
-  // TODO: Align return type and parms
+  // TODO: Align return type and params
   handleRedirectCallback: (params: HandleOAuthCallbackParams) => void;
   handleGoogleOneTapCallback: (
     signInOrUp: SignInResource | SignUpResource,
@@ -1276,7 +1278,7 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
   };
 
   authenticateWithOKXWallet = async (
-    params: AuthenticateWithOKXWalletParams | undefined
+    params?: AuthenticateWithOKXWalletParams
   ): Promise<void> => {
     const callback = () => this.clerkjs?.authenticateWithOKXWallet(params);
     if (this.clerkjs && this.#loaded) {
