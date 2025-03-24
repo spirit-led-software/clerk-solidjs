@@ -28,5 +28,6 @@ export {
   SignIn,
   SignUp,
   UserButton,
-  UserProfile
+  UserProfile,
+  Waitlist
 } from './ui-components';
