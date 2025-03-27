@@ -13,7 +13,7 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "solid-devtools": "^0.33.0",
-    "tailwindcss": "^4.0.12",
+    "tailwindcss": "^4.0.17",
     "vinxi": "^0.5.3"
   },
   "dependencies": {
