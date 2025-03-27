@@ -409,7 +409,6 @@ export class IsomorphicClerk implements IsomorphicLoadedClerk {
 
   #waitForClerkJS(): Promise<HeadlessBrowserClerk | BrowserClerk> {
     return new Promise<HeadlessBrowserClerk | BrowserClerk>((resolve) => {
-       
       this.addOnLoaded(() => resolve(this.clerkjs!));
     });
   }
