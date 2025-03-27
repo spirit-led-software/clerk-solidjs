@@ -1,6 +1,6 @@
 import type { InitialState, Without } from '@clerk/types';
+import type { ClerkProviderProps } from 'clerk-solidjs';
 import type { JSX } from 'solid-js';
-import type { ClerkProviderProps } from '../../types';
 
 export type ClerkState = {
   __type: 'clerkState';

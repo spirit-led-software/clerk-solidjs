@@ -18,5 +18,5 @@
     "types": ["@types/node"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".turbo/dist", "example"]
+  "exclude": ["node_modules", "dist", "example"]
 }

@@ -26,15 +26,6 @@
     "*": {
       "errors": [
         "./dist/errors/index.d.ts"
-      ],
-      "server": [
-        "./dist/server/index.d.ts"
-      ],
-      "start": [
-        "./dist/start/index.d.ts"
-      ],
-      "start/server": [
-        "./dist/start/server/index.d.ts"
       ]
     }
   },
@@ -103,88 +94,11 @@
         "types": "./dist/errors/index.d.cts",
         "default": "./dist/errors/index.cjs"
       }
-    },
-    "./server": {
-      "import": {
-        "types": "./dist/server/index.d.ts",
-        "default": "./dist/server/index.js"
-      },
-      "require": {
-        "types": "./dist/server/index.d.cts",
-        "default": "./dist/server/index.cjs"
-      }
-    },
-    "./start": {
-      "worker": {
-        "solid": "./dist/start/server.jsx",
-        "import": {
-          "types": "./dist/start/index.d.ts",
-          "default": "./dist/start/server.js"
-        },
-        "require": {
-          "types": "./dist/start/index.d.cts",
-          "default": "./dist/start/server.cjs"
-        }
-      },
-      "browser": {
-        "solid": "./dist/start/index.jsx",
-        "import": {
-          "types": "./dist/start/index.d.ts",
-          "default": "./dist/start/index.js"
-        },
-        "require": {
-          "types": "./dist/start/index.d.cts",
-          "default": "./dist/start/index.cjs"
-        }
-      },
-      "deno": {
-        "solid": "./dist/start/server.jsx",
-        "import": {
-          "types": "./dist/start/index.d.ts",
-          "default": "./dist/start/server.js"
-        },
-        "require": {
-          "types": "./dist/start/index.d.cts",
-          "default": "./dist/start/server.cjs"
-        }
-      },
-      "node": {
-        "solid": "./dist/start/server.jsx",
-        "import": {
-          "types": "./dist/start/index.d.ts",
-          "default": "./dist/start/server.js"
-        },
-        "require": {
-          "types": "./dist/start/index.d.cts",
-          "default": "./dist/start/server.cjs"
-        }
-      },
-      "solid": "./dist/start/index.jsx",
-      "import": {
-        "types": "./dist/start/index.d.ts",
-        "default": "./dist/start/index.js"
-      },
-      "require": {
-        "types": "./dist/start/index.d.cts",
-        "default": "./dist/start/index.cjs"
-      }
-    },
-    "./start/server": {
-      "import": {
-        "types": "./dist/start/server/index.d.ts",
-        "default": "./dist/start/server/index.js"
-      },
-      "require": {
-        "types": "./dist/start/server/index.d.cts",
-        "default": "./dist/start/server/index.cjs"
-      }
     }
   },
   "browser": {
     "./dist/index/server.js": "./dist/index/index.js",
-    "./dist/index/server.cjs": "./dist/index/index.cjs",
-    "./dist/start/server.js": "./dist/start/index.js",
-    "./dist/start/server.cjs": "./dist/start/index.cjs"
+    "./dist/index/server.cjs": "./dist/index/index.cjs"
   },
   "files": [
     "./dist"
@@ -237,8 +151,6 @@
     "vitest": "^3.0.9"
   },
   "peerDependencies": {
-    "@solidjs/router": ">=0.14",
-    "@solidjs/start": ">=1",
     "solid-js": ">=1"
   },
   "engines": {

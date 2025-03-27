@@ -1,4 +1,3 @@
-import clerkJsPackage from '@clerk/clerk-js/package.json' with { type: 'json' };
 import { defineConfig } from 'tsup';
 import * as preset from 'tsup-preset-solid';
 import thisPackage from './package.json' with { type: 'json' };
@@ -23,6 +22,10 @@ export default defineConfig((config) => {
         {
           name: 'errors',
           entry: 'src/errors.ts'
+        },
+        {
+          name: 'server',
+          entry: 'src/server/index.ts'
         }
       ],
       cjs: true,
@@ -38,7 +41,6 @@ export default defineConfig((config) => {
           ...options.define,
           PACKAGE_NAME: `"${thisPackage.name}"`,
           PACKAGE_VERSION: `"${thisPackage.version}"`,
-          JS_PACKAGE_VERSION: `"${clerkJsPackage.version}"`,
           __DEV__: `${watching}`
         };
 

@@ -1,0 +1,152 @@
+{
+  "name": "@clerk-solidjs/start",
+  "version": "1.0.0",
+  "description": "Clerk for SolidStart",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch .",
+    "dev:publish": "pnpm run dev -- --env.publish",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "clean": "rimraf dist",
+    "publish:local": "pnpm dlx yalc push --replace  --sig"
+  },
+  "dependencies": {
+    "@clerk/backend": "^1.25.8",
+    "@clerk/shared": "^3.2.3",
+    "@solid-primitives/destructure": "^0.2.0",
+    "clerk-solidjs": "workspace:*"
+  },
+  "devDependencies": {
+    "@clerk/types": "^4.50.1",
+    "@eslint/js": "^9.23.0",
+    "@solidjs/testing-library": "^0.8.10",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.14",
+    "eslint": "^9.23.0",
+    "expect-type": "^1.2.0",
+    "globals": "^16.0.0",
+    "jsdom": "^26.0.0",
+    "prettier": "3.5.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.4.0",
+    "tsup-preset-solid": "^2.2.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0",
+    "vite-plugin-solid": "^2.11.6",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.9"
+  },
+  "peerDependencies": {
+    "@solidjs/router": ">=0.14",
+    "@solidjs/start": ">=1",
+    "solid-js": ">=1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "main": "./dist/index/server.cjs",
+  "module": "./dist/index/server.js",
+  "types": "./dist/index/index.d.ts",
+  "browser": {
+    "./dist/index/server.js": "./dist/index/index.js",
+    "./dist/index/server.cjs": "./dist/index/index.cjs"
+  },
+  "exports": {
+    ".": {
+      "worker": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/server.cjs"
+        }
+      },
+      "browser": {
+        "solid": "./dist/index/index.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/index.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/index.cjs"
+        }
+      },
+      "deno": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/server.cjs"
+        }
+      },
+      "node": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/server.cjs"
+        }
+      },
+      "solid": "./dist/index/index.jsx",
+      "import": {
+        "types": "./dist/index/index.d.ts",
+        "default": "./dist/index/index.js"
+      },
+      "require": {
+        "types": "./dist/index/index.d.cts",
+        "default": "./dist/index/index.cjs"
+      }
+    },
+    "./errors": {
+      "import": {
+        "types": "./dist/errors/index.d.ts",
+        "default": "./dist/errors/index.js"
+      },
+      "require": {
+        "types": "./dist/errors/index.d.cts",
+        "default": "./dist/errors/index.cjs"
+      }
+    },
+    "./server": {
+      "import": {
+        "types": "./dist/server/index.d.ts",
+        "default": "./dist/server/index.js"
+      },
+      "require": {
+        "types": "./dist/server/index.d.cts",
+        "default": "./dist/server/index.cjs"
+      }
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "errors": [
+        "./dist/errors/index.d.ts"
+      ],
+      "server": [
+        "./dist/server/index.d.ts"
+      ]
+    }
+  },
+  "type": "module"
+}

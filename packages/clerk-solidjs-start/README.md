@@ -4,15 +4,15 @@
 
 ---
 
-_This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidJS](https://solidjs.com)_
+_This is an unofficial community-led port of the [Clerk React SDK](https://www.npmjs.com/package/@clerk/clerk-react) for [SolidStart](https://start.solidjs.com)._
 
 [![Clerk documentation](https://img.shields.io/badge/documentation-clerk-lavender.svg?style=for-the-badge&logo=clerk)](https://clerk.com/docs?utm_source=github&utm_medium=clerk_solidjs)
 
 ### Released on NPM
 
-[![NPM version](https://img.shields.io/npm/v/clerk-solidjs.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/clerk-solidjs/start)
+[![NPM version](https://img.shields.io/npm/v/clerk-solidjs.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/clerk-solidjs)
 [![NPM Downloads](https://img.shields.io/npm/dm/clerk-solidjs?style=for-the-badge)
-](https://www.npmjs.com/package/clerk-solidjs/start)
+](https://www.npmjs.com/package/clerk-solidjs)
 
 ### Maintained on GitHub
 
@@ -67,13 +67,13 @@ useOrganizationList(() => ({ userMemberships: { infinite: true } }));
 ### Installation
 
 ```sh
-npm install @clerk-solidjs/start
+npm install clerk-solidjs
 # or
-yarn add @clerk-solidjs/start
+yarn add clerk-solidjs
 # or
-pnpm add @clerk-solidjs/start
+pnpm add clerk-solidjs
 # or
-bun add @clerk-solidjs/start
+bun add clerk-solidjs
 ```
 
 ### Build
@@ -100,7 +100,7 @@ If using Vite, set `VITE_CLERK_PUBLISHABLE_KEY` to your Publishable key in your 
 import { Router } from '@solidjs/router';
 import { FileRoutes } from '@solidjs/start/router';
 import { Suspense } from 'solid-js/web';
-import { ClerkProvider } from '@clerk-solidjs/start';
+import { ClerkProvider } from 'clerk-solidjs';
 
 import './app.css';
 
@@ -132,7 +132,7 @@ import {
   useAuth,
   ClerkLoading,
   ClerkLoaded
-} from '@clerk-solidjs/start';
+} from 'clerk-solidjs';
 
 export default function MyComponent() {
   const { userId } = useAuth();

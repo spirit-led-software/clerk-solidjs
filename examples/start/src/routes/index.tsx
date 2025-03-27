@@ -8,7 +8,7 @@ import {
   SignInButton,
   SignOutButton,
   UserButton,
-} from "clerk-solidjs";
+} from "@clerk-solidjs/start";
 
 export default function Home() {
   const size = useWindowSize();

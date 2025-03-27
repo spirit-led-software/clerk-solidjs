@@ -6,7 +6,7 @@ import type {
 } from '@clerk/backend/internal';
 import { AuthStatus } from '@clerk/backend/internal';
 
-import { errorThrower } from '../../errors/error-thrower';
+import { errorThrower } from '../errors/error-thrower';
 import { patchRequest } from './utils';
 
 export async function authenticateRequest(

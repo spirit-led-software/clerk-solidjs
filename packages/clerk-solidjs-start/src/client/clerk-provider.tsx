@@ -1,7 +1,7 @@
 import { destructure } from '@solid-primitives/destructure';
+import { ClerkProvider as SolidClerkProvider } from 'clerk-solidjs';
 import { createMemo, JSX, onMount, splitProps } from 'solid-js';
 import { getRequestEvent, isServer } from 'solid-js/web';
-import { ClerkProvider as SolidClerkProvider } from '../../contexts/clerk';
 import type { SolidStartClerkProviderProps } from './types';
 import { useAwaitableNavigate } from './use-awaitable-navigate';
 import { mergeWithPublicEnvs, pickFromClerkInitState } from './utils';

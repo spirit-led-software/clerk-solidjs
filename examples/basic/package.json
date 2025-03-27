@@ -1,29 +1,21 @@
 {
-  "name": "clerk-solidjs-basic-example",
-  "description": "An example of how to use clerk-solidjs with SolidStart",
+  "name": "@clerk-solidjs/basic-example",
+  "description": "An example of how to use clerk-solidjs with SolidJS",
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "rimraf .output .vinxi",
-    "build": "vinxi build",
-    "dev": "vinxi dev",
-    "start": "vinxi start"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
-    "solid-devtools": "^0.33.0",
-    "tailwindcss": "^4.0.17",
-    "vinxi": "^0.5.3"
+    "clean": "rimraf dist",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@solid-primitives/resize-observer": "^2.1.0",
-    "@solidjs/router": "^0.15.3",
-    "@solidjs/start": "^1.1.3",
     "clerk-solidjs": "workspace:*",
     "solid-js": "^1.9.5"
   },
-  "engines": {
-    "node": ">=18"
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0",
+    "vite-plugin-solid": "^2.11.2"
   }
 }

@@ -5,8 +5,8 @@ import {
   SignOutButton,
   useAuth,
   useUser,
-} from "clerk-solidjs";
-import { auth } from "clerk-solidjs/start/server";
+} from "@clerk-solidjs/start";
+import { auth } from "@clerk-solidjs/start/server";
 import { createResource, Show } from "solid-js";
 import { getRequestEvent } from "solid-js/web";
 
