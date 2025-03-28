@@ -79,8 +79,8 @@ importers:
         specifier: '>=1'
         version: 1.1.3(@testing-library/jest-dom@6.6.3)(@types/node@22.13.14)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(solid-js@1.9.5)(terser@5.39.0)(vinxi@0.5.3(@types/node@22.13.14)(db0@0.3.1)(ioredis@5.6.0)(jiti@2.4.2)(terser@5.39.0))(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0))
       '@tanstack/solid-query':
-        specifier: ^5.69.0
-        version: 5.69.0(solid-js@1.9.5)
+        specifier: ^5.70.0
+        version: 5.70.0(solid-js@1.9.5)
       solid-js:
         specifier: '>=1'
         version: 1.9.5
@@ -1511,8 +1511,8 @@ packages:
     resolution: {integrity: sha512-yo9hyuCUGVGO2L3hVHlHCZV7iGIpkVGxJdnxpGC/U7+W0N1lYPx+kFGUvnkkJ3gAo4ZP3/mJxiBslywsVCAhgQ==}
     engines: {node: '>=12'}
 
-  '@tanstack/query-core@5.69.0':
-    resolution: {integrity: sha512-Kn410jq6vs1P8Nm+ZsRj9H+U3C0kjuEkYLxbiCyn3MDEiYor1j2DGVULqAz62SLZtUZ/e9Xt6xMXiJ3NJ65WyQ==}
+  '@tanstack/query-core@5.70.0':
+    resolution: {integrity: sha512-ZkkjQAZjI6nS5OyAmaSQafQXK180Xvp0lZYk4BzrnskkTV8On3zSJUxOIXnh0h/8EgqRkCA9i879DiJovA1kGw==}
 
   '@tanstack/router-utils@1.114.29':
     resolution: {integrity: sha512-RDn3aMOHPrXYCQGXNaN4P0MvwiuCZHBKTO9srtLqYYCzW2iipqbyZ53RI54TzPgNLE37jtN5XaEH4FNF0Ydodg==}
@@ -1522,8 +1522,8 @@ packages:
     resolution: {integrity: sha512-jNroqZgsJURdHHL4haeojoye1K3CWNk+lh88zTiABroal8ajzURETzXWGrBIllGpjbr4GT2R4jryqO62fG14Dg==}
     engines: {node: '>=12'}
 
-  '@tanstack/solid-query@5.69.0':
-    resolution: {integrity: sha512-yWSodAKaTGLRkGHwMe0Gg6Mh11QDoyb7GgjmU8Q0G6MGeAhcPKpPgbALeoNisa8FW5XfW2hFz2vb6zePIdx6rQ==}
+  '@tanstack/solid-query@5.70.0':
+    resolution: {integrity: sha512-PXWrLxNeS7rZXQ3WHEaTpDJQmuJhkbH3cbZojmp2ueQIxS9PReVUde/Yn/EgAmDl19dNuF3VT5yEQOqKJovbYA==}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -5845,7 +5845,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@tanstack/query-core@5.69.0': {}
+  '@tanstack/query-core@5.70.0': {}
 
   '@tanstack/router-utils@1.114.29':
     dependencies:
@@ -5882,9 +5882,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@tanstack/solid-query@5.69.0(solid-js@1.9.5)':
+  '@tanstack/solid-query@5.70.0(solid-js@1.9.5)':
     dependencies:
-      '@tanstack/query-core': 5.69.0
+      '@tanstack/query-core': 5.70.0
       solid-js: 1.9.5
 
   '@testing-library/dom@10.4.0':
