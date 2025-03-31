@@ -144,7 +144,9 @@ export const Waitlist = withClerk((props: WithClerkProp<SignInProps>) => {
     <Portal
       mount={local.clerk().mountWaitlist}
       unmount={local.clerk().unmountWaitlist}
-      updateProps={(local.clerk() as IsomorphicClerk).__unstable__updateProps}
+      updateProps={
+        (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
+      }
       props={rest}
     />
   );
