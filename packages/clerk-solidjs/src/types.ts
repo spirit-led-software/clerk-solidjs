@@ -1,21 +1,17 @@
 import type {
   Clerk,
   ClerkOptions,
-  ClerkPaginatedResponse,
   ClientResource,
   DomainOrProxyUrl,
   InitialState,
   LoadedClerk,
   MultiDomainAndOrProxy,
   RedirectUrlProp,
-  SignInProps,
   SignInRedirectOptions,
-  SignOutOptions,
-  SignUpProps,
   SignUpRedirectOptions,
   Without
 } from '@clerk/types';
-import { Accessor, JSX, JSXElement } from 'solid-js';
+import { JSXElement } from 'solid-js';
 
 declare global {
   interface Window {
@@ -25,10 +21,6 @@ declare global {
   }
 }
 
-export type Prettify<T> = {
-  [K in keyof T]: T[K];
-} & {};
-
 export type IsomorphicClerkOptions = Without<ClerkOptions, 'isSatellite'> & {
   Clerk?: ClerkProp;
   /**
@@ -36,7 +28,7 @@ export type IsomorphicClerkOptions = Without<ClerkOptions, 'isSatellite'> & {
    */
   clerkJSUrl?: string;
   /**
-   * If your web application only uses Control components, you can set this value to `'headless'` and load a minimal ClerkJS bundle for optimal page performance.
+   * If your web application only uses [Control Components](https://clerk.com/docs/components/overview#control-components), you can set this value to `'headless'` and load a minimal ClerkJS bundle for optimal page performance.
    */
   clerkJSVariant?: 'headless' | '';
   /**
@@ -44,20 +36,29 @@ export type IsomorphicClerkOptions = Without<ClerkOptions, 'isSatellite'> & {
    */
   clerkJSVersion?: string;
   /**
-   * The Clerk publishable key for your instance
-   * @note This can be found in your Clerk Dashboard on the [API Keys](https://dashboard.clerk.com/last-active?path=api-keys) page
+   * The Clerk Publishable Key for your instance. This can be found on the [API keys](https://dashboard.clerk.com/last-active?path=api-keys) page in the Clerk Dashboard.
    */
   publishableKey: string;
   /**
-   * This nonce value will be passed through to the `@clerk/clerk-js` script tag.
-   * @note You can use this to implement [strict-dynamic CSP](https://clerk.com/docs/security/clerk-csp#implementing-a-strict-dynamic-csp)
+   * This nonce value will be passed through to the `@clerk/clerk-js` script tag. Use it to implement a [strict-dynamic CSP](https://clerk.com/docs/security/clerk-csp#implementing-a-strict-dynamic-csp). Requires the `dynamic` prop to also be set.
    */
   nonce?: string;
 } & MultiDomainAndOrProxy;
 
+/**
+ * @interface
+ */
 export type ClerkProviderProps = IsomorphicClerkOptions & {
-  children: JSX.Element;
+  children: JSXElement;
+  /**
+   * Provide an initial state of the Clerk client during server-side rendering. You don't need to set this value yourself unless you're [developing an SDK](https://clerk.com/docs/references/sdk/overview).
+   */
   initialState?: InitialState;
+  /**
+   * Indicates to silently fail the initialization process when the publishable keys is not provided, instead of throwing an error. Defaults to `false`.
+   * @internal
+   */
+  __internal_bypassMissingPublishableKey?: boolean;
 };
 
 export interface BrowserClerkConstructor {
@@ -71,7 +72,15 @@ export interface HeadlessBrowserClerkConstructor {
   ): HeadlessBrowserClerk;
 }
 
-export type WithClerkProp<T = unknown> = T & { clerk: Accessor<LoadedClerk> };
+export type WithClerkProp<T = unknown> = T & {
+  clerk: LoadedClerk;
+  component?: string;
+};
+
+export interface CustomPortalsRendererProps {
+  customPagesPortals?: any[];
+  customMenuItemsPortals?: any[];
+}
 
 // Clerk object
 export interface MountProps {
@@ -105,34 +114,10 @@ export type ClerkProp =
   | undefined
   | null;
 
-type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type SignInWithMetamaskButtonProps = {
   mode?: 'redirect' | 'modal';
-};
-
-export type SignInButtonProps = ButtonProps &
-  Pick<
-    SignInProps,
-    | 'fallbackRedirectUrl'
-    | 'forceRedirectUrl'
-    | 'signUpForceRedirectUrl'
-    | 'signUpFallbackRedirectUrl'
-  >;
-
-export type SignOutButtonProps = ButtonProps &
-  Pick<SignOutOptions, 'redirectUrl' | 'sessionId'>;
-
-export type SignUpButtonProps = {
-  unsafeMetadata?: SignUpUnsafeMetadata;
-} & ButtonProps &
-  Pick<
-    SignUpProps,
-    | 'fallbackRedirectUrl'
-    | 'forceRedirectUrl'
-    | 'signInForceRedirectUrl'
-    | 'signInFallbackRedirectUrl'
-  >;
-
-export type SignInWithMetamaskButtonProps = ButtonProps & RedirectUrlProp;
+  children?: JSXElement;
+} & RedirectUrlProp;
 
 export type RedirectToSignInProps = SignInRedirectOptions;
 export type RedirectToSignUpProps = SignUpRedirectOptions;
@@ -160,69 +145,32 @@ export type UserProfileLinkProps = {
 export type OrganizationProfilePageProps = PageProps<'general' | 'members'>;
 export type OrganizationProfileLinkProps = UserProfileLinkProps;
 
-import type { ClerkAPIResponseError } from '@clerk/shared/error';
+type ButtonActionProps<T extends string> =
+  | {
+      label: string;
+      labelIcon: JSXElement;
+      onClick: () => void;
+      open?: never;
+    }
+  | {
+      label: T;
+      labelIcon?: never;
+      onClick?: never;
+      open?: never;
+    }
+  | {
+      label: string;
+      labelIcon: JSXElement;
+      onClick?: never;
+      open: string;
+    };
 
-export type ValueOrSetter<T = unknown> = (size: T | ((_size: T) => T)) => void;
+export type UserButtonActionProps = ButtonActionProps<
+  'manageAccount' | 'signOut'
+>;
 
-export type CacheSetter<CData = any> = (
-  data?:
-    | CData
-    | ((currentData?: CData) => Promise<undefined | CData> | undefined | CData)
-) => Promise<CData | undefined>;
-
-export type PaginatedResources<T = unknown, Infinite = false> = {
-  data: () => T[];
-  count: () => number;
-  error: () => ClerkAPIResponseError | null;
-  isLoading: () => boolean;
-  isFetching: () => boolean;
-  isError: () => boolean;
-  page: () => number;
-  pageCount: () => number;
-  fetchPrevious: () => void;
-  fetchNext: () => void;
-  hasNextPage: () => boolean;
-  hasPreviousPage: () => boolean;
-  setData: Infinite extends true
-    ? // Array of pages of data
-      CacheSetter<(ClerkPaginatedResponse<T> | undefined)[]>
-    : // Array of data
-      CacheSetter<ClerkPaginatedResponse<T> | undefined>;
-  revalidate: () => Promise<void>;
-};
-
-// Utility type to convert PaginatedDataAPI to properties as undefined, except booleans set to false
-export type PaginatedResourcesWithDefault<T> = {
-  [K in keyof PaginatedResources<T>]: PaginatedResources<T>[K] extends boolean
-    ? false
-    : undefined;
-};
-
-export type PaginatedHookConfig<T> = T & {
-  /**
-   * Persists the previous pages with new ones in the same array
-   */
-  infinite?: boolean;
-  /**
-   * Return the previous key's data until the new data has been loaded
-   */
-  keepPreviousData?: boolean;
-};
-
-export type PagesOrInfiniteConfig = PaginatedHookConfig<{
-  /**
-   * Should a request be triggered
-   */
-  enabled?: boolean;
-}>;
-
-export type PagesOrInfiniteOptions = {
-  /**
-   * This the starting point for your fetched results. The initial value persists between re-renders
-   */
-  initialPage?: number;
-  /**
-   * Maximum number of items returned per request. The initial value persists between re-renders
-   */
-  pageSize?: number;
+export type UserButtonLinkProps = {
+  href: string;
+  label: string;
+  labelIcon: JSXElement;
 };
