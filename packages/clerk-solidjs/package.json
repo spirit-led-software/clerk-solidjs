@@ -209,7 +209,7 @@
     "@solid-primitives/context": "^0.3.0",
     "@solid-primitives/destructure": "^0.2.0",
     "@solid-primitives/memo": "^1.4.1",
-    "@tanstack/solid-query": "^5.69.0"
+    "@tanstack/solid-query": "^5.71.2"
   },
   "devDependencies": {
     "@clerk/clerk-js": "^5.58.1",
@@ -220,9 +220,9 @@
     "@solidjs/testing-library": "^0.8.10",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.6.1",
-    "@types/node": "^22.13.14",
+    "@types/node": "^22.13.17",
     "eslint": "^9.23.0",
-    "expect-type": "^1.2.0",
+    "expect-type": "^1.2.1",
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
     "prettier": "3.5.3",
@@ -231,10 +231,10 @@
     "tsup": "^8.4.0",
     "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.28.0",
+    "typescript-eslint": "^8.29.0",
     "vite-plugin-solid": "^2.11.6",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.9"
+    "vitest": "^3.1.1"
   },
   "peerDependencies": {
     "@solidjs/router": ">=0.14",
