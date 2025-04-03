@@ -138,6 +138,20 @@ export const SignIn = withClerk((props: WithClerkProp<SignInProps>) => {
   );
 }, 'SignIn');
 
+export const Waitlist = withClerk((props: WithClerkProp<SignInProps>) => {
+  const [local, rest] = splitProps(props, ['clerk']);
+  return (
+    <Portal
+      mount={local.clerk().mountWaitlist}
+      unmount={local.clerk().unmountWaitlist}
+      updateProps={
+        (local.clerk() as unknown as IsomorphicClerk).__unstable__updateProps
+      }
+      props={rest}
+    />
+  );
+}, 'Waitlist');
+
 export const SignUp = withClerk((props: WithClerkProp<SignUpProps>) => {
   const [local, rest] = splitProps(props, ['clerk']);
   return (
