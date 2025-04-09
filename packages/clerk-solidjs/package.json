@@ -204,25 +204,25 @@
     "publish:local": "pnpm dlx yalc push --replace  --sig"
   },
   "dependencies": {
-    "@clerk/backend": "^1.25.8",
-    "@clerk/shared": "^3.2.3",
+    "@clerk/backend": "^1.27.2",
+    "@clerk/shared": "^3.5.0",
     "@solid-primitives/context": "^0.3.0",
     "@solid-primitives/destructure": "^0.2.0",
     "@solid-primitives/memo": "^1.4.1",
-    "@tanstack/solid-query": "^5.69.0"
+    "@tanstack/solid-query": "^5.72.2"
   },
   "devDependencies": {
-    "@clerk/clerk-js": "^5.58.1",
-    "@clerk/localizations": "^3.13.4",
-    "@clerk/themes": "^2.2.26",
-    "@clerk/types": "^4.50.1",
-    "@eslint/js": "^9.23.0",
+    "@clerk/clerk-js": "^5.59.3",
+    "@clerk/localizations": "^3.13.8",
+    "@clerk/themes": "^2.2.30",
+    "@clerk/types": "^4.52.0",
+    "@eslint/js": "^9.24.0",
     "@solidjs/testing-library": "^0.8.10",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.6.1",
-    "@types/node": "^22.13.14",
-    "eslint": "^9.23.0",
-    "expect-type": "^1.2.0",
+    "@types/node": "^22.14.0",
+    "eslint": "^9.24.0",
+    "expect-type": "^1.2.1",
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
     "prettier": "3.5.3",
@@ -230,11 +230,11 @@
     "rimraf": "^6.0.1",
     "tsup": "^8.4.0",
     "tsup-preset-solid": "^2.2.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.28.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1",
     "vite-plugin-solid": "^2.11.6",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.9"
+    "vitest": "^3.1.1"
   },
   "peerDependencies": {
     "@solidjs/router": ">=0.14",
